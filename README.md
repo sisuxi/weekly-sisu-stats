@@ -30,7 +30,7 @@ Run with Claude Code:
 ```
 
 This will:
-1. Calculate date range (default: previous Monday-Sunday)
+1. Calculate date range (default: previous Sunday-Saturday)
 2. Create folder `YYYYMMDD-YYYYMMDD/`
 3. Collect data from all sources in parallel
 4. Generate report sections
@@ -40,7 +40,7 @@ This will:
 
 Specify custom dates when prompted:
 ```
-"Generate report for 2025-08-26 to 2025-09-01"
+"Generate report for 2025-08-24 to 2025-08-30"
 ```
 
 ## Report Structure

@@ -7,7 +7,7 @@ Document principal-level engineering work including technical leadership, archit
 
 ## Usage
 
-To generate last week's report (Monday-Sunday):
+To generate last week's report (Sunday-Saturday):
 ```bash
 # Run this prompt with Claude Code
 # Automatically calculates last week's dates and generates the report
@@ -15,7 +15,7 @@ To generate last week's report (Monday-Sunday):
 
 To generate a custom date range report:
 ```bash
-# Specify custom dates: "2025-08-26 to 2025-09-01"
+# Specify custom dates: "2025-08-24 to 2025-08-30"
 ```
 
 ## Report Generation Process
@@ -25,10 +25,10 @@ To generate a custom date range report:
 # Get current date
 date +"%Y-%m-%d %A"
 
-# Calculate last week's date range (Monday to Sunday)
-# If today is 2025-09-06 (Friday), last week would be:
-# Monday: 2025-08-26
-# Sunday: 2025-09-01
+# Calculate last week's date range (Sunday to Saturday)
+# If today is 2025-09-05 (Friday), last week would be:
+# Sunday: 2025-08-24
+# Saturday: 2025-08-30
 ```
 
 ### Step 2: Data Collection Commands
@@ -292,9 +292,9 @@ Create the report in `reports/YYYYMMDD-YYYYMMDD.md` format with the following st
 When executing this prompt with Claude:
 
 ### 1. **Calculate dates**: 
-   - Default: Previous Monday-Sunday
+   - Default: Previous Sunday-Saturday
    - Custom: Parse provided range
-   - Format: YYYYMMDD-YYYYMMDD (e.g., 20250826-20250901)
+   - Format: YYYYMMDD-YYYYMMDD (e.g., 20250824-20250830)
 
 ### 2. **Setup**:
    
@@ -319,7 +319,7 @@ When executing this prompt with Claude:
        # Option 3: Exit without doing anything
    else
        # Create new folder
-       mkdir -p YYYYMMDD-YYYYMMDD  # Example: 20250826-20250901
+       mkdir -p YYYYMMDD-YYYYMMDD  # Example: 20250824-20250830
    fi
    ```
 
@@ -397,26 +397,26 @@ When executing this prompt with Claude:
 ```python
 # CORRECT: Parallel execution (what Claude should do)
 # Launch ALL these tasks in a single message with multiple tool calls
-# Example: For week 20250826-20250901
-Task("GitHub data collection", collect_github_data, writes_to="20250826-20250901/github_raw.json")
-Task("Slack data collection", collect_slack_data, writes_to="20250826-20250901/slack_raw.json")
-Task("Gmail data collection", collect_gmail_data, writes_to="20250826-20250901/gmail_raw.json")
-Task("Calendar data collection", collect_calendar_data, writes_to="20250826-20250901/calendar_raw.json")
-Task("Linear data collection", collect_linear_data, writes_to="20250826-20250901/linear_raw.json")
-Task("Drive data collection", collect_drive_data, writes_to="20250826-20250901/drive_raw.json")
-Task("LaunchDarkly data collection", collect_ld_data, writes_to="20250826-20250901/launchdarkly_raw.json")
+# Example: For week 20250824-20250830
+Task("GitHub data collection", collect_github_data, writes_to="20250824-20250830/github_raw.json")
+Task("Slack data collection", collect_slack_data, writes_to="20250824-20250830/slack_raw.json")
+Task("Gmail data collection", collect_gmail_data, writes_to="20250824-20250830/gmail_raw.json")
+Task("Calendar data collection", collect_calendar_data, writes_to="20250824-20250830/calendar_raw.json")
+Task("Linear data collection", collect_linear_data, writes_to="20250824-20250830/linear_raw.json")
+Task("Drive data collection", collect_drive_data, writes_to="20250824-20250830/drive_raw.json")
+Task("LaunchDarkly data collection", collect_ld_data, writes_to="20250824-20250830/launchdarkly_raw.json")
 
 # Wait for all to complete...
 
 # Then launch section generation in parallel
-Task("Generate technical section", analyze_technical_data, reads=["20250826-20250901/github_raw.json", "20250826-20250901/launchdarkly_raw.json"])
-Task("Generate collaboration section", analyze_collab_data, reads=["20250826-20250901/slack_raw.json", "20250826-20250901/gmail_raw.json"])
-Task("Generate strategic section", analyze_strategic_data, reads=["20250826-20250901/linear_raw.json", "20250826-20250901/calendar_raw.json"])
+Task("Generate technical section", analyze_technical_data, reads=["20250824-20250830/github_raw.json", "20250824-20250830/launchdarkly_raw.json"])
+Task("Generate collaboration section", analyze_collab_data, reads=["20250824-20250830/slack_raw.json", "20250824-20250830/gmail_raw.json"])
+Task("Generate strategic section", analyze_strategic_data, reads=["20250824-20250830/linear_raw.json", "20250824-20250830/calendar_raw.json"])
 
 # Wait for all sections...
 
 # Finally, generate executive summary with full context
-Task("Generate executive summary and final report", create_final_report, reads=all_files_in_folder, writes_to="20250826-20250901/weekly_report.md")
+Task("Generate executive summary and final report", create_final_report, reads=all_files_in_folder, writes_to="20250824-20250830/weekly_report.md")
 ```
 
 ```python

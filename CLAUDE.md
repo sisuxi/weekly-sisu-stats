@@ -90,7 +90,7 @@ Follow `/Users/sisu/.claude/commands/writing_guideline.md`:
 ```
 
 This will:
-1. Calculate previous week's dates (Monday-Sunday)
+1. Calculate previous week's dates (Sunday-Saturday)
 2. Check if folder exists (prompt if yes)
 3. Run parallel data collection
 4. Generate sections in parallel
@@ -102,20 +102,20 @@ This will:
 ### Date Calculation
 ```bash
 date +"%Y-%m-%d %A"  # Get current date
-# Calculate Monday-Sunday of previous week
+# Calculate Sunday-Saturday of previous week
 ```
 
 ### Folder Setup
 ```bash
-mkdir -p YYYYMMDD-YYYYMMDD  # Create week folder
+mkdir -p YYYYMMDD-YYYYMMDD  # Create week folder (e.g., 20250824-20250830)
 ```
 
 ### Parallel Task Launch Example
 ```python
 # Launch ALL at once (correct)
-Task("GitHub collection", ..., writes_to="20250826-20250901/github_raw.json")
-Task("Slack collection", ..., writes_to="20250826-20250901/slack_raw.json")
-Task("Gmail collection", ..., writes_to="20250826-20250901/gmail_raw.json")
+Task("GitHub collection", ..., writes_to="20250824-20250830/github_raw.json")
+Task("Slack collection", ..., writes_to="20250824-20250830/slack_raw.json")
+Task("Gmail collection", ..., writes_to="20250824-20250830/gmail_raw.json")
 # ... all 7 tasks in one message
 ```
 
