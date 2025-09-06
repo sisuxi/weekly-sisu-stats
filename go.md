@@ -3,7 +3,7 @@
 Generate comprehensive weekly snapshot reports documenting strategic technical leadership, architectural decisions, and cross-team impact across GitHub, Slack, Gmail, Drive, Calendar, Linear, and LaunchDarkly.
 
 ## Purpose
-Document principal-level engineering work including technical leadership, architectural guidance, mentorship, cross-functional collaboration, and strategic initiatives. Reports serve as weekly snapshots capturing high-impact contributions, technical decisions, and organizational influence as the company's highest-level IC.
+Generate concise, data-focused weekly activity snapshots with links to sources. Reports provide factual summaries of work completed across GitHub, Slack, Gmail, Drive, Calendar, Linear, and LaunchDarkly.
 
 ## Usage
 
@@ -143,148 +143,108 @@ cd ~/Hebbia/sisu-tools && .venv/bin/python tools/launchdarkly_explorer.py flags 
 
 ### Step 3: Report Generation
 
-**IMPORTANT**: The Executive Summary MUST be generated AFTER all data collection is complete, as it needs full visibility into the week's activities to accurately identify highlights and lowlights.
+**IMPORTANT**: The Executive Summary MUST be generated AFTER all data collection is complete. Keep it to 4-5 bullet points with just high-level metrics.
 
 Create the report in `reports/YYYYMMDD-YYYYMMDD.md` format with the following structure:
 
-## Report Template (Principal Engineer Focus)
+## Report Template (Data-Focused Format)
 
 ```markdown
-# Principal Engineer Weekly Snapshot: [START_DATE] - [END_DATE]
+# Weekly Snapshot: [START_DATE] - [END_DATE]
 
 *Generated: [CURRENT_DATE]*
 
 ## Executive Summary
+- **PRs**: [X] created, [Y] reviewed
+- **Teams**: [List teams collaborated with]
+- **P0/P1 Issues**: [Count and identifiers]
+- **Key Decisions**: [1-2 major technical decisions]
 
-### Strategic Impact
-- [Major architectural decision with long-term implications]
-- [Cross-team initiative delivered or advanced]
-- [Technical debt reduction or system optimization]
-- [Critical production issue resolved or prevented]
+## GitHub Activity
 
-### Technical Leadership
-- [Mentored engineers on complex problem]
-- [Guided architectural review or design]
-- [Unblocked teams with technical expertise]
+### PRs Created
+- #[XXX]: [Title] - [URL]
+- #[XXX]: [Title] - [URL]
 
-### Organizational Influence  
-- [Process improvement implemented]
-- [Standard or best practice established]
-- [Cross-functional alignment achieved]
+### PRs Reviewed
+- #[XXX] by @[author]: [Title] - [URL]
+- #[XXX] by @[author]: [Title] - [URL]
 
-### Metrics
-- **Technical Reviews**: [X] architecture reviews, [Y] code reviews
-- **Mentorship**: [X] engineers guided, [Y] technical discussions led
-- **Cross-team**: [X] teams collaborated with
-- **System Impact**: [Performance gains, reliability improvements]
+### Commits
+- [SHA]: [Message] - [Impact if significant]
 
-## Technical Leadership
+## Slack Activity
 
-### Architecture & Design
-**Reviews Led:**
-- PR #[XXX]: [Architectural guidance provided, impact on system design]
-- Design Review: [System/component reviewed with recommendations]
+### Key Messages
+- **#[channel]**: [Topic/decision] - [Outcome]
+- **DM @[person]**: [Support provided]
+- **Thread**: [Technical discussion] - [Resolution]
 
-**Technical Decisions:**
-- [Major technical decision]: [Rationale and expected impact]
-- [Technology choice]: [Trade-offs considered, long-term implications]
+### Stats
+- Messages sent: [X]
+- Channels active: [List]
+- DMs/support: [Count]
 
-### Code Contributions
-**Strategic PRs:**
-- PR #[XXX]: [System-level improvement or critical fix]
-- PR #[XXX]: [Performance optimization with measurable impact]
+## Gmail Activity
 
-**High-Impact Reviews:**
-- PR #[XXX] by [Engineer]: [Critical feedback that prevented issue]
-- PR #[XXX] by [Team]: [Architectural guidance provided]
+### Important Emails
+- **To**: [Recipients] | **Subject**: [Title] | **Action**: [Decision/outcome]
+- **From**: [Sender] | **Subject**: [Title] | **Response**: [Action taken]
 
-## Cross-Team Collaboration
+### Stats
+- Emails sent: [X]
+- Emails received: [Y]
+- Response rate: [%]
 
-### Initiatives Led
-- [Initiative]: Teams involved, current status, impact
-- [Project]: Cross-functional alignment achieved
+## Calendar Activity
 
-### Team Support
-**Unblocked:**
-- [Team]: [Technical blocker resolved]
-- [Engineer]: [Complex problem solved]
+### Key Meetings
+- **[Meeting Name]**: [Duration] | [Attendees] | [Outcome/decision]
+- **[Meeting Name]**: [Duration] | [Type: 1:1/team/strategic]
 
-**Mentorship:**
-- [Engineer]: [Technical concept taught or skill developed]
-- [Team]: [Best practice introduced or process improved]
+### Time Allocation
+- Meeting hours: [X]
+- Strategic sessions: [Y]
+- 1:1s: [Z]
 
-### Feature Flags & Production
-**Critical Changes:**
-- `flag-name`: [Production rollout strategy and impact]
-- System optimization: [Performance gain achieved]
+## Google Drive Activity
 
-## Strategic Work
+### Documents Modified
+- **[Doc Name]**: [Type] | [Purpose] | [Link if shareable]
+- **[Doc Name]**: [Collaborators] | [Status]
 
-### Linear Issues
-**High-Priority Delivered:**
-- [P0/P1 Issue]: [Business impact of resolution]
-- [Cross-team Issue]: [Dependencies resolved]
+### Documents Created
+- **[Doc Name]**: [Purpose] | [Audience]
 
-**Technical Debt:**
-- [Debt Item]: [Long-term benefit of addressing]
+## Linear Activity
 
-### Documentation & Standards
-**Created/Updated:**
-- [Architecture Doc]: [Future-proofing aspect]
-- [Technical Standard]: [Teams affected, adoption plan]
-- [Runbook/Guide]: [Operational improvement enabled]
+### High Priority Issues
+- **[ID]**: [Title] - [Status] - [Team] - [URL]
+- **[ID]**: [Title] - P[0/1] - [Status]
 
-## Organizational Impact
+### Completed This Week
+- **[ID]**: [Title] - [Impact]
 
-### Meetings & Decisions
-**Strategic Meetings:**
-- [Executive/Leadership]: [Technical input provided, decision influenced]
-- [Architecture Review]: [System design guided]
-- [Cross-team Sync]: [Alignment achieved]
+### Cross-Team Issues
+- **[ID]**: [Title] - Teams: [List] - [Dependencies]
 
-### Communication
-**Key Threads:**
-- [Slack/Email]: [Technical decision communicated to org]
-- [Discussion]: [Consensus built on approach]
+## LaunchDarkly Activity
 
-### Process & Culture
-- [Engineering Practice]: [Improvement introduced]
-- [Tool/Process]: [Efficiency gain for teams]
+### Flag Changes
+- **[flag-name]**: [Action: created/modified/toggled] - [Environment]
+- **[flag-name]**: [Rollout %] - [Impact]
 
-## Next Week Focus
+### Production Changes
+- [Description of significant production changes]
 
-### Strategic Priorities
-1. [Major Initiative]: [Why critical now, who's depending on it]
-2. [Technical Investigation]: [What we'll learn, decisions it enables]
-3. [Team Enablement]: [Who will be unblocked]
-
-### Risk Mitigation
-- [Technical Risk]: [Mitigation plan]
-- [Dependency]: [Contingency approach]
-
-## Principal Engineer Metrics
-
-### Technical Leadership
-- Architecture reviews: [X]
-- Critical PRs reviewed: [Y] 
-- Engineers mentored: [Z]
-- Teams supported: [List]
-
-### System Impact
-- Performance improvements: [Metrics]
-- Reliability gains: [Uptime/error rate changes]
-- Technical debt reduced: [Estimated hours saved]
-- Security issues prevented: [Count/severity]
-
-### Organizational Influence
-- Cross-team initiatives: [X]
-- Standards established: [Y]
-- Engineers influenced: [Estimated reach]
-- Strategic decisions shaped: [Count]
+## Next Week
+- [Top priority item with Linear ID]
+- [Blocked items needing attention]
+- [Scheduled strategic work]
 
 ---
 
-*Report generated automatically using weekly-stats tools*
+*Report generated: [timestamp]*
 ```
 
 ## Implementation Instructions
@@ -351,10 +311,13 @@ When executing this prompt with Claude:
    ```
    # Launch section generation agents in parallel
    # All sections saved to same YYYYMMDD-YYYYMMDD/ folder
-   Task A: Generate Technical Leadership section → YYYYMMDD-YYYYMMDD/section_technical.md
-   Task B: Generate Cross-Team Collaboration section → YYYYMMDD-YYYYMMDD/section_collaboration.md
-   Task C: Generate Strategic Work section → YYYYMMDD-YYYYMMDD/section_strategic.md
-   Task D: Generate Metrics section → YYYYMMDD-YYYYMMDD/section_metrics.md
+   Task A: Generate GitHub section → YYYYMMDD-YYYYMMDD/section_github.md
+   Task B: Generate Slack section → YYYYMMDD-YYYYMMDD/section_slack.md
+   Task C: Generate Gmail section → YYYYMMDD-YYYYMMDD/section_gmail.md
+   Task D: Generate Calendar section → YYYYMMDD-YYYYMMDD/section_calendar.md
+   Task E: Generate Drive section → YYYYMMDD-YYYYMMDD/section_drive.md
+   Task F: Generate Linear section → YYYYMMDD-YYYYMMDD/section_linear.md
+   Task G: Generate LaunchDarkly section → YYYYMMDD-YYYYMMDD/section_launchdarkly.md
    ```
 
 ### 5. **Sequential Final Assembly**:
@@ -364,17 +327,21 @@ When executing this prompt with Claude:
    a. **Aggregate all data** from YYYYMMDD-YYYYMMDD/ folder
    
    b. **Generate Executive Summary** (MUST be done AFTER all data is collected):
-      - Analyze all sections for highlights
-      - Identify lowlights and blockers
-      - Calculate overall metrics
-      - Extract strategic impact
+      - Count total PRs created and reviewed
+      - List teams collaborated with
+      - Note P0/P1 issues
+      - Extract 1-2 key technical decisions (if any)
    
    c. **Merge sections** into final report:
-      - Executive Summary (generated from full data)
-      - Technical Leadership (from section_technical.md)
-      - Cross-Team Collaboration (from section_collaboration.md)
-      - Strategic Work (from section_strategic.md)
-      - Metrics (from section_metrics.md)
+      - Executive Summary (4-5 bullet points only)
+      - GitHub Activity (from section_github.md)
+      - Slack Activity (from section_slack.md)
+      - Gmail Activity (from section_gmail.md)
+      - Calendar Activity (from section_calendar.md)
+      - Google Drive Activity (from section_drive.md)
+      - Linear Activity (from section_linear.md)
+      - LaunchDarkly Activity (from section_launchdarkly.md)
+      - Next Week (brief list)
    
    d. **Save final report**: `YYYYMMDD-YYYYMMDD/weekly_report.md`
 
@@ -408,10 +375,14 @@ Task("LaunchDarkly data collection", collect_ld_data, writes_to="20250824-202508
 
 # Wait for all to complete...
 
-# Then launch section generation in parallel
-Task("Generate technical section", analyze_technical_data, reads=["20250824-20250830/github_raw.json", "20250824-20250830/launchdarkly_raw.json"])
-Task("Generate collaboration section", analyze_collab_data, reads=["20250824-20250830/slack_raw.json", "20250824-20250830/gmail_raw.json"])
-Task("Generate strategic section", analyze_strategic_data, reads=["20250824-20250830/linear_raw.json", "20250824-20250830/calendar_raw.json"])
+# Then launch section generation in parallel (7 separate sections)
+Task("Generate GitHub section", analyze_github_data, reads=["20250824-20250830/github_raw.json"])
+Task("Generate Slack section", analyze_slack_data, reads=["20250824-20250830/slack_raw.json"])
+Task("Generate Gmail section", analyze_gmail_data, reads=["20250824-20250830/gmail_raw.json"])
+Task("Generate Calendar section", analyze_calendar_data, reads=["20250824-20250830/calendar_raw.json"])
+Task("Generate Drive section", analyze_drive_data, reads=["20250824-20250830/drive_raw.json"])
+Task("Generate Linear section", analyze_linear_data, reads=["20250824-20250830/linear_raw.json"])
+Task("Generate LaunchDarkly section", analyze_ld_data, reads=["20250824-20250830/launchdarkly_raw.json"])
 
 # Wait for all sections...
 
@@ -431,8 +402,10 @@ collect_gmail_data()  # Could have run in parallel
 
 ## Important Notes
 
-- **Executive Summary MUST be generated LAST**: It needs all data to accurately summarize
-- **Highlights/Lowlights require full context**: Don't generate these until all sections are complete
+- **Executive Summary MUST be generated LAST**: Keep to 4-5 high-level bullet points only
+- **Neutral tone throughout**: No subjective assessments, just facts with links
+- **Data-focused sections**: Each data source gets its own section (GitHub, Slack, etc.)
+- **Include all URLs**: Every PR, issue, document should have a clickable link
 - **Use separate files**: Prevents file lock conflicts during parallel writes
 - **Claude's parallel capability**: Leverage Claude's ability to run multiple tools simultaneously
 - **Folder structure**: Everything for a week stays in one folder (YYYYMMDD-YYYYMMDD/)
@@ -443,31 +416,23 @@ collect_gmail_data()  # Could have run in parallel
 
 ## Guidelines
 
-- **Writing Style**: Follow `/Users/sisu/.claude/commands/writing_guideline.md`
-  - Concise: Remove unnecessary words
-  - Clear: Avoid jargon, explain technical terms
-  - Objective: Focus on facts and outcomes
-  - Action-oriented: Use active voice
+- **Writing Style**:
+  - **Neutral tone**: Factual, no superlatives or subjective assessments
+  - **Bullet points**: Data in scannable format
+  - **Links included**: Direct URLs to PRs, issues, documents
+  - **Concise**: Just the facts, no narrative
+  - **Raw data**: Focus on what happened, not interpretation
 
-- **Principal Engineer Focus**:
-  - Strategic impact over tactical tasks
-  - System-wide improvements over local fixes
-  - Mentorship and team enablement
-  - Cross-functional collaboration
-  - Technical decision-making and architecture
-  - Long-term technical vision
-
-- **Content Priorities**:
-  - Architectural decisions and their rationale
-  - Cross-team initiatives and alignment
-  - Technical debt reduction with measurable impact
-  - Mentorship and knowledge transfer
-  - Production stability and performance gains
-  - Standards and best practices established
+- **Content Format**:
+  - One section per data source (GitHub, Slack, etc.)
+  - Chronological or priority order within sections
+  - Include identifiers (PR#, issue ID, etc.)
+  - Add URLs for easy access
+  - Keep descriptions to essential information only
 
 - **Technical Details**:
   - Pacific Time (PT) for all timestamps
-  - Include PR/issue links
-  - Verify metrics from raw data
-  - Highlight P0/P1 items
-  - Quantify impact (users affected, performance gains, etc.)
+  - Include all PR/issue/document links
+  - Use exact titles from sources
+  - Preserve original formatting (PR titles, issue names)
+  - No editorializing or analysis
