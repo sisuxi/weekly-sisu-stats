@@ -1,9 +1,9 @@
-# Principal Engineer Weekly Snepts Generator
+# Principal Engineer Weekly Snapshot Report Generator
 
-Generate comprehensive weekly snippets (snepts) documenting strategic technical leadership, architectural decisions, and cross-team impact across GitHub, Slack, Gmail, Drive, Calendar, Linear, and LaunchDarkly.
+Generate comprehensive weekly snapshot reports documenting strategic technical leadership, architectural decisions, and cross-team impact across GitHub, Slack, Gmail, Drive, Calendar, Linear, and LaunchDarkly.
 
 ## Purpose
-Document principal-level engineering work including technical leadership, architectural guidance, mentorship, cross-functional collaboration, and strategic initiatives. Reports serve as weekly snippets capturing high-impact contributions, technical decisions, and organizational influence as the company's highest-level IC.
+Document principal-level engineering work including technical leadership, architectural guidance, mentorship, cross-functional collaboration, and strategic initiatives. Reports serve as weekly snapshots capturing high-impact contributions, technical decisions, and organizational influence as the company's highest-level IC.
 
 ## Usage
 
@@ -150,7 +150,7 @@ Create the report in `reports/YYYYMMDD-YYYYMMDD.md` format with the following st
 ## Report Template (Principal Engineer Focus)
 
 ```markdown
-# Principal Engineer Weekly Snepts: [START_DATE] - [END_DATE]
+# Principal Engineer Weekly Snapshot: [START_DATE] - [END_DATE]
 
 *Generated: [CURRENT_DATE]*
 
