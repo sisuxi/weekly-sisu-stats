@@ -60,43 +60,43 @@ gh pr list --repo hebbia/mono --state all --limit 100 --json number,author,creat
 #### Slack Activity (Technical Leadership)
 ```bash
 # Technical discussions and decisions
-cd ~/Hebbia/sisu-tools && .venv/bin/python tools/slack_explorer.py search "from:@sisu" --count 100
+cd ~/Hebbia/sisu-tools && .venv/bin/python tools/slack_explorer.py search "from:@sisu" --from "START_DATE" --to "END_DATE" --count 100
 
 # Architecture and engineering channels
-cd ~/Hebbia/sisu-tools && .venv/bin/python tools/slack_explorer.py search "from:@sisu in:#engineering OR in:#architecture OR in:#platform" --count 50
+cd ~/Hebbia/sisu-tools && .venv/bin/python tools/slack_explorer.py search "from:@sisu in:#engineering OR in:#architecture OR in:#platform" --from "START_DATE" --to "END_DATE" --count 50
 
 # Mentorship and support (DMs and threads)
-cd ~/Hebbia/sisu-tools && .venv/bin/python tools/slack_explorer.py activity --days 7
+cd ~/Hebbia/sisu-tools && .venv/bin/python tools/slack_explorer.py activity --from "START_DATE" --to "END_DATE"
 
 # Critical incident responses
-cd ~/Hebbia/sisu-tools && .venv/bin/python tools/slack_explorer.py search "from:@sisu in:#incidents OR in:#alerts" --count 20
+cd ~/Hebbia/sisu-tools && .venv/bin/python tools/slack_explorer.py search "from:@sisu in:#incidents OR in:#alerts" --from "START_DATE" --to "END_DATE" --count 20
 ```
 
 #### Gmail Activity
 ```bash
 # Inbox statistics for the week
-cd ~/Hebbia/sisu-tools && .venv/bin/python tools/gmail_explorer.py stats --days 7
+cd ~/Hebbia/sisu-tools && .venv/bin/python tools/gmail_explorer.py stats --from "START_DATE" --to "END_DATE"
 
 # Important emails
-cd ~/Hebbia/sisu-tools && .venv/bin/python tools/gmail_explorer.py important --days 7
+cd ~/Hebbia/sisu-tools && .venv/bin/python tools/gmail_explorer.py important --from "START_DATE" --to "END_DATE"
 
 # Sent emails
-cd ~/Hebbia/sisu-tools && .venv/bin/python tools/gmail_explorer.py sent --days 7
+cd ~/Hebbia/sisu-tools && .venv/bin/python tools/gmail_explorer.py sent --from "START_DATE" --to "END_DATE"
 
 # Get detailed email data
-cd ~/Hebbia/sisu-tools && .venv/bin/python tools/gmail_explorer.py export --days 7 > week_emails.json
+cd ~/Hebbia/sisu-tools && .venv/bin/python tools/gmail_explorer.py export --from "START_DATE" --to "END_DATE" > week_emails.json
 ```
 
 #### Google Drive Activity
 ```bash
 # Documents modified during the week
-cd ~/Hebbia/sisu-tools && .venv/bin/python tools/drive_explorer.py recent --days 7
+cd ~/Hebbia/sisu-tools && .venv/bin/python tools/drive_explorer.py recent --from "START_DATE" --to "END_DATE"
 
 # Documents shared with me
-cd ~/Hebbia/sisu-tools && .venv/bin/python tools/drive_explorer.py shared --days 7
+cd ~/Hebbia/sisu-tools && .venv/bin/python tools/drive_explorer.py shared --from "START_DATE" --to "END_DATE"
 
 # Search for specific project documents
-cd ~/Hebbia/sisu-tools && .venv/bin/python tools/drive_explorer.py search "hebbia" --days 7
+cd ~/Hebbia/sisu-tools && .venv/bin/python tools/drive_explorer.py search "hebbia" --from "START_DATE" --to "END_DATE"
 ```
 
 #### Calendar Activity
@@ -114,16 +114,16 @@ cd ~/Hebbia/sisu-tools && .venv/bin/python tools/calendar_explorer.py search "1:
 #### Linear Activity (Strategic Focus)
 ```bash
 # High-priority issues (P0/P1) assigned or created
-cd ~/Hebbia/sisu-tools && .venv/bin/python tools/linear_explorer.py "query { issues(filter: { OR: [{assignee: { email: { eq: \"sisu@hebbia.ai\" } }}, {creator: { email: { eq: \"sisu@hebbia.ai\" } }}], priority: { in: [0, 1] }, updatedAt: { gte: \"START_DATE\" } }, first: 50) { nodes { identifier title state { name } priority updatedAt url team { name } } } }"
+cd ~/Hebbia/sisu-tools && .venv/bin/python tools/linear_explorer.py --from "START_DATE" --to "END_DATE" --urls "query { issues(filter: { OR: [{assignee: { email: { eq: \"sisu@hebbia.ai\" } }}, {creator: { email: { eq: \"sisu@hebbia.ai\" } }}], priority: { in: [0, 1] } }, first: 50) { nodes { identifier title state { name } priority updatedAt team { name } } } }"
 
 # Cross-team issues and dependencies
-cd ~/Hebbia/sisu-tools && .venv/bin/python tools/linear_explorer.py "query { issues(filter: { OR: [{assignee: { email: { eq: \"sisu@hebbia.ai\" } }}, {subscribers: { email: { eq: \"sisu@hebbia.ai\" } }}], updatedAt: { gte: \"START_DATE\" } }, first: 50) { nodes { identifier title state { name } priority team { name } parent { identifier title } children { nodes { identifier title } } } } }"
+cd ~/Hebbia/sisu-tools && .venv/bin/python tools/linear_explorer.py --from "START_DATE" --to "END_DATE" --urls "query { issues(filter: { OR: [{assignee: { email: { eq: \"sisu@hebbia.ai\" } }}, {subscribers: { email: { eq: \"sisu@hebbia.ai\" } }}] }, first: 50) { nodes { identifier title state { name } priority team { name } parent { identifier title } children { nodes { identifier title } } } } }"
 
 # Technical debt and architecture issues
-cd ~/Hebbia/sisu-tools && .venv/bin/python tools/linear_explorer.py "query { issues(filter: { labels: { name: { in: [\"tech-debt\", \"architecture\", \"performance\"] } }, OR: [{assignee: { email: { eq: \"sisu@hebbia.ai\" } }}, {creator: { email: { eq: \"sisu@hebbia.ai\" } }}], updatedAt: { gte: \"START_DATE\" } }, first: 50) { nodes { identifier title state { name } labels { nodes { name } } team { name } } } }"
+cd ~/Hebbia/sisu-tools && .venv/bin/python tools/linear_explorer.py --from "START_DATE" --to "END_DATE" --urls "query { issues(filter: { labels: { name: { in: [\"tech-debt\", \"architecture\", \"performance\"] } }, OR: [{assignee: { email: { eq: \"sisu@hebbia.ai\" } }}, {creator: { email: { eq: \"sisu@hebbia.ai\" } }}] }, first: 50) { nodes { identifier title state { name } labels { nodes { name } } team { name } } } }"
 
 # Completed high-impact issues
-cd ~/Hebbia/sisu-tools && .venv/bin/python tools/linear_explorer.py "query { issues(filter: { assignee: { email: { eq: \"sisu@hebbia.ai\" } }, state: { type: { eq: \"completed\" } }, completedAt: { gte: \"START_DATE\" } }, first: 50) { nodes { identifier title completedAt url team { name } priority } } }"
+cd ~/Hebbia/sisu-tools && .venv/bin/python tools/linear_explorer.py --from "START_DATE" --to "END_DATE" --urls "query { issues(filter: { assignee: { email: { eq: \"sisu@hebbia.ai\" } }, state: { type: { eq: \"completed\" } } }, first: 50) { nodes { identifier title completedAt team { name } priority } } }"
 ```
 
 #### LaunchDarkly Activity
