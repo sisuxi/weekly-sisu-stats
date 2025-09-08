@@ -145,7 +145,7 @@ cd ~/Hebbia/sisu-tools && .venv/bin/python tools/launchdarkly_explorer.py flags 
 
 **IMPORTANT**: The Executive Summary MUST be generated AFTER all data collection is complete. Keep it to 4-5 bullet points with just high-level metrics.
 
-Create the report in `reports/YYYYMMDD-YYYYMMDD.md` format with the following structure:
+Create the report in `YYYYMMDD-YYYYMMDD/report_YYYYMMDD_YYYYMMDD.md` format with the following structure:
 
 ## Report Template (Data-Focused Format)
 
@@ -343,10 +343,10 @@ When executing this prompt with Claude:
       - LaunchDarkly Activity (from section_launchdarkly.md)
       - Next Week (brief list)
    
-   d. **Save final report**: `YYYYMMDD-YYYYMMDD/weekly_report.md`
+   d. **Save final report**: `YYYYMMDD-YYYYMMDD/report_YYYYMMDD_YYYYMMDD.md`
 
 ### 6. **Output**: 
-   - Report location: `YYYYMMDD-YYYYMMDD/weekly_report.md`
+   - Report location: `YYYYMMDD-YYYYMMDD/report_YYYYMMDD_YYYYMMDD.md`
    - Summary statistics displayed to user
    - All raw data preserved in same folder for reference
 
@@ -387,7 +387,7 @@ Task("Generate LaunchDarkly section", analyze_ld_data, reads=["20250824-20250830
 # Wait for all sections...
 
 # Finally, generate executive summary with full context
-Task("Generate executive summary and final report", create_final_report, reads=all_files_in_folder, writes_to="20250824-20250830/weekly_report.md")
+Task("Generate executive summary and final report", create_final_report, reads=all_files_in_folder, writes_to="20250824-20250830/report_20250824_20250830.md")
 ```
 
 ```python
@@ -411,7 +411,7 @@ collect_gmail_data()  # Could have run in parallel
 - **Folder structure**: Everything for a week stays in one folder (YYYYMMDD-YYYYMMDD/)
   - Raw data files: `*_raw.json`
   - Section files: `section_*.md`
-  - Final report: `weekly_report.md`
+  - Final report: `report_YYYYMMDD_YYYYMMDD.md`
 - **Data preservation**: All raw data is kept for future reference or reprocessing
 
 ## Guidelines
