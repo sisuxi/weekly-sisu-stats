@@ -1,0 +1,164 @@
+{
+  "collection_metadata": {
+    "collection_date": "2025-09-06",
+    "date_range": "2025-08-24 to 2025-08-30",
+    "user_email": "sisu.xi@hebbia.ai",
+    "note": "Limited activity during target week. Data includes broader context from August 2025."
+  },
+  "high_priority_issues": {
+    "description": "P0/P1 issues assigned to or created by Sisu Xi during target week",
+    "query_results": [],
+    "note": "No P0/P1 issues found with activity specifically during 2025-08-24 to 2025-08-30",
+    "broader_context": {
+      "all_p0_p1_assigned": [
+        {
+          "identifier": "HEB-1669",
+          "title": "Better observability in get rows",
+          "state": "Todo",
+          "priority": 0,
+          "team": "Hebbia EPD",
+          "updatedAt": "2025-08-21T16:09:23.593Z",
+          "parent_issue": "HEB-1668"
+        },
+        {
+          "identifier": "HEB-1668", 
+          "title": "Matrix Slowness: Get rows",
+          "state": "In Progress",
+          "priority": 0,
+          "team": "Hebbia EPD",
+          "updatedAt": "2025-08-21T20:58:07.579Z",
+          "child_issues": ["HEB-1670", "HEB-1669"]
+        }
+      ]
+    }
+  },
+  "cross_team_issues": {
+    "description": "Issues spanning multiple teams or with dependencies",
+    "query_results": [],
+    "note": "Complex OR queries not supported by API during target week",
+    "broader_context": {
+      "identified_cross_team_work": [
+        {
+          "identifier": "HEB-1668",
+          "title": "Matrix Slowness: Get rows", 
+          "team": "Hebbia EPD",
+          "type": "Parent issue with multiple sub-tasks",
+          "children": [
+            {
+              "identifier": "HEB-1669",
+              "title": "Better observability in get rows"
+            },
+            {
+              "identifier": "HEB-1670", 
+              "title": "Fix get rows slowness"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "technical_debt_issues": {
+    "description": "Issues labeled with tech-debt, architecture, or performance",
+    "query_results": [],
+    "note": "Label-based queries encountered API limitations during target week",
+    "broader_context": {
+      "performance_related": [
+        {
+          "identifier": "HEB-1668",
+          "title": "Matrix Slowness: Get rows",
+          "type": "Performance optimization",
+          "description": "Addressing slow database queries in get_rows operation",
+          "impact": "System-wide performance improvement"
+        },
+        {
+          "identifier": "HEB-1669", 
+          "title": "Better observability in get rows",
+          "type": "Observability/Monitoring",
+          "description": "Adding metrics and logging to identify performance bottlenecks in complex queries",
+          "impact": "Enables data-driven performance optimization"
+        }
+      ]
+    }
+  },
+  "completed_issues": {
+    "description": "Issues completed during target week",
+    "query_results": [],
+    "note": "No issues completed during 2025-08-24 to 2025-08-30 period"
+  },
+  "comprehensive_assigned_issues": {
+    "description": "All issues currently assigned to Sisu Xi",
+    "issues": [
+      {
+        "identifier": "HEB-1669",
+        "title": "Better observability in get rows",
+        "state": "Todo",
+        "priority": 0,
+        "team": "Hebbia EPD",
+        "updatedAt": "2025-08-21T16:09:23.593Z",
+        "createdAt": "2025-08-11T22:32:12.948Z",
+        "url": "https://linear.app/hebbia-ai/issue/HEB-1669/better-observability-in-get-rows",
+        "parent": {
+          "identifier": "HEB-1668",
+          "title": "Matrix Slowness: Get rows"
+        },
+        "description": "Get rows is one of the slowest queries in our product and frequently cause a lot of DB load, some even leading to incidents. To fix this, we must first have more observability into the slowest parts of it.\n\nRight now, the way to diagnose slow queries is to sort them by duration and EXPLAIN ANALYZE each query. We have gotten as much gains as we could from painstakingly doing this - adding indices etc., but it is still very slow, and going further is a bad way to figuring out what's slow.\n\nGet rows is a very complicated query with a lot of parameters - filters, sorts, etc. A lot of these trigger very expensive query patterns like JSONB aggregations and ILIKE filtering. So:\n\n* Want to know: *What query patterns are slowest*?\n\nTask: Let's emit a log-based metric that has context fields:\n\n* sort orders,\n* filters,\n* full matrix search or not,\n* num rows & num cols in matrix,\n* num rows returned,\n* cache hit or miss (in get_relevant_rows())\n* latencies\n\nget_rows() is a 2-phase operation that has the following steps:\n\n1. get_relevant_rows() - based on the filters & pagination settings present, get me the relevant row_ids to return to the frontend\n2. hydrate_rows(): hydrate the row ids with all the cells that belong to the row. This is an expensive JSONB aggregation to fetch all the cells contents for the rows.\n\nWe should have statistics for both so we know which combinations are slow.",
+        "technical_context": {
+          "type": "Performance Engineering",
+          "complexity": "High",
+          "impact": "System-wide performance improvement",
+          "skills_demonstrated": ["Database optimization", "Observability", "Performance monitoring", "System design"]
+        }
+      },
+      {
+        "identifier": "HEB-1668",
+        "title": "Matrix Slowness: Get rows",
+        "state": "In Progress", 
+        "priority": 0,
+        "team": "Hebbia EPD",
+        "updatedAt": "2025-08-21T20:58:07.579Z",
+        "createdAt": "2025-08-11T22:31:57.327Z",
+        "url": "https://linear.app/hebbia-ai/issue/HEB-1668/matrix-slowness-get-rows",
+        "children": [
+          {
+            "identifier": "HEB-1670",
+            "title": "Fix get rows slowness"
+          },
+          {
+            "identifier": "HEB-1669", 
+            "title": "Better observability in get rows"
+          }
+        ],
+        "technical_context": {
+          "type": "System Performance Initiative",
+          "complexity": "High",
+          "impact": "Critical system performance improvement",
+          "leadership_role": "Technical lead on performance initiative with multiple sub-tasks",
+          "skills_demonstrated": ["System architecture", "Performance optimization", "Task decomposition", "Technical leadership"]
+        }
+      }
+    ]
+  },
+  "summary": {
+    "total_active_issues": 2,
+    "high_priority_issues": 2,
+    "in_progress_issues": 1,
+    "todo_issues": 1,
+    "completed_issues_week": 0,
+    "primary_focus": "Database performance optimization and observability",
+    "technical_leadership": {
+      "leading_performance_initiative": true,
+      "decomposed_complex_problem": true,
+      "assigned_to_critical_p0_issues": true
+    },
+    "cross_team_impact": {
+      "system_wide_performance_improvements": true,
+      "incident_prevention_work": true
+    }
+  },
+  "api_limitations_encountered": [
+    "Complex OR queries with multiple conditions returned 400 errors",
+    "Label-based filtering queries failed",
+    "Subscriber-based queries not accessible",
+    "Date range filtering for target week returned no results (likely no activity)"
+  ]
+}

@@ -1,0 +1,516 @@
+{
+  "collection_date": "2025-09-06",
+  "week_period": "2025-08-24 to 2025-08-30",
+  "note": "Data collected covers broader timeframe since Drive tools don't support date filtering",
+  
+  "recent_documents": [
+    {
+      "title": "Sisu Onboarding",
+      "type": "Google Doc",
+      "modified": "2025-09-06 00:30",
+      "last_modified_by": "Sisu Xi",
+      "size": "0.0 MB",
+      "link": "https://docs.google.com/document/d/19imidnD7ORTauuvtwnbalurmU3RV_UVbrQxznTm4UTs/edit?usp=drivesdk"
+    },
+    {
+      "title": "Engineering Interview Process",
+      "type": "Google Doc",
+      "modified": "2025-09-05 20:57",
+      "last_modified_by": "Sisu Xi",
+      "size": "0.1 MB",
+      "link": "https://docs.google.com/document/d/1ufb52iy84QAoTQHPuTEU9cY36t66y7w-I_OSeKH69yM/edit?usp=drivesdk"
+    },
+    {
+      "title": "EPD Roadmap",
+      "type": "Google Sheet",
+      "modified": "2025-09-05 19:05",
+      "last_modified_by": "Morten Bruun",
+      "size": "0.1 MB",
+      "link": "https://docs.google.com/spreadsheets/d/15i7FBjg_yX2uKDxT4aoJy-kZJm5phBSxc4n6phrGZdg/edit?usp=drivesdk"
+    },
+    {
+      "title": "Deals Where EU Tenancy is Needed",
+      "type": "Google Sheet",
+      "modified": "2025-09-05 17:45",
+      "last_modified_by": "Jillian Liu",
+      "size": "0.0 MB",
+      "link": "https://docs.google.com/spreadsheets/d/1vrXfns9C9uELi1BYvyIt5xJ_l3FimeVCDraWDN4vsMY/edit?usp=drivesdk"
+    },
+    {
+      "title": "Sisu / Rob",
+      "type": "Google Doc",
+      "modified": "2025-09-05 17:31",
+      "last_modified_by": "Sisu Xi",
+      "size": "1.2 MB",
+      "link": "https://docs.google.com/document/d/1gQRV1UiPl_7n8MN7PPXnWZ7OTZRnbUsVe_YE0OYVMt4/edit?usp=drivesdk"
+    },
+    {
+      "title": "Sisu Weekly Snippets",
+      "type": "Google Doc",
+      "modified": "2025-09-05 17:25",
+      "last_modified_by": "Sisu Xi",
+      "size": "0.0 MB",
+      "link": "https://docs.google.com/document/d/107wxRoH4BVISuGU0g-PcFArzL8NHSReLuiru-FDU0dw/edit?usp=drivesdk"
+    },
+    {
+      "title": "EPD Weekly - Sep 01 - Sep 05",
+      "type": "Google Doc",
+      "modified": "2025-09-05 17:04",
+      "last_modified_by": "Matt Aromatorio",
+      "size": "0.0 MB",
+      "link": "https://docs.google.com/document/d/1P9Brxbjqc2Dcj2nEJXw27Y4xgU0kt1lq7ff95e8iCPc/edit?usp=drivesdk"
+    },
+    {
+      "title": "Robo - Hebbia Comparison",
+      "type": "Google Doc",
+      "modified": "2025-09-05 16:19",
+      "last_modified_by": "Rob Day",
+      "size": "6.9 MB",
+      "link": "https://docs.google.com/document/d/1DfBH8NrwFaOTH_xC-I3ihZ-AXpdxPna-JGWjEA7Bn2o/edit?usp=drivesdk"
+    },
+    {
+      "title": "[NOEDIT] Notion Sync",
+      "type": "Google Sheet",
+      "modified": "2025-09-05 15:44",
+      "last_modified_by": "Adithya Ramanathan",
+      "size": "0.1 MB",
+      "link": "https://docs.google.com/spreadsheets/d/1ba6m8ZdKIOwKmyuYO3Lokej54Du_GQIZdCyfXyQLxoc/edit?usp=drivesdk"
+    },
+    {
+      "title": "Talent Screen Script",
+      "type": "Google Doc",
+      "modified": "2025-09-05 03:53",
+      "last_modified_by": "Scott Bianco",
+      "size": "0.0 MB",
+      "link": "https://docs.google.com/document/d/1ZU-Jn6o5sO9dKqz4Efg7dRRW1VJEI8o-VRi5kirJEeM/edit?usp=drivesdk"
+    },
+    {
+      "title": "Matrix Team Planning",
+      "type": "Google Doc",
+      "modified": "2025-09-05 01:42",
+      "last_modified_by": "Ammar Husain",
+      "size": "0.1 MB",
+      "link": "https://docs.google.com/document/d/1uX4RfsgMswc7hsUtHRvzKcSDGCPStuGymaOxW1EI1H0/edit?usp=drivesdk"
+    },
+    {
+      "title": "Notes - Sisu // Rob",
+      "type": "Google Doc",
+      "modified": "2025-09-04 15:19",
+      "last_modified_by": "Sisu Xi",
+      "size": "0.0 MB",
+      "link": "https://docs.google.com/document/d/1sBd5SxTi9oFwLt-5NQ4_oMTUuksY92ZPfVXfpCUqLqc/edit?usp=drivesdk"
+    },
+    {
+      "title": "Rogo V Hebbia Microsoft.mp4",
+      "type": "Video",
+      "modified": "2025-09-04 02:01",
+      "last_modified_by": "Rob Day",
+      "size": "48.3 MB",
+      "link": "https://drive.google.com/file/d/11wCXSZLhKLGzD2omd4-_S4FoBQzwoOa7/view?usp=drivesdk"
+    },
+    {
+      "title": "[WIP] HR IT Onboarding Deck",
+      "type": "Google Slides",
+      "modified": "2025-09-02 22:06",
+      "last_modified_by": "Anna Tomas",
+      "size": "3.4 MB",
+      "link": "https://docs.google.com/presentation/d/12Wsngj4vxeerG91RoS-YY5mQD_yadR1343MnQcf1xRI/edit?usp=drivesdk"
+    },
+    {
+      "title": "[Copy] Simplifying titles at Hebbia",
+      "type": "Google Doc",
+      "modified": "2025-09-02 21:48",
+      "last_modified_by": "Rob Day",
+      "size": "0.0 MB",
+      "link": "https://docs.google.com/document/d/1sbiJSJuAn9fkqzMfKgrsrZ3pjZd228VViIddTXn4pcg/edit?usp=drivesdk"
+    },
+    {
+      "title": "Agents Platform",
+      "type": "Google Doc",
+      "modified": "2025-09-02 18:03",
+      "last_modified_by": "Alex Flick",
+      "size": "0.4 MB",
+      "link": "https://docs.google.com/document/d/1ybkuI1i5UgsmTtOYGVd1gF1zjZoNUmO55XLeGUtUEUE/edit?usp=drivesdk"
+    },
+    {
+      "title": "[Onboarding] Q&A session with G - 2025/09/02 11:02 EDT - Recording",
+      "type": "Video",
+      "modified": "2025-09-02 16:52",
+      "last_modified_by": "Anna Tomas",
+      "size": "825.2 MB",
+      "link": "https://drive.google.com/file/d/1S2MF6cTsuK75JuSrLFpJuG1rhn5zfRMF/view?usp=drivesdk"
+    },
+    {
+      "title": "Matrix Daily Standup - 2025/09/02 09:57 EDT - Notes by Gemini",
+      "type": "Google Doc",
+      "modified": "2025-09-02 14:16",
+      "last_modified_by": "Ammar Husain",
+      "size": "0.0 MB",
+      "link": "https://docs.google.com/document/d/1in2KWE2rYxQ7LB2ZVpBCaHAN4CBRBOQ2YeN96O4NfLc/edit?usp=drivesdk"
+    },
+    {
+      "title": "PDC Weekly - Aug 25 - Aug 29",
+      "type": "Google Doc",
+      "modified": "2025-09-01 17:15",
+      "last_modified_by": "Rob Day",
+      "size": "0.0 MB",
+      "link": "https://docs.google.com/document/d/1V_pdGLmuMNK9f_8wnH62oJPEkAE7OCjvTagWKsAZMsw/edit?usp=drivesdk"
+    }
+  ],
+
+  "shared_documents": [
+    {
+      "title": "Robo - Hebbia Comparison",
+      "owner": "Rob Day",
+      "type": "Google Doc",
+      "modified": "2025-09-05 16:19",
+      "link": "https://docs.google.com/document/d/1DfBH8NrwFaOTH_xC-I3ihZ-AXpdxPna-JGWjEA7Bn2o/edit?usp=drivesdk"
+    },
+    {
+      "title": "Rogo V Hebbia Microsoft.mp4",
+      "owner": "Rob Day",
+      "type": "Video",
+      "modified": "2025-09-04 02:01",
+      "link": "https://drive.google.com/file/d/11wCXSZLhKLGzD2omd4-_S4FoBQzwoOa7/view?usp=drivesdk"
+    },
+    {
+      "title": "EPD Weekly - Sep 01 - Sep 05",
+      "owner": "Rob Day",
+      "shared_by": "Rob Day",
+      "type": "Google Doc",
+      "modified": "2025-09-05 17:04",
+      "link": "https://docs.google.com/document/d/1P9Brxbjqc2Dcj2nEJXw27Y4xgU0kt1lq7ff95e8iCPc/edit?usp=drivesdk"
+    },
+    {
+      "title": "Talent Screen Script",
+      "owner": "Scott Bianco",
+      "shared_by": "Scott Bianco",
+      "type": "Google Doc",
+      "modified": "2025-09-05 03:53",
+      "link": "https://docs.google.com/document/d/1ZU-Jn6o5sO9dKqz4Efg7dRRW1VJEI8o-VRi5kirJEeM/edit?usp=drivesdk"
+    },
+    {
+      "title": "[Copy] Simplifying titles at Hebbia",
+      "owner": "Rob Day",
+      "shared_by": "Rob Day",
+      "type": "Google Doc",
+      "modified": "2025-09-02 21:48",
+      "link": "https://docs.google.com/document/d/1sbiJSJuAn9fkqzMfKgrsrZ3pjZd228VViIddTXn4pcg/edit?usp=drivesdk"
+    },
+    {
+      "title": "[Onboarding] Q&A session with G - 2025/09/02 11:02 EDT - Recording",
+      "owner": "Anna Tomas",
+      "shared_by": "Anna Tomas",
+      "type": "Video",
+      "modified": "2025-09-02 16:52",
+      "link": "https://drive.google.com/file/d/1S2MF6cTsuK75JuSrLFpJuG1rhn5zfRMF/view?usp=drivesdk"
+    },
+    {
+      "title": "Matrix Daily Standup - 2025/09/02 09:57 EDT - Notes by Gemini",
+      "owner": "Ammar Husain",
+      "shared_by": "Ammar Husain",
+      "type": "Google Doc",
+      "modified": "2025-09-02 14:16",
+      "link": "https://docs.google.com/document/d/1in2KWE2rYxQ7LB2ZVpBCaHAN4CBRBOQ2YeN96O4NfLc/edit?usp=drivesdk"
+    },
+    {
+      "title": "Deals Where EU Tenancy is Needed",
+      "owner": "sergey",
+      "type": "Google Sheet",
+      "modified": "2025-09-05 17:45",
+      "link": "https://docs.google.com/spreadsheets/d/1vrXfns9C9uELi1BYvyIt5xJ_l3FimeVCDraWDN4vsMY/edit?usp=drivesdk"
+    },
+    {
+      "title": "PDC Weekly - Aug 25 - Aug 29",
+      "owner": "Rob Day",
+      "shared_by": "Rob Day",
+      "type": "Google Doc",
+      "modified": "2025-09-01 17:15",
+      "link": "https://docs.google.com/document/d/1V_pdGLmuMNK9f_8wnH62oJPEkAE7OCjvTagWKsAZMsw/edit?usp=drivesdk"
+    },
+    {
+      "title": "[NOEDIT] Notion Sync",
+      "owner": "Rob Day",
+      "type": "Google Sheet",
+      "modified": "2025-09-05 15:44",
+      "link": "https://docs.google.com/spreadsheets/d/1ba6m8ZdKIOwKmyuYO3Lokej54Du_GQIZdCyfXyQLxoc/edit?usp=drivesdk"
+    },
+    {
+      "title": "Matrix Team Planning",
+      "owner": "Ammar Husain",
+      "type": "Google Doc",
+      "modified": "2025-09-05 01:42",
+      "link": "https://docs.google.com/document/d/1uX4RfsgMswc7hsUtHRvzKcSDGCPStuGymaOxW1EI1H0/edit?usp=drivesdk"
+    },
+    {
+      "title": "Proposed GH Changes",
+      "owner": "Adithya Ramanathan",
+      "type": "Google Doc",
+      "modified": "2025-08-29 18:02",
+      "link": "https://docs.google.com/document/d/15Ia4Yehiw-SJ_Kvfdv68Q3hQRWIfPclhX3honr8wh80/edit?usp=drivesdk"
+    },
+    {
+      "title": "EPD Roadmap",
+      "owner": "Rob Day",
+      "type": "Google Sheet",
+      "modified": "2025-09-05 19:05",
+      "link": "https://docs.google.com/spreadsheets/d/15i7FBjg_yX2uKDxT4aoJy-kZJm5phBSxc4n6phrGZdg/edit?usp=drivesdk"
+    },
+    {
+      "title": "Engineering Interview Process",
+      "owner": "Scott Bianco",
+      "shared_by": "Rob Day",
+      "type": "Google Doc",
+      "modified": "2025-09-05 20:57",
+      "link": "https://docs.google.com/document/d/1ufb52iy84QAoTQHPuTEU9cY36t66y7w-I_OSeKH69yM/edit?usp=drivesdk"
+    },
+    {
+      "title": "Notes - Sisu // Rob",
+      "owner": "Rob Day",
+      "shared_by": "Rob Day",
+      "type": "Google Doc",
+      "modified": "2025-09-04 15:19",
+      "link": "https://docs.google.com/document/d/1sBd5SxTi9oFwLt-5NQ4_oMTUuksY92ZPfVXfpCUqLqc/edit?usp=drivesdk"
+    },
+    {
+      "title": "Agents Platform",
+      "owner": "Alex Flick",
+      "type": "Google Doc",
+      "modified": "2025-09-02 18:03",
+      "link": "https://docs.google.com/document/d/1ybkuI1i5UgsmTtOYGVd1gF1zjZoNUmO55XLeGUtUEUE/edit?usp=drivesdk"
+    },
+    {
+      "title": "[WIP] HR IT Onboarding Deck",
+      "owner": "Anna Tomas",
+      "type": "Google Slides",
+      "modified": "2025-09-02 22:06",
+      "link": "https://docs.google.com/presentation/d/12Wsngj4vxeerG91RoS-YY5mQD_yadR1343MnQcf1xRI/edit?usp=drivesdk"
+    },
+    {
+      "title": "Sisu Onboarding",
+      "owner": "Rob Day",
+      "shared_by": "Ammar Husain",
+      "type": "Google Doc",
+      "modified": "2025-09-06 00:30",
+      "link": "https://docs.google.com/document/d/19imidnD7ORTauuvtwnbalurmU3RV_UVbrQxznTm4UTs/edit?usp=drivesdk"
+    }
+  ],
+
+  "hebbia_documents": [
+    {
+      "title": "Sisu Onboarding",
+      "type": "Google Doc",
+      "modified": "2025-09-06 00:30",
+      "last_modified_by": "Sisu Xi",
+      "link": "https://docs.google.com/document/d/19imidnD7ORTauuvtwnbalurmU3RV_UVbrQxznTm4UTs/edit?usp=drivesdk"
+    },
+    {
+      "title": "Engineering Interview Process",
+      "type": "Google Doc",
+      "modified": "2025-09-05 20:57",
+      "last_modified_by": "Sisu Xi",
+      "link": "https://docs.google.com/document/d/1ufb52iy84QAoTQHPuTEU9cY36t66y7w-I_OSeKH69yM/edit?usp=drivesdk"
+    },
+    {
+      "title": "EPD Roadmap",
+      "type": "Google Sheet",
+      "modified": "2025-09-05 19:05",
+      "last_modified_by": "Morten Bruun",
+      "link": "https://docs.google.com/spreadsheets/d/15i7FBjg_yX2uKDxT4aoJy-kZJm5phBSxc4n6phrGZdg/edit?usp=drivesdk"
+    },
+    {
+      "title": "Deals Where EU Tenancy is Needed",
+      "type": "Google Sheet",
+      "modified": "2025-09-05 17:45",
+      "last_modified_by": "Jillian Liu",
+      "link": "https://docs.google.com/spreadsheets/d/1vrXfns9C9uELi1BYvyIt5xJ_l3FimeVCDraWDN4vsMY/edit?usp=drivesdk"
+    },
+    {
+      "title": "Sisu / Rob",
+      "type": "Google Doc",
+      "modified": "2025-09-05 17:31",
+      "last_modified_by": "Sisu Xi",
+      "link": "https://docs.google.com/document/d/1gQRV1UiPl_7n8MN7PPXnWZ7OTZRnbUsVe_YE0OYVMt4/edit?usp=drivesdk"
+    },
+    {
+      "title": "Sisu Weekly Snippets",
+      "type": "Google Doc",
+      "modified": "2025-09-05 17:25",
+      "last_modified_by": "Sisu Xi",
+      "link": "https://docs.google.com/document/d/107wxRoH4BVISuGU0g-PcFArzL8NHSReLuiru-FDU0dw/edit?usp=drivesdk"
+    },
+    {
+      "title": "EPD Weekly - Sep 01 - Sep 05",
+      "type": "Google Doc",
+      "modified": "2025-09-05 17:04",
+      "last_modified_by": "Matt Aromatorio",
+      "link": "https://docs.google.com/document/d/1P9Brxbjqc2Dcj2nEJXw27Y4xgU0kt1lq7ff95e8iCPc/edit?usp=drivesdk"
+    },
+    {
+      "title": "Robo - Hebbia Comparison",
+      "type": "Google Doc",
+      "modified": "2025-09-05 16:19",
+      "last_modified_by": "Rob Day",
+      "link": "https://docs.google.com/document/d/1DfBH8NrwFaOTH_xC-I3ihZ-AXpdxPna-JGWjEA7Bn2o/edit?usp=drivesdk"
+    },
+    {
+      "title": "Rogo V Hebbia Microsoft.mp4",
+      "type": "Video",
+      "modified": "2025-09-04 02:01",
+      "last_modified_by": "Rob Day",
+      "link": "https://drive.google.com/file/d/11wCXSZLhKLGzD2omd4-_S4FoBQzwoOa7/view?usp=drivesdk"
+    },
+    {
+      "title": "[Copy] Simplifying titles at Hebbia",
+      "type": "Google Doc",
+      "modified": "2025-09-02 21:48",
+      "last_modified_by": "Rob Day",
+      "link": "https://docs.google.com/document/d/1sbiJSJuAn9fkqzMfKgrsrZ3pjZd228VViIddTXn4pcg/edit?usp=drivesdk"
+    },
+    {
+      "title": "Notes - Sisu // Rob",
+      "type": "Google Doc",
+      "modified": "2025-09-04 15:19",
+      "last_modified_by": "Sisu Xi",
+      "link": "https://docs.google.com/document/d/1sBd5SxTi9oFwLt-5NQ4_oMTUuksY92ZPfVXfpCUqLqc/edit?usp=drivesdk"
+    },
+    {
+      "title": "PDC Weekly - Aug 25 - Aug 29",
+      "type": "Google Doc",
+      "modified": "2025-09-01 17:15",
+      "last_modified_by": "Rob Day",
+      "link": "https://docs.google.com/document/d/1V_pdGLmuMNK9f_8wnH62oJPEkAE7OCjvTagWKsAZMsw/edit?usp=drivesdk"
+    },
+    {
+      "title": "Proposed GH Changes",
+      "type": "Google Doc",
+      "modified": "2025-08-29 18:02",
+      "last_modified_by": "Adithya Ramanathan",
+      "link": "https://docs.google.com/document/d/15Ia4Yehiw-SJ_Kvfdv68Q3hQRWIfPclhX3honr8wh80/edit?usp=drivesdk"
+    },
+    {
+      "title": "Agents 2.0 PRD",
+      "type": "Google Doc",
+      "modified": "2025-08-28 18:00",
+      "last_modified_by": "Felipe Suero",
+      "link": "https://docs.google.com/document/d/1JRDz5HXrPIIk7vS_9-BM1OjevmI0zq9ERZbx9MfUCsw/edit?usp=drivesdk"
+    },
+    {
+      "title": "2025 Q3 External Product Roadmap - Base & Assets",
+      "type": "Google Slides",
+      "modified": "2025-08-28 17:43",
+      "last_modified_by": "Morten Bruun",
+      "link": "https://docs.google.com/presentation/d/1rHq_3Re3AqOdUNk5HZPxg47giEb_JRuwFcsj-RLpwSU/edit?usp=drivesdk"
+    },
+    {
+      "title": "Matrix team KTLO Q3",
+      "type": "Google Doc",
+      "modified": "2025-08-28 17:07",
+      "last_modified_by": "Felipe Suero",
+      "link": "https://docs.google.com/document/d/1QYB7qviuEn7mTNxPF4VAs7o54J7oqqHdkys9oPK-NLE/edit?usp=drivesdk"
+    },
+    {
+      "title": "Notes - Eng Leads Sync",
+      "type": "Google Doc",
+      "modified": "2025-08-28 02:48",
+      "last_modified_by": "Sisu Xi",
+      "link": "https://docs.google.com/document/d/1Uc8WjpGOIEqscvrB4lKcaqXdUA21XMDhcr6ss0LOA0g/edit?usp=drivesdk"
+    },
+    {
+      "title": "Sisu Xi, Ph.D., Principal Engineer",
+      "type": "Google Doc",
+      "modified": "2025-08-27 15:37",
+      "last_modified_by": "xisisu",
+      "link": "https://docs.google.com/document/d/1V9n1dI-7KFtFlWtnPdHlegN4s5iZHgTfQXMMOTgpbqE/edit?usp=drivesdk"
+    },
+    {
+      "title": "Who Evaluates the Evaluator: Reaching Autonomous Consensus on Agentic Outputs",
+      "type": "Google Doc",
+      "modified": "2025-08-27 13:42",
+      "last_modified_by": "Adithya Ramanathan",
+      "link": "https://docs.google.com/document/d/1qiry9C4U-vB-uXtfFeSm2ImvQHpJZw3ewI51lJ_AdTc/edit?usp=drivesdk"
+    },
+    {
+      "title": "Onsite Interview Question",
+      "type": "Google Doc",
+      "modified": "2025-08-26 21:54",
+      "last_modified_by": "Ben Devore",
+      "link": "https://docs.google.com/document/d/1nZg0BfpmT-HcUjnlE0goru5tt-E7lCQhqJhbSEWks7w/edit?usp=drivesdk"
+    },
+    {
+      "title": "Matrix Team Runbook",
+      "type": "Google Doc",
+      "modified": "2025-08-26 14:14",
+      "last_modified_by": "Wilson Jusuf",
+      "link": "https://docs.google.com/document/d/1on8Nk4QiAEoDyXW83w3pBWUEQpYgyaj-Rlcod1M5O0w/edit?usp=drivesdk"
+    },
+    {
+      "title": "Hebbia Product Strategy Q3 2025",
+      "type": "Google Doc",
+      "modified": "2025-08-26 04:19",
+      "last_modified_by": "Divya Mehta",
+      "link": "https://docs.google.com/document/d/1g94fJ0hqeLNgpRlthsegCBoWWidlepL9ekFr3ie1BJ0/edit?usp=drivesdk"
+    },
+    {
+      "title": "PDC Weekly - Aug 18 - Aug 22",
+      "type": "Google Doc",
+      "modified": "2025-08-25 18:53",
+      "last_modified_by": "Ammar Husain",
+      "link": "https://docs.google.com/document/d/1ZMzXvfK5wUcdRWZltZ6JvcvQ6i0F8pahbqWZrk2Ht1M/edit?usp=drivesdk"
+    },
+    {
+      "title": "Sisu / Adithya",
+      "type": "Google Doc",
+      "modified": "2025-08-20 15:38",
+      "last_modified_by": "Sisu Xi",
+      "link": "https://docs.google.com/document/d/1Rhg_HYdbNNdStdLTRMals0skU_sYBg9zgjcZB_1EBsU/edit?usp=drivesdk"
+    }
+  ],
+
+  "week_specific_activity": {
+    "documents_from_target_week": [
+      {
+        "title": "PDC Weekly - Aug 25 - Aug 29",
+        "type": "Google Doc",
+        "modified": "2025-09-01 17:15",
+        "last_modified_by": "Rob Day",
+        "note": "Covers the target week period",
+        "link": "https://docs.google.com/document/d/1V_pdGLmuMNK9f_8wnH62oJPEkAE7OCjvTagWKsAZMsw/edit?usp=drivesdk"
+      },
+      {
+        "title": "PDC Weekly - Aug 18 - Aug 22",
+        "type": "Google Doc",
+        "modified": "2025-08-25 18:53",
+        "last_modified_by": "Ammar Husain",
+        "note": "Adjacent to target week",
+        "link": "https://docs.google.com/document/d/1ZMzXvfK5wUcdRWZltZ6JvcvQ6i0F8pahbqWZrk2Ht1M/edit?usp=drivesdk"
+      }
+    ]
+  },
+
+  "summary": {
+    "total_recent_documents": 19,
+    "total_shared_documents": 47,
+    "total_hebbia_documents": 50,
+    "documents_by_sisu": [
+      "Sisu Onboarding",
+      "Engineering Interview Process",
+      "Sisu / Rob",
+      "Sisu Weekly Snippets",
+      "Notes - Sisu // Rob",
+      "Notes - Eng Leads Sync",
+      "Sisu / Adithya",
+      "Sisu / Beshoi",
+      "Sisu / Ammar"
+    ],
+    "key_strategic_documents": [
+      "EPD Roadmap",
+      "Engineering Interview Process", 
+      "Matrix Team Planning",
+      "Hebbia Product Strategy Q3 2025",
+      "EPD Operating System",
+      "Agents Platform",
+      "Agents 2.0 PRD"
+    ]
+  }
+}

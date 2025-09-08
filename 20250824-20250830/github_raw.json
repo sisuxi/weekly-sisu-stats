@@ -1,0 +1,341 @@
+{
+  "data_collection_timestamp": "2025-09-06T00:00:00Z",
+  "date_range": {
+    "start": "2025-08-24",
+    "end": "2025-08-30"
+  },
+  "user": {
+    "github_username": "sisuxi",
+    "name": "Sisu Xi"
+  },
+  "prs_created": [
+    {
+      "commentsCount": 7,
+      "createdAt": "2025-08-29T23:31:32Z",
+      "labels": [],
+      "number": 13537,
+      "repository": {
+        "name": "mono",
+        "nameWithOwner": "hebbia/mono"
+      },
+      "state": "merged",
+      "title": "perf: add database indexes to optimize get_rows function",
+      "updatedAt": "2025-09-02T21:23:26Z",
+      "url": "https://github.com/hebbia/mono/pull/13537"
+    },
+    {
+      "commentsCount": 1,
+      "createdAt": "2025-08-29T17:50:34Z",
+      "labels": [],
+      "number": 13523,
+      "repository": {
+        "name": "mono",
+        "nameWithOwner": "hebbia/mono"
+      },
+      "state": "merged",
+      "title": "Revert \"Update RDS proxy connection settings for performance tuning\"",
+      "updatedAt": "2025-08-29T18:08:53Z",
+      "url": "https://github.com/hebbia/mono/pull/13523"
+    },
+    {
+      "commentsCount": 6,
+      "createdAt": "2025-08-29T15:42:50Z",
+      "labels": [],
+      "number": 13521,
+      "repository": {
+        "name": "mono",
+        "nameWithOwner": "hebbia/mono"
+      },
+      "state": "merged",
+      "title": "Update RDS proxy connection settings for performance tuning",
+      "updatedAt": "2025-08-29T17:38:58Z",
+      "url": "https://github.com/hebbia/mono/pull/13521"
+    },
+    {
+      "commentsCount": 0,
+      "createdAt": "2025-08-27T00:50:24Z",
+      "labels": [],
+      "number": 13443,
+      "repository": {
+        "name": "mono",
+        "nameWithOwner": "hebbia/mono"
+      },
+      "state": "merged",
+      "title": "Add .serena/ to gitignore",
+      "updatedAt": "2025-08-27T15:00:43Z",
+      "url": "https://github.com/hebbia/mono/pull/13443"
+    }
+  ],
+  "prs_reviewed": [
+    {
+      "author": "wilsonaurus",
+      "number": 13658,
+      "repository": "hebbia/mono",
+      "state": "closed",
+      "title": "perf: work_mem optimizations for get rows queries",
+      "url": "https://api.github.com/repos/hebbia/mono/pulls/13658"
+    }
+  ],
+  "cross_team_prs": [
+    {
+      "author": {
+        "id": "U_kgDOCrncfQ",
+        "is_bot": false,
+        "login": "wilsonaurus",
+        "type": "User",
+        "url": "https://github.com/wilsonaurus"
+      },
+      "number": 13658,
+      "repository": {
+        "name": "mono",
+        "nameWithOwner": "hebbia/mono"
+      },
+      "title": "perf: work_mem optimizations for get rows queries"
+    },
+    {
+      "author": {
+        "id": "U_kgDODYruhg",
+        "is_bot": false,
+        "login": "sisuxi",
+        "type": "User",
+        "url": "https://github.com/sisuxi"
+      },
+      "number": 13625,
+      "repository": {
+        "name": "mono",
+        "nameWithOwner": "hebbia/mono"
+      },
+      "title": "feat: add concurrent index creation support for migrations"
+    },
+    {
+      "author": {
+        "id": "U_kgDODYruhg",
+        "is_bot": false,
+        "login": "sisuxi",
+        "type": "User",
+        "url": "https://github.com/sisuxi"
+      },
+      "number": 13619,
+      "repository": {
+        "name": "mono",
+        "nameWithOwner": "hebbia/mono"
+      },
+      "title": "feat: add logging to verify N+1 query protection in get_rows_utils"
+    },
+    {
+      "author": {
+        "id": "U_kgDODYruhg",
+        "is_bot": false,
+        "login": "sisuxi",
+        "type": "User",
+        "url": "https://github.com/sisuxi"
+      },
+      "number": 13608,
+      "repository": {
+        "name": "mono",
+        "nameWithOwner": "hebbia/mono"
+      },
+      "title": "Set explicit 5-second database connection timeout"
+    },
+    {
+      "author": {
+        "id": "U_kgDODYruhg",
+        "is_bot": false,
+        "login": "sisuxi",
+        "type": "User",
+        "url": "https://github.com/sisuxi"
+      },
+      "number": 13568,
+      "repository": {
+        "name": "mono",
+        "nameWithOwner": "hebbia/mono"
+      },
+      "title": "feat: Add comprehensive database connection pool monitoring"
+    },
+    {
+      "author": {
+        "id": "U_kgDODYruhg",
+        "is_bot": false,
+        "login": "sisuxi",
+        "type": "User",
+        "url": "https://github.com/sisuxi"
+      },
+      "number": 13537,
+      "repository": {
+        "name": "mono",
+        "nameWithOwner": "hebbia/mono"
+      },
+      "title": "perf: add database indexes to optimize get_rows function"
+    },
+    {
+      "author": {
+        "id": "U_kgDODYruhg",
+        "is_bot": false,
+        "login": "sisuxi",
+        "type": "User",
+        "url": "https://github.com/sisuxi"
+      },
+      "number": 13349,
+      "repository": {
+        "name": "mono",
+        "nameWithOwner": "hebbia/mono"
+      },
+      "title": "Add comprehensive performance tracing to sheets get_rows pipeline"
+    }
+  ],
+  "commits": [
+    {
+      "commit": {
+        "author": {
+          "date": "2025-08-26T14:49:41-04:00",
+          "email": "sisu.xi@hebbia.ai",
+          "name": "Sisu Xi"
+        },
+        "comment_count": 0,
+        "committer": {
+          "date": "2025-08-26T14:49:41-04:00",
+          "email": "noreply@github.com",
+          "name": "GitHub"
+        },
+        "message": "Merge pull request #13349 from hebbia/sisu-fix\n\nAdd comprehensive performance tracing to sheets get_rows pipeline",
+        "tree": {
+          "sha": "0eeb0b10f6750e141c0267d517226009ea42d037"
+        }
+      },
+      "sha": "86ebc11cc690d8db17832007ad0c203459109ca4"
+    },
+    {
+      "commit": {
+        "author": {
+          "date": "2025-08-27T11:00:40-04:00",
+          "email": "sisu.xi@hebbia.ai",
+          "name": "Sisu Xi"
+        },
+        "comment_count": 0,
+        "committer": {
+          "date": "2025-08-27T11:00:40-04:00",
+          "email": "noreply@github.com",
+          "name": "GitHub"
+        },
+        "message": "Add .serena/ to gitignore (#13443)\n\nThe .serena/ folder is used by Serena\n(https://github.com/oraios/serena), a semantic code understanding tool.\nThese are local development cache/memory files that should not be\ntracked in version control.\n\n\n\n## Why\n\nWhy are you making this change?\n\n## What\n\nWhat are the changes you made?\n\n## How to test\n\nHow can someone else test these changes?\n\n## Notes\n\nCo-authored-by: Sisu Xi <xisisu@gmail.com>\nCo-authored-by: Claude <noreply@anthropic.com>",
+        "tree": {
+          "sha": "79357e9c6b0ff670bcd2a901064fcc0ce1ec7d49"
+        }
+      },
+      "sha": "591948389c725c9c10cf6e8241fc554dcbf125b7"
+    },
+    {
+      "commit": {
+        "author": {
+          "date": "2025-08-29T13:38:57-04:00",
+          "email": "sisu.xi@hebbia.ai",
+          "name": "Sisu Xi"
+        },
+        "comment_count": 0,
+        "committer": {
+          "date": "2025-08-29T13:38:57-04:00",
+          "email": "noreply@github.com",
+          "name": "GitHub"
+        },
+        "message": "Update RDS proxy connection settings for performance tuning (#13521)\n\nThis PR updates the RDS proxy connection settings in both\nservice-classic and tenant infrastructure to improve performance tuning.\n\nNotes to reviewers: the problem exists in both staging and prod. We\nshould be able to deploy in staging, verify it, and decide whether we\nshould go to prod or not. I did not go as aggressive as claude suggests,\nreason is normal search told me this are the \"normal\" ranges. Happy to\nbe more aggressive here as well.\n\n# Problem\npostgres takes a long time to connect, in both prod and staging. across\nthe broad.\n<img width=\"1545\" height=\"634\" alt=\"image\"\nsrc=\"https://github.com/user-attachments/assets/86bea07b-e20a-48e3-8a0b-4f713e62be8b\"\n/>\n<img width=\"1558\" height=\"851\" alt=\"image\"\nsrc=\"https://github.com/user-attachments/assets/6c864b5f-0114-497c-9380-0befc3761fed\"\n/>\n\n# Analysis (from Claude mostly)\n\nRoot Cause Analysis\n\n  Connection Flow Investigation\n\n  # Database connection analysis\n.venv/bin/python tools/db_explorer.py --env prod \"SELECT count(*) FROM\npg_stat_activity WHERE pid <>\n  pg_backend_pid();\"\n  Result: 6,517 total connections\n\n  # AWS CloudWatch metrics analysis  \naws --profile readonly --region us-east-1 cloudwatch\nget-metric-statistics \\\n--metric-name ClientConnections --dimensions\nName=ProxyName,Value=hebbia-backend-postgres-prod\n  Result: 48-64 concurrent client connections\n\naws --profile readonly --region us-east-1 cloudwatch\nget-metric-statistics \\\n    --metric-name DatabaseConnectionsBorrowLatency --dimensions\n  Name=ProxyName,Value=hebbia-backend-postgres-prod\n  Result: Peak latency 92.6ms (should be <10ms)\n\naws --profile readonly --region us-east-1 cloudwatch\nget-metric-statistics \\\n    --metric-name DatabaseConnectionsCurrentlyBorrowed --dimensions\n  Name=ProxyName,Value=hebbia-backend-postgres-prod\n  Result: Only 5-13 connections actively borrowed\n\n  Key Findings\n\n  Connection Inefficiency Discovered:\n  - 6,517 database connections total (54% of DB capacity)\n  - Only 5-13 actively working (0.2% utilization)\n- 50% idle setting = 3,258 connections reserved idle, 3,259 available\nfor 64+ client apps\n  - Peak borrow latency: 92.6ms indicates client connection queuing\n\nBottleneck Location: Client → RDS Proxy connection slots, NOT database\ncapacity\n\n  Solution\n\n  Configuration Changes\n\n  # Current configuration causing delays:\n  connection_borrow_timeout    = 120  # 2 minutes wait\n  max_connections_percent      = 90   # 10,800 total allowed\n  max_idle_connections_percent = 50   # Half connections idle\n\n  # Optimized configuration:\n  connection_borrow_timeout    = 10   # Fail fast, retry quickly\n  max_connections_percent      = 95   # 11,400 total allowed\n  max_idle_connections_percent = 10   # Minimal idle reserve\n\n  Files Modified\n\n  - infra/service-classic/postgres_rds_proxy.tf\n  - infra/tenant/postgres_rds_proxy.tf\n\n  Validation\n\n  Baseline Metrics (Pre-Deployment)\n\n  # Current connection pool efficiency\naws cloudwatch get-metric-statistics --metric-name\nDatabaseConnectionsBorrowLatency\n  Baseline: 92.6ms peak latency\n\n  aws cloudwatch get-metric-statistics --metric-name ClientConnections\n  Baseline: 48-64 concurrent applications\n\naws cloudwatch get-metric-statistics --metric-name\nDatabaseConnectionsCurrentlyBorrowed\n  Baseline: 5-13 actively borrowed connections\n\n  Post-Deployment Monitoring\n\n  # Verify connection pool optimization\naws cloudwatch get-metric-statistics --metric-name\nDatabaseConnectionsBorrowLatency\n  Target: <10ms consistently\n\n  aws cloudwatch get-metric-statistics --metric-name ClientConnections\n  Monitor: Should remain stable\n\n  # Confirm database load unchanged\n.venv/bin/python tools/db_explorer.py --env prod \"SELECT count(*) FROM\npg_stat_activity WHERE pid <>\n  pg_backend_pid();\"\n  Monitor: Connection count should remain ~6,517\n\n  ---\nRoot Cause: Inefficient connection pool allocation with 50% idle\nreserves causing client connection queuing\n  despite abundant database capacity.\n\n---------\n\nCo-authored-by: Sisu Xi <xisisu@gmail.com>",
+        "tree": {
+          "sha": "16272b213a45e59d51e2b26d7b615c1e352a773f"
+        }
+      },
+      "sha": "ede847a829051627e9ff092e4e8663e8e6b23650"
+    },
+    {
+      "commit": {
+        "author": {
+          "date": "2025-08-29T14:08:52-04:00",
+          "email": "sisu.xi@hebbia.ai",
+          "name": "Sisu Xi"
+        },
+        "comment_count": 0,
+        "committer": {
+          "date": "2025-08-29T14:08:52-04:00",
+          "email": "noreply@github.com",
+          "name": "GitHub"
+        },
+        "message": "Revert \"Update RDS proxy connection settings for performance tuning\" (#13523)\n\nReverts hebbia/mono#13521\n\nI can terraform and test locally in staging.\n\nreverting it to avoid someone applied it to prod.",
+        "tree": {
+          "sha": "a91bfacaf47635e00c7b03d57d14047506d1bbca"
+        }
+      },
+      "sha": "2a7b303b61c53435d39f3730be31948e3b0443c8"
+    }
+  ],
+  "team_reviews": [
+    {
+      "author": {
+        "id": "U_kgDOC1lXkA",
+        "is_bot": false,
+        "login": "anukrati12",
+        "name": "Anu"
+      },
+      "createdAt": "2025-09-05T20:43:51Z",
+      "number": 13673,
+      "title": "increase timeout and add a return",
+      "url": "https://github.com/hebbia/mono/pull/13673"
+    },
+    {
+      "author": {
+        "id": "U_kgDODU9KAw",
+        "is_bot": false,
+        "login": "felipe-hebbia",
+        "name": ""
+      },
+      "createdAt": "2025-09-05T20:19:23Z",
+      "number": 13672,
+      "title": "sort max moved",
+      "url": "https://github.com/hebbia/mono/pull/13672"
+    },
+    {
+      "author": {
+        "id": "U_kgDODU9KAw",
+        "is_bot": false,
+        "login": "felipe-hebbia",
+        "name": ""
+      },
+      "createdAt": "2025-09-05T20:16:05Z",
+      "number": 13671,
+      "title": "Felipe pydantic optimizations",
+      "url": "https://github.com/hebbia/mono/pull/13671"
+    },
+    {
+      "author": {
+        "id": "U_kgDODWN4Qw",
+        "is_bot": false,
+        "login": "joffin-m-hebbia",
+        "name": ""
+      },
+      "createdAt": "2025-09-05T20:13:04Z",
+      "number": 13670,
+      "title": "Upload Ticket - AU Filings",
+      "url": "https://github.com/hebbia/mono/pull/13670"
+    },
+    {
+      "author": {
+        "id": "U_kgDODOjQDw",
+        "is_bot": false,
+        "login": "jon-hebbia",
+        "name": ""
+      },
+      "createdAt": "2025-09-05T19:52:55Z",
+      "number": 13669,
+      "title": "[GD-283] refactor away from `get_uuid_from_field_name` for GR",
+      "url": "https://github.com/hebbia/mono/pull/13669"
+    }
+  ],
+  "summary": {
+    "total_prs_created": 4,
+    "total_prs_reviewed": 1,
+    "total_commits": 4,
+    "repositories_contributed": ["hebbia/mono"],
+    "focus_areas": [
+      "Database performance optimization",
+      "Infrastructure configuration", 
+      "Development tooling"
+    ]
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "data_collection_date": "2025-09-06",
+  "week_period": "2025-08-24 to 2025-08-30",
+  "stats": {
+    "received": 201,
+    "sent": 0,
+    "unread": 201,
+    "important": 201,
+    "daily_average_received": 28.7,
+    "daily_average_sent": 0.0,
+    "top_senders": [
+      {"email": "interview@metaview.ai", "count": 2},
+      {"email": "scott@hebbia.ai", "count": 1},
+      {"email": "info@hebbia.ai", "count": 1}
+    ],
+    "top_domains": [
+      {"domain": "hebbia.ai", "count": 2},
+      {"domain": "metaview.ai", "count": 2}
+    ]
+  },
+  "important_emails": [
+    {
+      "subject": "Accepted: Hebbia Engineering Interview Process Overview @ Mon Sep 8, 2025 1:30pm - 1:55pm (EDT) (Sisu Xi)",
+      "from": "Scott Bianco <scott@hebbia.ai>",
+      "date": "2025-09-06 02:20",
+      "preview": "Hebbia Engineering Interview Process Overview Scott Bianco has accepted this invitation. Join with G...",
+      "labels": ["UNREAD", "IMPORTANT"]
+    },
+    {
+      "subject": "New API key created on Linear",
+      "from": "Linear <security@updates.linear.app>",
+      "date": "2025-09-06 00:32",
+      "preview": "Personal API key with for claude was added to your account ͏​ ͏​ ͏​ ͏​ ͏​ ͏​ ͏​ ͏​ ͏​ ͏​ ͏​ ͏​ ͏​ ͏​...",
+      "labels": ["IMPORTANT"]
+    },
+    {
+      "subject": "EPD Weekly - Sep 01 - Sep 05",
+      "from": "Rob Day <rob.day@hebbia.ai>",
+      "date": "2025-09-05 21:36",
+      "preview": "[BCC EPD] Hey All First, sharing out the EPD Weekly Doc. I haven&#39;t yet shared our September comm...",
+      "labels": ["IMPORTANT"]
+    },
+    {
+      "subject": "Invitation: Software Engineer, BackendPython Technical Screen @ Mon Sep 15, 2025 11:30am - 12:15pm (EDT) (Sisu Xi)",
+      "from": "Caleb Trees <caleb.trees@hebbia.ai>",
+      "date": "2025-09-05 21:06",
+      "preview": "Software Engineer, BackendPython Technical Screen Join with Google Meet – Lucas Haarmann as trained ...",
+      "labels": ["IMPORTANT"]
+    },
+    {
+      "subject": "Accepted: Hebbia Engineering Interview Process Overview @ Mon Sep 8, 2025 1:30pm - 1:55pm (EDT) (Sisu Xi)",
+      "from": "Rob Day <rob.day@hebbia.ai>",
+      "date": "2025-09-05 20:03",
+      "preview": "Hebbia Engineering Interview Process Overview Rob Day has accepted this invitation. Join with Google...",
+      "labels": ["IMPORTANT"]
+    },
+    {
+      "subject": "Beshoi Genidy sent you a message",
+      "from": "Slack <notification@slack.com>",
+      "date": "2025-09-05 19:28",
+      "preview": "You have a new direct message in Hebbia (hebbia.slack.com) From your conversation with Beshoi Genidy...",
+      "labels": ["IMPORTANT"]
+    },
+    {
+      "subject": "Re: [hebbia/mono] Hotfix 4.64.4: Cherry-pick work_mem optimization for get_rows queries (PR #13663)",
+      "from": "Wilson Jusuf <notifications@github.com>",
+      "date": "2025-09-05 11:22",
+      "preview": "@wilsonaurus approved this pull request. approved — Reply to this email directly, view it on GitHub,...",
+      "labels": ["IMPORTANT"]
+    },
+    {
+      "subject": "Re: [hebbia/mono] Hotfix 4.64.4: Cherry-pick work_mem optimization for get_rows queries (PR #13663)",
+      "from": "claude[bot] <notifications@github.com>",
+      "date": "2025-09-05 11:19",
+      "preview": "claude[bot] left a comment (hebbia/mono#13663) Code Review: Hotfix 4.64.4 - work_mem optimization fo...",
+      "labels": ["IMPORTANT"]
+    },
+    {
+      "subject": "Re: [hebbia/mono] Hotfix 4.64.3: Cherry-pick work_mem optimization for get_rows queries (PR #13662)",
+      "from": "claude[bot] <notifications@github.com>",
+      "date": "2025-09-05 11:08",
+      "preview": "claude[bot] left a comment (hebbia/mono#13662) 🤖 Claude Code Review 📋 Summary This hotfix cherry-pic...",
+      "labels": ["IMPORTANT"]
+    },
+    {
+      "subject": "Updated invitation: Sisu // Rob V2 @ Fri Sep 5, 2025 1:30pm - 2pm (EDT) (Sisu Xi)",
+      "from": "Rob Day <rob.day@hebbia.ai>",
+      "date": "2025-09-05 17:25",
+      "preview": "Sisu // Rob V2 Join with Google Meet – You have been invited by Rob Day to attend an event named Sis...",
+      "labels": ["IMPORTANT"]
+    },
+    {
+      "subject": "Re: [hebbia/mono] perf: work_mem optimizations for get rows queries (PR #13658)",
+      "from": "Wilson Jusuf <notifications@github.com>",
+      "date": "2025-09-05 10:16",
+      "preview": "Merged #13658 into main. — Reply to this email directly, view it on GitHub, or unsubscribe. You are ...",
+      "labels": ["IMPORTANT"]
+    },
+    {
+      "subject": "Declined: Hebbia Engineering Interview Process Overview @ Fri Sep 5, 2025 3:30pm - 3:55pm (EDT) (Sisu Xi)",
+      "from": "Ben Devore <ben@hebbia.ai>",
+      "date": "2025-09-05 17:07",
+      "preview": "Hebbia Engineering Interview Process Overview Ben Devore has declined this invitation. Join with Goo...",
+      "labels": ["IMPORTANT"]
+    },
+    {
+      "subject": "Re: [hebbia/mono] perf: work_mem optimizations for get rows queries (PR #13658)",
+      "from": "Adithya Ramanathan <notifications@github.com>",
+      "date": "2025-09-05 09:33",
+      "preview": "@adithram approved this pull request. — Reply to this email directly, view it on GitHub, or unsubscr...",
+      "labels": ["IMPORTANT"]
+    },
+    {
+      "subject": "Re: [hebbia/mono] perf: work_mem optimizations for get rows queries (PR #13658)",
+      "from": "Wilson Jusuf <notifications@github.com>",
+      "date": "2025-09-05 09:25",
+      "preview": "@wilsonaurus pushed 1 commit. 098dfed fix test failure — View it on GitHub or unsubscribe. You are r...",
+      "labels": ["IMPORTANT"]
+    },
+    {
+      "subject": "New messages from Google Drive, Slackbot, and more in Hebbia",
+      "from": "Slack <notification@slack.com>",
+      "date": "2025-09-05 16:24",
+      "preview": "You have three new mentions in Hebbia (hebbia.slack.com) Google Drive September 4th at 9:31 AM @Ben ...",
+      "labels": ["IMPORTANT"]
+    },
+    {
+      "subject": "EPD Weekly - Sep ... - CC @sisu.xi@hebbia.ai here as there i...",
+      "from": "Rob Day (Google Docs) <comments-noreply@docs.google.com>",
+      "date": "2025-09-05 09:06",
+      "preview": "Rob Day (rob.day@hebbia.ai) mentioned you in a comment in the following document EPD Weekly - Sep 01...",
+      "labels": ["IMPORTANT"]
+    },
+    {
+      "subject": "New messages from Erin Winchester and Google Calendar in Hebbia",
+      "from": "Slack <notification@slack.com>",
+      "date": "2025-09-05 15:14",
+      "preview": "You have a new direct message and a new mention in Hebbia (hebbia.slack.com) From your conversation ...",
+      "labels": ["IMPORTANT"]
+    },
+    {
+      "subject": "Sisu, follow Bill Gates - Co-chair at Gates Foundation",
+      "from": "LinkedIn <messages-noreply@linkedin.com>",
+      "date": "2025-09-05 15:14",
+      "preview": "See your recommendations ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏ ͏...",
+      "labels": ["IMPORTANT"]
+    },
+    {
+      "subject": "Your conversation, [Onboarding] Intro to Financial Services, is ready for you to review!",
+      "from": "Metaview <interview@metaview.ai>",
+      "date": "2025-09-05 15:05",
+      "preview": "Your conversation, [Onboarding] Intro to Financial Services, is ready for you to review! Your conver...",
+      "labels": ["IMPORTANT"]
+    },
+    {
+      "subject": "thank you",
+      "from": "Sergey Mann <sergey@hebbia.ai>",
+      "date": "2025-09-05 14:57",
+      "preview": "Team, It&#39;s surreal that today is my last day at Hebbia. I feel immense gratitude to George, the ...",
+      "labels": ["IMPORTANT"]
+    }
+  ],
+  "sent_emails": {
+    "count": 0,
+    "messages": []
+  },
+  "detailed_export": {
+    "error": "Export command failed due to argument mismatch in gmail_explorer.py",
+    "raw_error": "TypeError: export_messages_json() takes from 1 to 4 positional arguments but 6 were given"
+  },
+  "notes": [
+    "Significant email activity with 201 received emails (28.7 daily average)",
+    "No sent emails during this period - unusual pattern",
+    "High volume of GitHub notifications related to work_mem optimization PRs",
+    "Engineering interview process coordination visible",
+    "EPD Weekly communications present",
+    "Multiple Slack notifications indicating active internal communications"
+  ]
+}
