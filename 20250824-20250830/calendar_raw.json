@@ -1,0 +1,862 @@
+{
+  "week_period": "2025-08-24 to 2025-08-30",
+  "collection_date": "2025-09-06",
+  "all_events": [
+    {
+      "kind": "calendar#event",
+      "etag": "\"3511064462608318\"",
+      "id": "do2s1fb9h71avnej1nsarj87ss_20250825",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=ZG8yczFmYjloNzFhdm5lajFuc2Fyajg3c3NfMjAyNTA4MjUgc2lzdS54aUBoZWJiaWEuYWk",
+      "created": "2025-08-18T15:50:30.000Z",
+      "updated": "2025-08-18T15:50:31.304Z",
+      "summary": "Office",
+      "creator": {
+        "email": "sisu.xi@hebbia.ai",
+        "self": true
+      },
+      "organizer": {
+        "email": "sisu.xi@hebbia.ai",
+        "self": true
+      },
+      "start": {
+        "date": "2025-08-25"
+      },
+      "end": {
+        "date": "2025-08-26"
+      },
+      "recurringEventId": "do2s1fb9h71avnej1nsarj87ss",
+      "originalStartTime": {
+        "date": "2025-08-25"
+      },
+      "transparency": "transparent",
+      "visibility": "public",
+      "iCalUID": "do2s1fb9h71avnej1nsarj87ss@google.com",
+      "sequence": 0,
+      "reminders": {
+        "useDefault": false
+      },
+      "workingLocationProperties": {
+        "type": "officeLocation",
+        "officeLocation": {}
+      },
+      "eventType": "workingLocation"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3513641913149022\"",
+      "id": "0uj5uk0s74it6krt6urquls2cv_20250825T140000Z",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=MHVqNXVrMHM3NGl0NmtydDZ1cnF1bHMyY3ZfMjAyNTA4MjVUMTQwMDAwWiBzaXN1LnhpQGhlYmJpYS5haQ",
+      "created": "2024-09-24T17:50:07.000Z",
+      "updated": "2025-09-02T13:49:16.574Z",
+      "summary": "Matrix Daily Standup",
+      "location": "NYC-9-Greenwich (12)",
+      "creator": {
+        "email": "ammar@hebbia.ai"
+      },
+      "organizer": {
+        "email": "ammar@hebbia.ai"
+      },
+      "start": {
+        "dateTime": "2025-08-25T10:00:00-04:00",
+        "timeZone": "America/New_York"
+      },
+      "end": {
+        "dateTime": "2025-08-25T10:30:00-04:00",
+        "timeZone": "America/New_York"
+      },
+      "recurringEventId": "0uj5uk0s74it6krt6urquls2cv_R20250729T140000",
+      "originalStartTime": {
+        "dateTime": "2025-08-25T10:00:00-04:00",
+        "timeZone": "America/New_York"
+      },
+      "iCalUID": "0uj5uk0s74it6krt6urquls2cv_R20250729T140000@google.com",
+      "sequence": 1,
+      "attendees": [
+        {
+          "email": "ellis@hebbia.ai",
+          "responseStatus": "declined",
+          "comment": "Declined because I am out of office"
+        },
+        {
+          "email": "vikas@hebbia.ai",
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "ammar@hebbia.ai",
+          "organizer": true,
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "wilson@hebbia.ai",
+          "responseStatus": "declined",
+          "comment": "Declined because I am out of office"
+        },
+        {
+          "email": "rohil@hebbia.ai",
+          "responseStatus": "needsAction"
+        },
+        {
+          "email": "chelsea@hebbia.ai",
+          "responseStatus": "declined",
+          "comment": "Declined because I am out of office (doc appt)"
+        },
+        {
+          "email": "c_1884uipfifs4ujq5n6rjf58tgoh18@resource.calendar.google.com",
+          "displayName": "NYC-9-Liberty (12)",
+          "resource": true,
+          "responseStatus": "declined"
+        },
+        {
+          "email": "ethan.fuchs@hebbia.ai",
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "divya@hebbia.ai",
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "c_18852bq29vkq2jd9hu5sj42jkrs1i@resource.calendar.google.com",
+          "displayName": "NYC-9-Greenwich (12)",
+          "resource": true,
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "morten.bruun@hebbia.ai",
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "andrii.melnychuk@hebbia.ai",
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "felipe.suero@hebbia.ai",
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "sisu.xi@hebbia.ai",
+          "self": true,
+          "responseStatus": "accepted"
+        }
+      ],
+      "hangoutLink": "https://meet.google.com/jsz-mndn-vqw",
+      "conferenceData": {
+        "entryPoints": [
+          {
+            "entryPointType": "video",
+            "uri": "https://meet.google.com/jsz-mndn-vqw",
+            "label": "meet.google.com/jsz-mndn-vqw"
+          },
+          {
+            "entryPointType": "more",
+            "uri": "https://tel.meet/jsz-mndn-vqw?pin=8136963727500",
+            "pin": "8136963727500"
+          },
+          {
+            "regionCode": "US",
+            "entryPointType": "phone",
+            "uri": "tel:+1-559-856-2223",
+            "label": "+1 559-856-2223",
+            "pin": "324629505"
+          }
+        ],
+        "conferenceSolution": {
+          "key": {
+            "type": "hangoutsMeet"
+          },
+          "name": "Google Meet",
+          "iconUri": "https://fonts.gstatic.com/s/i/productlogos/meet_2020q4/v6/web-512dp/logo_meet_2020q4_color_2x_web_512dp.png"
+        },
+        "conferenceId": "jsz-mndn-vqw"
+      },
+      "reminders": {
+        "useDefault": true
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3512792141709246\"",
+      "id": "0juu9d8nqsj67e7pgs0hhv76oa_20250825T150000Z",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=MGp1dTlkOG5xc2o2N2U3cGdzMGhodjc2b2FfMjAyNTA4MjVUMTUwMDAwWiBzaXN1LnhpQGhlYmJpYS5haQ",
+      "created": "2025-03-11T15:08:23.000Z",
+      "updated": "2025-08-28T15:47:50.854Z",
+      "summary": "Release Cutoff",
+      "creator": {
+        "email": "ammar@hebbia.ai"
+      },
+      "organizer": {
+        "email": "ammar@hebbia.ai"
+      },
+      "start": {
+        "dateTime": "2025-08-25T11:00:00-04:00",
+        "timeZone": "America/New_York"
+      },
+      "end": {
+        "dateTime": "2025-08-25T11:15:00-04:00",
+        "timeZone": "America/New_York"
+      },
+      "recurringEventId": "0juu9d8nqsj67e7pgs0hhv76oa_R20250729T150000",
+      "originalStartTime": {
+        "dateTime": "2025-08-25T11:00:00-04:00",
+        "timeZone": "America/New_York"
+      },
+      "transparency": "transparent",
+      "iCalUID": "0juu9d8nqsj67e7pgs0hhv76oa_R20250729T150000@google.com",
+      "sequence": 3,
+      "attendees": [
+        {
+          "email": "ammar@hebbia.ai",
+          "organizer": true,
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "engineering@hebbia.ai",
+          "displayName": "Engineering",
+          "responseStatus": "needsAction"
+        },
+        {
+          "email": "felipe.suero@hebbia.ai",
+          "responseStatus": "needsAction"
+        },
+        {
+          "email": "sisu.xi@hebbia.ai",
+          "self": true,
+          "responseStatus": "accepted"
+        }
+      ],
+      "hangoutLink": "https://meet.google.com/tzq-zaoc-yip",
+      "conferenceData": {
+        "entryPoints": [
+          {
+            "entryPointType": "video",
+            "uri": "https://meet.google.com/tzq-zaoc-yip",
+            "label": "meet.google.com/tzq-zaoc-yip"
+          },
+          {
+            "entryPointType": "more",
+            "uri": "https://tel.meet/tzq-zaoc-yip?pin=9284376290371",
+            "pin": "9284376290371"
+          },
+          {
+            "regionCode": "US",
+            "entryPointType": "phone",
+            "uri": "tel:+1-916-588-3733",
+            "label": "+1 916-588-3733",
+            "pin": "176729105"
+          }
+        ],
+        "conferenceSolution": {
+          "key": {
+            "type": "hangoutsMeet"
+          },
+          "name": "Google Meet",
+          "iconUri": "https://fonts.gstatic.com/s/i/productlogos/meet_2020q4/v6/web-512dp/logo_meet_2020q4_color_2x_web_512dp.png"
+        },
+        "conferenceId": "tzq-zaoc-yip"
+      },
+      "reminders": {
+        "useDefault": true
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3512278383605150\"",
+      "id": "1bpg0035q8om64jj9tvlaflk9e",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=MWJwZzAwMzVxOG9tNjRqajl0dmxhZmxrOWUgc2lzdS54aUBoZWJiaWEuYWk",
+      "created": "2025-08-22T15:20:26.000Z",
+      "updated": "2025-08-25T16:26:31.802Z",
+      "summary": "DNS",
+      "location": "NYC-9-Canal (4)",
+      "creator": {
+        "email": "sisu.xi@hebbia.ai",
+        "self": true
+      },
+      "organizer": {
+        "email": "sisu.xi@hebbia.ai",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-08-25T12:30:00-04:00",
+        "timeZone": "America/New_York"
+      },
+      "end": {
+        "dateTime": "2025-08-25T12:55:00-04:00",
+        "timeZone": "America/New_York"
+      },
+      "iCalUID": "1bpg0035q8om64jj9tvlaflk9e@google.com",
+      "sequence": 0,
+      "attendees": [
+        {
+          "email": "c_188ee01n904j6hd4j2kh7af4l3jl4@resource.calendar.google.com",
+          "displayName": "NYC-9-Canal (4)",
+          "resource": true,
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "sisu.xi@hebbia.ai",
+          "organizer": true,
+          "self": true,
+          "responseStatus": "accepted"
+        }
+      ],
+      "hangoutLink": "https://meet.google.com/urb-otro-poy",
+      "conferenceData": {
+        "entryPoints": [
+          {
+            "entryPointType": "video",
+            "uri": "https://meet.google.com/urb-otro-poy",
+            "label": "meet.google.com/urb-otro-poy"
+          },
+          {
+            "entryPointType": "more",
+            "uri": "https://tel.meet/urb-otro-poy?pin=8657547455991",
+            "pin": "8657547455991"
+          },
+          {
+            "regionCode": "US",
+            "entryPointType": "phone",
+            "uri": "tel:+1-929-999-1311",
+            "label": "+1 929-999-1311",
+            "pin": "278622373"
+          }
+        ],
+        "conferenceSolution": {
+          "key": {
+            "type": "hangoutsMeet"
+          },
+          "name": "Google Meet",
+          "iconUri": "https://fonts.gstatic.com/s/i/productlogos/meet_2020q4/v6/web-512dp/logo_meet_2020q4_color_2x_web_512dp.png"
+        },
+        "conferenceId": "urb-otro-poy"
+      },
+      "guestsCanModify": true,
+      "reminders": {
+        "useDefault": true
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3511778929386430\"",
+      "id": "453bhc9fl8u5fbql4ro8h7l45i",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=NDUzYmhjOWZsOHU1ZmJxbDRybzhoN2w0NWkgc2lzdS54aUBoZWJiaWEuYWk",
+      "created": "2025-08-21T13:59:34.000Z",
+      "updated": "2025-08-22T19:04:24.693Z",
+      "summary": "Divya / Sisu",
+      "description": "Hey, Divya:\\n\\nI am Sisu, recently joint. Scheduling a 1:1 to say hi.\\n\\nFeel free to reschedule if time does not work for you.\\n\\nThanks!\\nSisu",
+      "location": "NYC-9-Canal (4)",
+      "creator": {
+        "email": "sisu.xi@hebbia.ai",
+        "self": true
+      },
+      "organizer": {
+        "email": "sisu.xi@hebbia.ai",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-08-25T13:30:00-04:00",
+        "timeZone": "America/New_York"
+      },
+      "end": {
+        "dateTime": "2025-08-25T13:55:00-04:00",
+        "timeZone": "America/New_York"
+      },
+      "iCalUID": "453bhc9fl8u5fbql4ro8h7l45i@google.com",
+      "sequence": 1,
+      "attendees": [
+        {
+          "email": "sisu.xi@hebbia.ai",
+          "organizer": true,
+          "self": true,
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "divya@hebbia.ai",
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "c_188ee01n904j6hd4j2kh7af4l3jl4@resource.calendar.google.com",
+          "displayName": "NYC-9-Canal (4)",
+          "resource": true,
+          "responseStatus": "accepted"
+        }
+      ],
+      "hangoutLink": "https://meet.google.com/ubd-yhbj-txw",
+      "conferenceData": {
+        "entryPoints": [
+          {
+            "entryPointType": "video",
+            "uri": "https://meet.google.com/ubd-yhbj-txw",
+            "label": "meet.google.com/ubd-yhbj-txw"
+          },
+          {
+            "entryPointType": "more",
+            "uri": "https://tel.meet/ubd-yhbj-txw?pin=4761576260608",
+            "pin": "4761576260608"
+          },
+          {
+            "regionCode": "US",
+            "entryPointType": "phone",
+            "uri": "tel:+1-401-753-3248",
+            "label": "+1 401-753-3248",
+            "pin": "827255577"
+          }
+        ],
+        "conferenceSolution": {
+          "key": {
+            "type": "hangoutsMeet"
+          },
+          "name": "Google Meet",
+          "iconUri": "https://fonts.gstatic.com/s/i/productlogos/meet_2020q4/v6/web-512dp/logo_meet_2020q4_color_2x_web_512dp.png"
+        },
+        "conferenceId": "ubd-yhbj-txw"
+      },
+      "guestsCanModify": true,
+      "reminders": {
+        "useDefault": true
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3512454205136606\"",
+      "id": "7aslfhfrec6crppqt7287krs7g_20250822T154500Z",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=N2FzbGZoZnJlYzZjcnBwcXQ3Mjg3a3JzN2dfMjAyNTA4MjJUMTU0NTAwWiBzaXN1LnhpQGhlYmJpYS5haQ",
+      "created": "2024-06-16T16:11:14.000Z",
+      "updated": "2025-08-26T16:51:42.568Z",
+      "summary": "PDC Weekly",
+      "location": "NYC-9-Liberty (12)",
+      "creator": {
+        "email": "anil@hebbia.ai"
+      },
+      "organizer": {
+        "email": "divya@hebbia.ai"
+      },
+      "start": {
+        "dateTime": "2025-08-25T14:00:00-04:00",
+        "timeZone": "America/New_York"
+      },
+      "end": {
+        "dateTime": "2025-08-25T15:00:00-04:00",
+        "timeZone": "America/New_York"
+      },
+      "recurringEventId": "7aslfhfrec6crppqt7287krs7g_R20250822T154500",
+      "originalStartTime": {
+        "dateTime": "2025-08-22T11:45:00-04:00",
+        "timeZone": "America/New_York"
+      },
+      "iCalUID": "7aslfhfrec6crppqt7287krs7g_R20250822T154500@google.com",
+      "sequence": 6,
+      "attendees": [
+        {
+          "email": "c_1884uipfifs4ujq5n6rjf58tgoh18@resource.calendar.google.com",
+          "displayName": "NYC-9-Liberty (12)",
+          "resource": true,
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "epd-leads@hebbia.ai",
+          "displayName": "EPD Leads",
+          "responseStatus": "needsAction"
+        },
+        {
+          "email": "sisu.xi@hebbia.ai",
+          "self": true,
+          "responseStatus": "accepted"
+        }
+      ],
+      "hangoutLink": "https://meet.google.com/ien-xmmb-qeu",
+      "conferenceData": {
+        "entryPoints": [
+          {
+            "entryPointType": "video",
+            "uri": "https://meet.google.com/ien-xmmb-qeu",
+            "label": "meet.google.com/ien-xmmb-qeu"
+          },
+          {
+            "entryPointType": "more",
+            "uri": "https://tel.meet/ien-xmmb-qeu?pin=5451341698984",
+            "pin": "5451341698984"
+          },
+          {
+            "regionCode": "US",
+            "entryPointType": "phone",
+            "uri": "tel:+1-252-574-6101",
+            "label": "+1 252-574-6101",
+            "pin": "934314136"
+          }
+        ],
+        "conferenceSolution": {
+          "key": {
+            "type": "hangoutsMeet"
+          },
+          "name": "Google Meet",
+          "iconUri": "https://fonts.gstatic.com/s/i/productlogos/meet_2020q4/v6/web-512dp/logo_meet_2020q4_color_2x_web_512dp.png"
+        },
+        "conferenceId": "ien-xmmb-qeu"
+      },
+      "reminders": {
+        "useDefault": true
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3512285384152670\"",
+      "id": "6r3dpnas23o2bko5gaka916i4h",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=NnIzZHBuYXMyM28yYmtvNWdha2E5MTZpNGggc2lzdS54aUBoZWJiaWEuYWk",
+      "created": "2025-08-24T17:30:47.000Z",
+      "updated": "2025-08-25T17:24:52.076Z",
+      "summary": "Sisu // Rob",
+      "description": "<a href=\"https://docs.google.com/document/d/1gQRV1UiPl_7n8MN7PPXnWZ7OTZRnbUsVe_YE0OYVMt4/edit?tab=t.0#heading=h.xjbs7scx888p\" class=\"pastedDriveLink-0\">https://docs.google.com/document/d/1gQRV1UiPl_7n8MN7PPXnWZ7OTZRnbUsVe_YE0OYVMt4/edit?tab=t.0#heading=h.xjbs7scx888p</a>",
+      "location": "NYC-9-Amsterdam (4)",
+      "creator": {
+        "email": "rob.day@hebbia.ai"
+      },
+      "organizer": {
+        "email": "rob.day@hebbia.ai"
+      },
+      "start": {
+        "dateTime": "2025-08-25T15:00:00-04:00",
+        "timeZone": "America/New_York"
+      },
+      "end": {
+        "dateTime": "2025-08-25T16:00:00-04:00",
+        "timeZone": "America/New_York"
+      },
+      "iCalUID": "6r3dpnas23o2bko5gaka916i4h@google.com",
+      "sequence": 0,
+      "attendees": [
+        {
+          "email": "c_188258sktu1jahsknsalt64s6o7ou@resource.calendar.google.com",
+          "displayName": "NYC-9-Amsterdam (4)",
+          "resource": true,
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "rob.day@hebbia.ai",
+          "organizer": true,
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "sisu.xi@hebbia.ai",
+          "self": true,
+          "responseStatus": "accepted"
+        }
+      ],
+      "hangoutLink": "https://meet.google.com/iev-wcaq-xtj",
+      "conferenceData": {
+        "entryPoints": [
+          {
+            "entryPointType": "video",
+            "uri": "https://meet.google.com/iev-wcaq-xtj",
+            "label": "meet.google.com/iev-wcaq-xtj"
+          },
+          {
+            "entryPointType": "more",
+            "uri": "https://tel.meet/iev-wcaq-xtj?pin=8825826283392",
+            "pin": "8825826283392"
+          },
+          {
+            "regionCode": "US",
+            "entryPointType": "phone",
+            "uri": "tel:+1-419-901-8538",
+            "label": "+1 419-901-8538",
+            "pin": "144432127"
+          }
+        ],
+        "conferenceSolution": {
+          "key": {
+            "type": "hangoutsMeet"
+          },
+          "name": "Google Meet",
+          "iconUri": "https://fonts.gstatic.com/s/i/productlogos/meet_2020q4/v6/web-512dp/logo_meet_2020q4_color_2x_web_512dp.png"
+        },
+        "conferenceId": "iev-wcaq-xtj"
+      },
+      "guestsCanModify": true,
+      "reminders": {
+        "useDefault": true
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3512792141709246\"",
+      "id": "04nip7br0rbi9q6j1drjk6n5a3_20250825T200000Z",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=MDRuaXA3YnIwcmJpOXE2ajFkcmprNm41YTNfMjAyNTA4MjVUMjAwMDAwWiBzaXN1LnhpQGhlYmJpYS5haQ",
+      "created": "2025-03-11T15:10:01.000Z",
+      "updated": "2025-08-28T15:47:50.854Z",
+      "summary": "Deployment Window",
+      "description": "Oncall must be present to facilitate release.",
+      "creator": {
+        "email": "ammar@hebbia.ai"
+      },
+      "organizer": {
+        "email": "ammar@hebbia.ai"
+      },
+      "start": {
+        "dateTime": "2025-08-25T16:00:00-04:00",
+        "timeZone": "America/New_York"
+      },
+      "end": {
+        "dateTime": "2025-08-25T18:00:00-04:00",
+        "timeZone": "America/New_York"
+      },
+      "recurringEventId": "04nip7br0rbi9q6j1drjk6n5a3_R20250804T200000",
+      "originalStartTime": {
+        "dateTime": "2025-08-25T16:00:00-04:00",
+        "timeZone": "America/New_York"
+      },
+      "transparency": "transparent",
+      "iCalUID": "04nip7br0rbi9q6j1drjk6n5a3_R20250804T200000@google.com",
+      "sequence": 1,
+      "attendees": [
+        {
+          "email": "ammar@hebbia.ai",
+          "organizer": true,
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "engineering@hebbia.ai",
+          "displayName": "Engineering",
+          "responseStatus": "needsAction"
+        },
+        {
+          "email": "sisu.xi@hebbia.ai",
+          "self": true,
+          "responseStatus": "accepted"
+        }
+      ],
+      "hangoutLink": "https://meet.google.com/zyy-dqyw-rmr",
+      "conferenceData": {
+        "entryPoints": [
+          {
+            "entryPointType": "video",
+            "uri": "https://meet.google.com/zyy-dqyw-rmr",
+            "label": "meet.google.com/zyy-dqyw-rmr"
+          },
+          {
+            "entryPointType": "more",
+            "uri": "https://tel.meet/zyy-dqyw-rmr?pin=5510324131182",
+            "pin": "5510324131182"
+          },
+          {
+            "regionCode": "US",
+            "entryPointType": "phone",
+            "uri": "tel:+1-470-705-3467",
+            "label": "+1 470-705-3467",
+            "pin": "891170438"
+          }
+        ],
+        "conferenceSolution": {
+          "key": {
+            "type": "hangoutsMeet"
+          },
+          "name": "Google Meet",
+          "iconUri": "https://fonts.gstatic.com/s/i/productlogos/meet_2020q4/v6/web-512dp/logo_meet_2020q4_color_2x_web_512dp.png"
+        },
+        "conferenceId": "zyy-dqyw-rmr"
+      },
+      "reminders": {
+        "useDefault": true
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3513858556304894\"",
+      "id": "4sag53kjcrhpue081ucft0vr58_20250825T233000Z",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=NHNhZzUza2pjcmhwdWUwODF1Y2Z0MHZyNThfMjAyNTA4MjVUMjMzMDAwWiBzaXN1LnhpQGhlYmJpYS5haQ",
+      "created": "2025-01-06T21:33:44.000Z",
+      "updated": "2025-09-03T19:54:38.152Z",
+      "summary": "Exec Office Hours [Optional]",
+      "creator": {
+        "email": "george@hebbia.ai"
+      },
+      "organizer": {
+        "email": "george@hebbia.ai"
+      },
+      "start": {
+        "dateTime": "2025-08-25T19:30:00-04:00",
+        "timeZone": "America/New_York"
+      },
+      "end": {
+        "dateTime": "2025-08-25T22:45:00-04:00",
+        "timeZone": "America/New_York"
+      },
+      "recurringEventId": "4sag53kjcrhpue081ucft0vr58_R20250714T233000",
+      "originalStartTime": {
+        "dateTime": "2025-08-25T19:30:00-04:00",
+        "timeZone": "America/New_York"
+      },
+      "iCalUID": "4sag53kjcrhpue081ucft0vr58_R20250714T233000@google.com",
+      "sequence": 0,
+      "attendees": [
+        {
+          "email": "george@hebbia.ai",
+          "organizer": true,
+          "responseStatus": "accepted"
+        },
+        {
+          "email": "team@hebbia.ai",
+          "displayName": "Hebbia Team",
+          "responseStatus": "needsAction"
+        },
+        {
+          "email": "trp@hebbia.ai",
+          "responseStatus": "declined"
+        },
+        {
+          "email": "sisu.xi@hebbia.ai",
+          "self": true,
+          "responseStatus": "accepted"
+        }
+      ],
+      "reminders": {
+        "useDefault": true
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3511064463530302\"",
+      "id": "8lg21ttniki4r4hm9o1tebb3g4_20250826",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=OGxnMjF0dG5pa2k0cjRobTlvMXRlYmIzZzRfMjAyNTA4MjYgc2lzdS54aUBoZWJiaWEuYWk",
+      "created": "2025-08-18T15:50:31.000Z",
+      "updated": "2025-08-18T15:50:31.765Z",
+      "summary": "Office",
+      "creator": {
+        "email": "sisu.xi@hebbia.ai",
+        "self": true
+      },
+      "organizer": {
+        "email": "sisu.xi@hebbia.ai",
+        "self": true
+      },
+      "start": {
+        "date": "2025-08-26"
+      },
+      "end": {
+        "date": "2025-08-27"
+      },
+      "recurringEventId": "8lg21ttniki4r4hm9o1tebb3g4",
+      "originalStartTime": {
+        "date": "2025-08-26"
+      },
+      "transparency": "transparent",
+      "visibility": "public",
+      "iCalUID": "8lg21ttniki4r4hm9o1tebb3g4@google.com",
+      "sequence": 0,
+      "reminders": {
+        "useDefault": false
+      },
+      "workingLocationProperties": {
+        "type": "officeLocation",
+        "officeLocation": {}
+      },
+      "eventType": "workingLocation"
+    }
+  ],
+  "time_analysis": {
+    "note": "Analysis was performed on current period rather than requested historical week",
+    "total_events": 32,
+    "total_time_scheduled": "1 day, 1:55:00",
+    "average_events_per_day": 4.6,
+    "average_time_per_day": "3:42:08",
+    "event_types": {
+      "Other": "30 (93.8%)",
+      "Interviews": "1 (3.1%)",
+      "Breaks": "1 (3.1%)"
+    }
+  },
+  "one_on_ones": {
+    "note": "Search returned data from different period (September 2025)",
+    "meetings_found": [
+      {
+        "title": "Erin / Sisu",
+        "time": "2025-09-05 11:00 - 11:25",
+        "duration": "0:25:00",
+        "location": "NYC-9-Canal (4)",
+        "attendees": 3,
+        "description": "Hey, Erin: Scheduling a 1:1 to say hi. Feel free to reschedule if time does not work for you.",
+        "meet_link": "https://meet.google.com/pbe-bdcr-dgo"
+      }
+    ]
+  },
+  "analysis_summary": {
+    "key_meetings_identified": [
+      {
+        "date": "2025-08-25",
+        "title": "Matrix Daily Standup",
+        "time": "10:00-10:30",
+        "type": "Engineering team meeting"
+      },
+      {
+        "date": "2025-08-25",
+        "title": "Release Cutoff",
+        "time": "11:00-11:15",
+        "type": "Engineering process"
+      },
+      {
+        "date": "2025-08-25",
+        "title": "DNS",
+        "time": "12:30-12:55",
+        "type": "Technical work (self-organized)"
+      },
+      {
+        "date": "2025-08-25",
+        "title": "Divya / Sisu",
+        "time": "13:30-13:55",
+        "type": "1:1 meeting - team building"
+      },
+      {
+        "date": "2025-08-25",
+        "title": "PDC Weekly",
+        "time": "14:00-15:00",
+        "type": "Product/Design/Engineering alignment"
+      },
+      {
+        "date": "2025-08-25",
+        "title": "Sisu // Rob",
+        "time": "15:00-16:00",
+        "type": "1:1 meeting - strategic"
+      },
+      {
+        "date": "2025-08-25",
+        "title": "Deployment Window",
+        "time": "16:00-18:00",
+        "type": "Release management"
+      },
+      {
+        "date": "2025-08-25",
+        "title": "Exec Office Hours [Optional]",
+        "time": "19:30-22:45",
+        "type": "Executive engagement"
+      }
+    ],
+    "office_days": [
+      "2025-08-25",
+      "2025-08-26"
+    ],
+    "total_meeting_hours_aug_25": "~9 hours",
+    "principal_engineer_activities": [
+      "Technical infrastructure work (DNS)",
+      "Team building and onboarding (1:1s with Divya)",
+      "Strategic alignment (PDC Weekly, meeting with Rob)",
+      "Release management participation",
+      "Executive visibility (Office Hours)"
+    ]
+  }
+}
