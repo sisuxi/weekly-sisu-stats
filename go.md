@@ -22,7 +22,9 @@ python3 collect_raw_data.py --date 2025-08-27
 This will:
 - Calculate the date range (default: previous Sunday-Saturday)
 - Create a folder named `YYYYMMDD-YYYYMMDD`
+- **If folder exists: Delete and recreate (default behavior)**
 - Collect all raw data in parallel
+- **If any data collection fails: Exit immediately**
 - Save as `raw_*.json` files
 
 ### Step 2: Generate Report
@@ -166,6 +168,7 @@ When executing this prompt:
 ```python
 # Look for most recent YYYYMMDD-YYYYMMDD folder
 # Verify all raw_*.json files exist
+# If any raw data files are missing or corrupted: EXIT IMMEDIATELY
 ```
 
 ### 2. Launch parallel section generators
@@ -215,6 +218,8 @@ After all sections complete:
 
 ## Important Notes
 
+- **Error Handling**: If ANY data collection fails, exit immediately
+- **Folder Management**: Default behavior is to delete existing folder and recreate
 - **Executive Summary**: MUST be generated LAST with full context
 - **Parallel Execution**: All section generators run simultaneously
 - **Data Preservation**: Raw data files are never modified
