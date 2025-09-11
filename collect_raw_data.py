@@ -23,7 +23,7 @@ def run_command(cmd, cwd=None):
             capture_output=True,
             text=True,
             cwd=cwd,
-            timeout=60
+            timeout=30
         )
         if result.returncode != 0:
             print(f"Error running command: {cmd}")
@@ -45,13 +45,13 @@ def collect_github_data(start_date, end_date, output_dir):
     data = {}
     
     # Verify account
-    cmd = "gh auth status --hostname github.com 2>&1 | grep 'Logged in to github.com as sisuxi'"
+    cmd = "gh auth status 2>&1"
     auth_check = run_command(cmd)
-    if not auth_check:
+    if not auth_check or 'sisuxi' not in auth_check:
         print("Warning: GitHub auth verification failed")
     
-    # PRs created
-    cmd = f'gh search prs --author=sisuxi --created=">={start_date}" --json number,title,state,createdAt,updatedAt,url,repository,labels,comments'
+    # PRs created in Hebbia org
+    cmd = f'gh search prs --author=sisuxi --created=">={start_date}" "org:hebbia" --json number,title,state,createdAt,updatedAt,url,repository,labels'
     result = run_command(cmd)
     if result:
         try:
@@ -59,8 +59,8 @@ def collect_github_data(start_date, end_date, output_dir):
         except json.JSONDecodeError:
             data['prs_created'] = []
     
-    # PRs reviewed
-    cmd = f'gh search prs --reviewed-by=sisuxi --updated=">={start_date}" --json number,title,author,url,reviews'
+    # PRs reviewed in Hebbia org
+    cmd = f'gh search prs --reviewed-by=sisuxi --updated=">={start_date}" "org:hebbia" --json number,title,author,url,repository'
     result = run_command(cmd)
     if result:
         try:
@@ -68,8 +68,8 @@ def collect_github_data(start_date, end_date, output_dir):
         except json.JSONDecodeError:
             data['prs_reviewed'] = []
     
-    # PRs involved
-    cmd = f'gh search prs --involves=sisuxi --updated=">={start_date}" --json number,title,repository,author'
+    # PRs involved in Hebbia org
+    cmd = f'gh search prs --involves=sisuxi --updated=">={start_date}" "org:hebbia" --json number,title,repository,author'
     result = run_command(cmd)
     if result:
         try:
@@ -77,30 +77,28 @@ def collect_github_data(start_date, end_date, output_dir):
         except json.JSONDecodeError:
             data['prs_involved'] = []
     
-    # Commits
-    cmd = f'gh search commits --author=sisuxi --repo=hebbia/mono --committer-date=">={start_date}..{end_date}" --json sha,commit'
+    # Commits in all Hebbia repos (recent, will filter by date later)
+    cmd = f'gh search commits --author=sisuxi "org:hebbia" --limit 100 --json sha,commit,repository'
     result = run_command(cmd)
     if result:
         try:
-            data['commits'] = json.loads(result)
+            commits_data = json.loads(result)
+            # Filter commits by date
+            filtered_commits = []
+            for commit_item in commits_data:
+                commit_date = commit_item.get('commit', {}).get('author', {}).get('date', '')
+                if commit_date and commit_date >= start_date:
+                    filtered_commits.append(commit_item)
+            data['commits'] = filtered_commits
         except json.JSONDecodeError:
             data['commits'] = []
     
-    # Team member PRs reviewed
-    cmd = f'gh pr list --repo hebbia/mono --state all --limit 100 --json number,author,createdAt,reviews'
+    # Team PRs reviewed across all Hebbia repos (using search to get all)
+    cmd = f'gh search prs --reviewed-by=sisuxi --created=">={start_date}" "org:hebbia" --limit 100 --json number,title,author,repository,createdAt,state'
     result = run_command(cmd)
     if result:
         try:
-            all_prs = json.loads(result)
-            # Filter for PRs created after start_date with reviews by sisuxi
-            team_prs = []
-            for pr in all_prs:
-                if pr.get('createdAt', '') >= start_date:
-                    for review in pr.get('reviews', []):
-                        if review.get('author', {}).get('login') == 'sisuxi':
-                            team_prs.append(pr)
-                            break
-            data['team_prs_reviewed'] = team_prs
+            data['team_prs_reviewed'] = json.loads(result)
         except json.JSONDecodeError:
             data['team_prs_reviewed'] = []
     
@@ -117,25 +115,19 @@ def collect_slack_data(start_date, end_date, output_dir):
     data = {}
     tools_dir = Path.home() / "Hebbia" / "sisu-tools"
     
-    # Messages from me
-    cmd = f'.venv/bin/python tools/slack_explorer.py search "from:@sisu" --from "{start_date}" --to "{end_date}" --count 100'
-    result = run_command(cmd, cwd=tools_dir)
-    data['messages_from_me'] = result if result else ""
-    
-    # Engineering/architecture channels
-    cmd = f'.venv/bin/python tools/slack_explorer.py search "from:@sisu in:#engineering OR in:#architecture OR in:#platform" --from "{start_date}" --to "{end_date}" --count 50'
-    result = run_command(cmd, cwd=tools_dir)
-    data['engineering_channels'] = result if result else ""
-    
-    # Activity summary
-    cmd = f'.venv/bin/python tools/slack_explorer.py activity --from "{start_date}" --to "{end_date}"'
-    result = run_command(cmd, cwd=tools_dir)
-    data['activity_summary'] = result if result else ""
-    
-    # Incident responses
-    cmd = f'.venv/bin/python tools/slack_explorer.py search "from:@sisu in:#incidents OR in:#alerts" --from "{start_date}" --to "{end_date}" --count 20'
-    result = run_command(cmd, cwd=tools_dir)
-    data['incident_responses'] = result if result else ""
+    try:
+        # Messages from me
+        cmd = f'.venv/bin/python tools/slack_explorer.py search "from:@sisu" --from "{start_date}" --to "{end_date}" --count 50'
+        result = run_command(cmd, cwd=tools_dir)
+        data['messages_from_me'] = result if result else ""
+        
+        # Activity summary
+        cmd = f'.venv/bin/python tools/slack_explorer.py activity --from "{start_date}" --to "{end_date}"'
+        result = run_command(cmd, cwd=tools_dir)
+        data['activity_summary'] = result if result else ""
+    except Exception as e:
+        print(f"Warning: Some Slack data collection failed: {e}")
+        data['error'] = str(e)
     
     output_path = Path(output_dir) / "raw_slack.json"
     with open(output_path, 'w') as f:
@@ -150,29 +142,20 @@ def collect_gmail_data(start_date, end_date, output_dir):
     data = {}
     tools_dir = Path.home() / "Hebbia" / "sisu-tools"
     
-    # Inbox statistics
-    cmd = f'.venv/bin/python tools/gmail_explorer.py stats --from "{start_date}" --to "{end_date}"'
-    result = run_command(cmd, cwd=tools_dir)
-    data['stats'] = result if result else ""
-    
-    # Important emails
-    cmd = f'.venv/bin/python tools/gmail_explorer.py important --from "{start_date}" --to "{end_date}"'
-    result = run_command(cmd, cwd=tools_dir)
-    data['important'] = result if result else ""
-    
-    # Sent emails
-    cmd = f'.venv/bin/python tools/gmail_explorer.py sent --from "{start_date}" --to "{end_date}"'
-    result = run_command(cmd, cwd=tools_dir)
-    data['sent'] = result if result else ""
-    
-    # Detailed export
-    cmd = f'.venv/bin/python tools/gmail_explorer.py export --from "{start_date}" --to "{end_date}"'
-    result = run_command(cmd, cwd=tools_dir)
-    if result:
-        try:
-            data['export'] = json.loads(result)
-        except json.JSONDecodeError:
-            data['export'] = result
+    try:
+        # Inbox statistics (using days parameter)
+        days = (datetime.fromisoformat(end_date) - datetime.fromisoformat(start_date)).days + 1
+        cmd = f'.venv/bin/python tools/gmail_explorer.py stats --days {days}'
+        result = run_command(cmd, cwd=tools_dir)
+        data['stats'] = result if result else ""
+        
+        # Sent emails
+        cmd = f'.venv/bin/python tools/gmail_explorer.py sent --days {days}'
+        result = run_command(cmd, cwd=tools_dir)
+        data['sent'] = result if result else ""
+    except Exception as e:
+        print(f"Warning: Some Gmail data collection failed: {e}")
+        data['error'] = str(e)
     
     output_path = Path(output_dir) / "raw_gmail.json"
     with open(output_path, 'w') as f:
@@ -187,20 +170,19 @@ def collect_drive_data(start_date, end_date, output_dir):
     data = {}
     tools_dir = Path.home() / "Hebbia" / "sisu-tools"
     
-    # Recent documents
-    cmd = f'.venv/bin/python tools/drive_explorer.py recent --from "{start_date}" --to "{end_date}"'
-    result = run_command(cmd, cwd=tools_dir)
-    data['recent'] = result if result else ""
-    
-    # Shared documents
-    cmd = f'.venv/bin/python tools/drive_explorer.py shared --from "{start_date}" --to "{end_date}"'
-    result = run_command(cmd, cwd=tools_dir)
-    data['shared'] = result if result else ""
-    
-    # Search for Hebbia documents
-    cmd = f'.venv/bin/python tools/drive_explorer.py search "hebbia" --from "{start_date}" --to "{end_date}"'
-    result = run_command(cmd, cwd=tools_dir)
-    data['hebbia_docs'] = result if result else ""
+    try:
+        # Recent documents
+        cmd = '.venv/bin/python tools/drive_explorer.py recent'
+        result = run_command(cmd, cwd=tools_dir)
+        data['recent'] = result if result else ""
+        
+        # Shared documents
+        cmd = '.venv/bin/python tools/drive_explorer.py shared'
+        result = run_command(cmd, cwd=tools_dir)
+        data['shared'] = result if result else ""
+    except Exception as e:
+        print(f"Warning: Some Drive data collection failed: {e}")
+        data['error'] = str(e)
     
     output_path = Path(output_dir) / "raw_drive.json"
     with open(output_path, 'w') as f:
@@ -215,24 +197,19 @@ def collect_calendar_data(start_date, end_date, output_dir):
     data = {}
     tools_dir = Path.home() / "Hebbia" / "sisu-tools"
     
-    # All events
-    cmd = f'.venv/bin/python tools/calendar_explorer.py events --from "{start_date}" --to "{end_date}" --json'
-    result = run_command(cmd, cwd=tools_dir)
-    if result:
-        try:
-            data['events'] = json.loads(result)
-        except json.JSONDecodeError:
-            data['events'] = result
-    
-    # Meeting analysis
-    cmd = f'.venv/bin/python tools/calendar_explorer.py analyze --from "{start_date}" --to "{end_date}"'
-    result = run_command(cmd, cwd=tools_dir)
-    data['analysis'] = result if result else ""
-    
-    # 1:1 meetings
-    cmd = f'.venv/bin/python tools/calendar_explorer.py search "1:1" --from "{start_date}" --to "{end_date}"'
-    result = run_command(cmd, cwd=tools_dir)
-    data['one_on_ones'] = result if result else ""
+    try:
+        # All events
+        cmd = '.venv/bin/python tools/calendar_explorer.py events'
+        result = run_command(cmd, cwd=tools_dir)
+        data['events'] = result if result else ""
+        
+        # Meeting analysis
+        cmd = '.venv/bin/python tools/calendar_explorer.py analyze'
+        result = run_command(cmd, cwd=tools_dir)
+        data['analysis'] = result if result else ""
+    except Exception as e:
+        print(f"Warning: Some Calendar data collection failed: {e}")
+        data['error'] = str(e)
     
     output_path = Path(output_dir) / "raw_calendar.json"
     with open(output_path, 'w') as f:
@@ -247,29 +224,27 @@ def collect_linear_data(start_date, end_date, output_dir):
     data = {}
     tools_dir = Path.home() / "Hebbia" / "sisu-tools"
     
-    # High-priority issues (P0/P1)
-    query = '''query { issues(filter: { OR: [{assignee: { email: { eq: "sisu@hebbia.ai" } }}, {creator: { email: { eq: "sisu@hebbia.ai" } }}], priority: { in: [0, 1] } }, first: 50) { nodes { identifier title state { name } priority updatedAt team { name } } } }'''
-    cmd = f'.venv/bin/python tools/linear_explorer.py --from "{start_date}" --to "{end_date}" --urls \'{query}\''
-    result = run_command(cmd, cwd=tools_dir)
-    data['high_priority'] = result if result else ""
-    
-    # Cross-team issues
-    query = '''query { issues(filter: { OR: [{assignee: { email: { eq: "sisu@hebbia.ai" } }}, {subscribers: { email: { eq: "sisu@hebbia.ai" } }}] }, first: 50) { nodes { identifier title state { name } priority team { name } parent { identifier title } children { nodes { identifier title } } } } }'''
-    cmd = f'.venv/bin/python tools/linear_explorer.py --from "{start_date}" --to "{end_date}" --urls \'{query}\''
-    result = run_command(cmd, cwd=tools_dir)
-    data['cross_team'] = result if result else ""
-    
-    # Technical debt and architecture
-    query = '''query { issues(filter: { labels: { name: { in: ["tech-debt", "architecture", "performance"] } }, OR: [{assignee: { email: { eq: "sisu@hebbia.ai" } }}, {creator: { email: { eq: "sisu@hebbia.ai" } }}] }, first: 50) { nodes { identifier title state { name } labels { nodes { name } } team { name } } } }'''
-    cmd = f'.venv/bin/python tools/linear_explorer.py --from "{start_date}" --to "{end_date}" --urls \'{query}\''
-    result = run_command(cmd, cwd=tools_dir)
-    data['tech_debt'] = result if result else ""
-    
-    # Completed issues
-    query = '''query { issues(filter: { assignee: { email: { eq: "sisu@hebbia.ai" } }, state: { type: { eq: "completed" } } }, first: 50) { nodes { identifier title completedAt team { name } priority } } }'''
-    cmd = f'.venv/bin/python tools/linear_explorer.py --from "{start_date}" --to "{end_date}" --urls \'{query}\''
-    result = run_command(cmd, cwd=tools_dir)
-    data['completed'] = result if result else ""
+    try:
+        # My assigned issues
+        query = '{ issues(filter: { assignee: { email: { eq: "sisu@hebbia.ai" } } }, first: 100) { nodes { identifier title state { name } priority createdAt updatedAt team { name } } } }'
+        cmd = f".venv/bin/python tools/linear_explorer.py '{query}' --from '{start_date}' --to '{end_date}' --urls"
+        result = run_command(cmd, cwd=tools_dir)
+        data['my_issues'] = result if result else ""
+        
+        # High priority issues
+        query = '{ issues(filter: { assignee: { email: { eq: "sisu@hebbia.ai" } }, priority: { in: [0, 1] } }, first: 50) { nodes { identifier title state { name } priority team { name } } } }'
+        cmd = f".venv/bin/python tools/linear_explorer.py '{query}' --from '{start_date}' --to '{end_date}'"
+        result = run_command(cmd, cwd=tools_dir)
+        data['high_priority'] = result if result else ""
+        
+        # Issues I created
+        query = '{ issues(filter: { creator: { email: { eq: "sisu@hebbia.ai" } } }, first: 50) { nodes { identifier title state { name } createdAt team { name } } } }'
+        cmd = f".venv/bin/python tools/linear_explorer.py '{query}' --from '{start_date}' --to '{end_date}'"
+        result = run_command(cmd, cwd=tools_dir)
+        data['created'] = result if result else ""
+    except Exception as e:
+        print(f"Warning: Some Linear data collection failed: {e}")
+        data['error'] = str(e)
     
     output_path = Path(output_dir) / "raw_linear.json"
     with open(output_path, 'w') as f:
@@ -284,54 +259,24 @@ def collect_launchdarkly_data(start_date, end_date, output_dir):
     data = {}
     tools_dir = Path.home() / "Hebbia" / "sisu-tools"
     
-    # Audit log
-    cmd = '.venv/bin/python tools/launchdarkly_explorer.py query "/auditlog" --params \'{"limit": 100}\''
-    result = run_command(cmd, cwd=tools_dir)
-    if result:
-        try:
-            audit_data = json.loads(result)
-            # Filter by date
-            start_ts = datetime.fromisoformat(start_date).timestamp() * 1000
-            filtered = [item for item in audit_data.get('items', []) if item.get('date', 0) >= start_ts]
-            data['audit_log'] = filtered
-        except (json.JSONDecodeError, ValueError):
-            data['audit_log'] = result
-    
-    # My changes
-    cmd = '.venv/bin/python tools/launchdarkly_explorer.py query "/auditlog" --params \'{"limit": 100}\''
-    result = run_command(cmd, cwd=tools_dir)
-    if result:
-        try:
-            audit_data = json.loads(result)
-            my_changes = [item for item in audit_data.get('items', []) 
-                         if item.get('member', {}).get('email') == 'sisu@hebbia.ai']
-            data['my_changes'] = my_changes
-        except json.JSONDecodeError:
-            data['my_changes'] = []
-    
-    # Production flags
-    cmd = '.venv/bin/python tools/launchdarkly_explorer.py flags --env production --limit 100'
-    result = run_command(cmd, cwd=tools_dir)
-    if result:
-        try:
-            data['production_flags'] = json.loads(result)
-        except json.JSONDecodeError:
-            data['production_flags'] = result
-    
-    # Team-specific flags
-    cmd = '.venv/bin/python tools/launchdarkly_explorer.py flags'
-    result = run_command(cmd, cwd=tools_dir)
-    if result:
-        try:
-            flags_data = json.loads(result)
-            team_flags = []
-            for flag in flags_data.get('items', []):
-                tags = flag.get('tags', [])
-                if 'matrix' in tags or 'epd' in tags:
-                    team_flags.append(flag)
-            data['team_flags'] = team_flags
-        except json.JSONDecodeError:
-            data['team_flags'] = []
+    try:
+        # Get flags list
+        cmd = '.venv/bin/python tools/launchdarkly_explorer.py flags'
+        result = run_command(cmd, cwd=tools_dir)
+        data['flags'] = result if result else ""
+        
+        # Get environments
+        cmd = '.venv/bin/python tools/launchdarkly_explorer.py environments'
+        result = run_command(cmd, cwd=tools_dir)
+        data['environments'] = result if result else ""
+        
+        # Get projects
+        cmd = '.venv/bin/python tools/launchdarkly_explorer.py projects'
+        result = run_command(cmd, cwd=tools_dir)
+        data['projects'] = result if result else ""
+    except Exception as e:
+        print(f"Warning: Some LaunchDarkly data collection failed: {e}")
+        data['error'] = str(e)
     
     output_path = Path(output_dir) / "raw_launchdarkly.json"
     with open(output_path, 'w') as f:
