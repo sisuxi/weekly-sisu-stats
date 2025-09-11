@@ -48,7 +48,7 @@ def collect_github_data(start_date, end_date, output_dir):
     cmd = "gh auth status 2>&1"
     auth_check = run_command(cmd)
     if not auth_check or 'sisuxi' not in auth_check:
-        print("Warning: GitHub auth verification failed")
+        raise Exception("GitHub auth verification failed - not authenticated as sisuxi")
     
     # PRs created in Hebbia org
     cmd = f'gh search prs --author=sisuxi --created=">={start_date}" "org:hebbia" --json number,title,state,createdAt,updatedAt,url,repository,labels'
@@ -115,19 +115,19 @@ def collect_slack_data(start_date, end_date, output_dir):
     data = {}
     tools_dir = Path.home() / "Hebbia" / "sisu-tools"
     
-    try:
-        # Messages from me
-        cmd = f'.venv/bin/python tools/slack_explorer.py search "from:@sisu" --from "{start_date}" --to "{end_date}" --count 50'
-        result = run_command(cmd, cwd=tools_dir)
-        data['messages_from_me'] = result if result else ""
-        
-        # Activity summary
-        cmd = f'.venv/bin/python tools/slack_explorer.py activity --from "{start_date}" --to "{end_date}"'
-        result = run_command(cmd, cwd=tools_dir)
-        data['activity_summary'] = result if result else ""
-    except Exception as e:
-        print(f"Warning: Some Slack data collection failed: {e}")
-        data['error'] = str(e)
+    # Messages from me
+    cmd = f'.venv/bin/python tools/slack_explorer.py search "from:@sisu" --from "{start_date}" --to "{end_date}" --count 50'
+    result = run_command(cmd, cwd=tools_dir)
+    if result is None:
+        raise Exception("Failed to collect Slack messages")
+    data['messages_from_me'] = result
+    
+    # Activity summary
+    cmd = f'.venv/bin/python tools/slack_explorer.py activity --from "{start_date}" --to "{end_date}"'
+    result = run_command(cmd, cwd=tools_dir)
+    if result is None:
+        raise Exception("Failed to collect Slack activity summary")
+    data['activity_summary'] = result
     
     output_path = Path(output_dir) / "raw_slack.json"
     with open(output_path, 'w') as f:
@@ -365,6 +365,8 @@ def main():
     ]
     
     print("\nStarting parallel data collection...")
+    failed_collectors = []
+    
     with ThreadPoolExecutor(max_workers=7) as executor:
         futures = {}
         for name, collector_func in collectors:
@@ -378,8 +380,15 @@ def main():
                 print(f"✅ {name} collection completed")
             except Exception as e:
                 print(f"❌ {name} collection failed: {e}")
+                failed_collectors.append(name)
     
-    print(f"\n✅ All data collection completed!")
+    # Check if any collectors failed
+    if failed_collectors:
+        print(f"\n❌ Data collection failed for: {', '.join(failed_collectors)}")
+        print(f"Exiting with error code 1")
+        sys.exit(1)
+    
+    print(f"\n✅ All data collection completed successfully!")
     print(f"📁 Raw data saved in: {output_dir}/")
     print(f"   - raw_github.json")
     print(f"   - raw_slack.json")
