@@ -342,7 +342,7 @@ def main():
             try:
                 response = input(f"\nFolder {output_dir} already exists. What would you like to do?\n"
                                 "1. Delete and regenerate everything (default - press Enter)\n"
-                                "2. Keep existing data and exit\n"
+                                "2. Download new raw data, but keep existing report sections unchanged\n"
                                 "3. Cancel operation\n"
                                 "Choice [1]: ")
             except EOFError:
@@ -355,8 +355,16 @@ def main():
                 os.makedirs(output_dir)
                 print(f"Deleted and recreated {output_dir}")
             elif response == "2":
-                print(f"Keeping existing data in {output_dir}")
-                return
+                # Keep existing sections but remove raw data files for re-download
+                import glob
+                raw_files = glob.glob(os.path.join(output_dir, "raw_*.json"))
+                if raw_files:
+                    for raw_file in raw_files:
+                        os.remove(raw_file)
+                    print(f"Removed {len(raw_files)} raw data files, keeping existing report sections")
+                else:
+                    print(f"No raw data files found to remove in {output_dir}")
+                # Continue with data collection (don't return)
             else:
                 print("Operation cancelled")
                 sys.exit(0)
