@@ -1,4 +1,5 @@
 {
-  "stats": "\n=== Email Statistics (last 7 days) ===\n\n\ud83d\udce5 Received: 201\n\ud83d\udce4 Sent: 0\n\ud83d\udce7 Unread: 201\n\u2b50 Important: 201\n\ud83d\udcca Daily average received: 28.7\n\ud83d\udcca Daily average sent: 0.0\n\n=== Top Senders ===\n   notifications@github.com: 20 emails\n   ammar@hebbia.ai: 1 emails\n   rob.day@hebbia.ai: 1 emails\n\n=== Top Email Domains ===\n   github.com: 20 emails\n   hebbia.ai: 2 emails\n",
-  "sent": "\n=== Sent Messages (last 7 days) ===\n\nNo messages found.\n"
+  "stats": "",
+  "sent_emails": "",
+  "received_emails": ""
 }

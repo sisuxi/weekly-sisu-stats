@@ -1,5 +1,5 @@
 {
-  "my_issues": "{\n  \"data\": {\n    \"issues\": {\n      \"nodes\": []\n    }\n  }\n}\n",
-  "high_priority": "{\n  \"data\": {\n    \"issues\": {\n      \"nodes\": []\n    }\n  }\n}\n",
-  "created": "{\n  \"data\": {\n    \"issues\": {\n      \"nodes\": []\n    }\n  }\n}\n"
+  "my_issues": "Request Error: 400 Client Error: Bad Request for url: https://api.linear.app/graphql\n",
+  "completed_issues": "{\n  \"data\": {\n    \"issues\": {\n      \"nodes\": []\n    }\n  }\n}\n",
+  "high_priority_issues": "Request Error: 400 Client Error: Bad Request for url: https://api.linear.app/graphql\n"
 }

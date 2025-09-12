@@ -1,227 +1,6 @@
 {
   "prs_created": [
     {
-      "createdAt": "2025-09-12T02:30:59Z",
-      "labels": [],
-      "number": 35,
-      "repository": {
-        "name": "sisu-tools",
-        "nameWithOwner": "hebbia/sisu-tools"
-      },
-      "state": "merged",
-      "title": "feat: improve JSON output formatting for human readability",
-      "updatedAt": "2025-09-12T02:31:12Z",
-      "url": "https://github.com/hebbia/sisu-tools/pull/35"
-    },
-    {
-      "createdAt": "2025-09-11T22:22:20Z",
-      "labels": [],
-      "number": 34,
-      "repository": {
-        "name": "sisu-tools",
-        "nameWithOwner": "hebbia/sisu-tools"
-      },
-      "state": "merged",
-      "title": "Standardize JSON output formatting across all tools",
-      "updatedAt": "2025-09-11T22:22:30Z",
-      "url": "https://github.com/hebbia/sisu-tools/pull/34"
-    },
-    {
-      "createdAt": "2025-09-11T20:07:55Z",
-      "labels": [],
-      "number": 13771,
-      "repository": {
-        "name": "mono",
-        "nameWithOwner": "hebbia/mono"
-      },
-      "state": "merged",
-      "title": "feat: add alembic version check to create-migration.sh",
-      "updatedAt": "2025-09-11T21:14:25Z",
-      "url": "https://github.com/hebbia/mono/pull/13771"
-    },
-    {
-      "createdAt": "2025-09-11T19:16:31Z",
-      "labels": [],
-      "number": 13766,
-      "repository": {
-        "name": "mono",
-        "nameWithOwner": "hebbia/mono"
-      },
-      "state": "merged",
-      "title": "Fix cells table index definitions to prevent migration conflicts",
-      "updatedAt": "2025-09-11T19:57:50Z",
-      "url": "https://github.com/hebbia/mono/pull/13766"
-    },
-    {
-      "createdAt": "2025-09-11T18:37:04Z",
-      "labels": [],
-      "number": 33,
-      "repository": {
-        "name": "sisu-tools",
-        "nameWithOwner": "hebbia/sisu-tools"
-      },
-      "state": "merged",
-      "title": "docs: enhance database and LaunchDarkly command documentation",
-      "updatedAt": "2025-09-11T18:37:13Z",
-      "url": "https://github.com/hebbia/sisu-tools/pull/33"
-    },
-    {
-      "createdAt": "2025-09-10T17:56:29Z",
-      "labels": [],
-      "number": 9,
-      "repository": {
-        "name": "interview-guideline-and-questions-bank",
-        "nameWithOwner": "hebbia/interview-guideline-and-questions-bank"
-      },
-      "state": "merged",
-      "title": "Clarify that Practical Project interview itself is TBD",
-      "updatedAt": "2025-09-10T17:56:38Z",
-      "url": "https://github.com/hebbia/interview-guideline-and-questions-bank/pull/9"
-    },
-    {
-      "createdAt": "2025-09-10T15:21:52Z",
-      "labels": [],
-      "number": 13734,
-      "repository": {
-        "name": "mono",
-        "nameWithOwner": "hebbia/mono"
-      },
-      "state": "merged",
-      "title": "Simplify LaunchDarkly flag logic and use existing batching utility",
-      "updatedAt": "2025-09-12T00:56:28Z",
-      "url": "https://github.com/hebbia/mono/pull/13734"
-    },
-    {
-      "createdAt": "2025-09-10T04:51:52Z",
-      "labels": [],
-      "number": 32,
-      "repository": {
-        "name": "sisu-tools",
-        "nameWithOwner": "hebbia/sisu-tools"
-      },
-      "state": "merged",
-      "title": "docs: improve database explorer documentation",
-      "updatedAt": "2025-09-10T04:52:02Z",
-      "url": "https://github.com/hebbia/sisu-tools/pull/32"
-    },
-    {
-      "createdAt": "2025-09-09T18:46:42Z",
-      "labels": [],
-      "number": 8,
-      "repository": {
-        "name": "interview-guideline-and-questions-bank",
-        "nameWithOwner": "hebbia/interview-guideline-and-questions-bank"
-      },
-      "state": "merged",
-      "title": "Update interview working group assignments per Sept 9 meeting",
-      "updatedAt": "2025-09-09T18:46:50Z",
-      "url": "https://github.com/hebbia/interview-guideline-and-questions-bank/pull/8"
-    },
-    {
-      "createdAt": "2025-09-09T18:38:18Z",
-      "labels": [],
-      "number": 31,
-      "repository": {
-        "name": "sisu-tools",
-        "nameWithOwner": "hebbia/sisu-tools"
-      },
-      "state": "merged",
-      "title": "Update org structure documentation with team member details",
-      "updatedAt": "2025-09-09T18:38:26Z",
-      "url": "https://github.com/hebbia/sisu-tools/pull/31"
-    },
-    {
-      "createdAt": "2025-09-09T18:31:34Z",
-      "labels": [],
-      "number": 30,
-      "repository": {
-        "name": "sisu-tools",
-        "nameWithOwner": "hebbia/sisu-tools"
-      },
-      "state": "merged",
-      "title": "Move org structure documentation to commands folder",
-      "updatedAt": "2025-09-09T18:31:43Z",
-      "url": "https://github.com/hebbia/sisu-tools/pull/30"
-    },
-    {
-      "createdAt": "2025-09-09T14:55:18Z",
-      "labels": [],
-      "number": 29,
-      "repository": {
-        "name": "sisu-tools",
-        "nameWithOwner": "hebbia/sisu-tools"
-      },
-      "state": "merged",
-      "title": "Remove duplicated content between CLAUDE.md and README.md",
-      "updatedAt": "2025-09-09T14:55:27Z",
-      "url": "https://github.com/hebbia/sisu-tools/pull/29"
-    },
-    {
-      "createdAt": "2025-09-08T21:33:30Z",
-      "labels": [],
-      "number": 6,
-      "repository": {
-        "name": "interview-guideline-and-questions-bank",
-        "nameWithOwner": "hebbia/interview-guideline-and-questions-bank"
-      },
-      "state": "merged",
-      "title": "Streamline interview process for P3+ hiring with unified structure",
-      "updatedAt": "2025-09-09T00:52:49Z",
-      "url": "https://github.com/hebbia/interview-guideline-and-questions-bank/pull/6"
-    },
-    {
-      "createdAt": "2025-09-08T15:03:55Z",
-      "labels": [],
-      "number": 5,
-      "repository": {
-        "name": "interview-guideline-and-questions-bank",
-        "nameWithOwner": "hebbia/interview-guideline-and-questions-bank"
-      },
-      "state": "merged",
-      "title": "Update terminology from 'GitHub migration' to 'Doc as Code'",
-      "updatedAt": "2025-09-08T15:04:06Z",
-      "url": "https://github.com/hebbia/interview-guideline-and-questions-bank/pull/5"
-    },
-    {
-      "createdAt": "2025-09-07T03:00:54Z",
-      "labels": [],
-      "number": 28,
-      "repository": {
-        "name": "sisu-tools",
-        "nameWithOwner": "hebbia/sisu-tools"
-      },
-      "state": "merged",
-      "title": "Add checkpoint PR practice to development workflow",
-      "updatedAt": "2025-09-07T03:01:04Z",
-      "url": "https://github.com/hebbia/sisu-tools/pull/28"
-    },
-    {
-      "createdAt": "2025-09-07T02:58:16Z",
-      "labels": [],
-      "number": 27,
-      "repository": {
-        "name": "sisu-tools",
-        "nameWithOwner": "hebbia/sisu-tools"
-      },
-      "state": "merged",
-      "title": "Update CLAUDE.md to reflect new universal features",
-      "updatedAt": "2025-09-07T02:58:25Z",
-      "url": "https://github.com/hebbia/sisu-tools/pull/27"
-    },
-    {
-      "createdAt": "2025-09-07T02:56:55Z",
-      "labels": [],
-      "number": 26,
-      "repository": {
-        "name": "sisu-tools",
-        "nameWithOwner": "hebbia/sisu-tools"
-      },
-      "state": "merged",
-      "title": "Add comprehensive date range filtering and URL generation to all explorer tools",
-      "updatedAt": "2025-09-07T02:57:07Z",
-      "url": "https://github.com/hebbia/sisu-tools/pull/26"
-    },
-    {
       "createdAt": "2025-09-06T04:29:50Z",
       "labels": [],
       "number": 25,
@@ -389,441 +168,231 @@
       "title": "Rename token.json to calendar_token.json for consistency",
       "updatedAt": "2025-09-06T01:56:46Z",
       "url": "https://github.com/hebbia/sisu-tools/pull/13"
-    }
-  ],
-  "prs_reviewed": [
-    {
-      "author": {
-        "id": "U_kgDODYruhg",
-        "is_bot": false,
-        "login": "sisuxi",
-        "type": "User",
-        "url": "https://github.com/sisuxi"
-      },
-      "number": 13766,
-      "repository": {
-        "name": "mono",
-        "nameWithOwner": "hebbia/mono"
-      },
-      "title": "Fix cells table index definitions to prevent migration conflicts",
-      "url": "https://github.com/hebbia/mono/pull/13766"
     },
     {
-      "author": {
-        "id": "U_kgDODYruhg",
-        "is_bot": false,
-        "login": "sisuxi",
-        "type": "User",
-        "url": "https://github.com/sisuxi"
-      },
-      "number": 13734,
-      "repository": {
-        "name": "mono",
-        "nameWithOwner": "hebbia/mono"
-      },
-      "title": "Simplify LaunchDarkly flag logic and use existing batching utility",
-      "url": "https://github.com/hebbia/mono/pull/13734"
-    },
-    {
-      "author": {
-        "id": "MDQ6VXNlcjgzNDQzOTM=",
-        "is_bot": false,
-        "login": "ammuh",
-        "type": "User",
-        "url": "https://github.com/ammuh"
-      },
-      "number": 13727,
-      "repository": {
-        "name": "mono",
-        "nameWithOwner": "hebbia/mono"
-      },
-      "title": "reprompt pr reviews",
-      "url": "https://github.com/hebbia/mono/pull/13727"
-    },
-    {
-      "author": {
-        "id": "U_kgDOCrncfQ",
-        "is_bot": false,
-        "login": "wilsonaurus",
-        "type": "User",
-        "url": "https://github.com/wilsonaurus"
-      },
-      "number": 13658,
-      "repository": {
-        "name": "mono",
-        "nameWithOwner": "hebbia/mono"
-      },
-      "title": "perf: work_mem optimizations for get rows queries",
-      "url": "https://github.com/hebbia/mono/pull/13658"
-    },
-    {
-      "author": {
-        "id": "U_kgDODOjQDw",
-        "is_bot": false,
-        "login": "jon-hebbia",
-        "type": "User",
-        "url": "https://github.com/jon-hebbia"
-      },
-      "number": 13654,
-      "repository": {
-        "name": "mono",
-        "nameWithOwner": "hebbia/mono"
-      },
-      "title": "Add Third Bridge DocumentScope Enum",
-      "url": "https://github.com/hebbia/mono/pull/13654"
-    },
-    {
-      "author": {
-        "id": "U_kgDODYruhg",
-        "is_bot": false,
-        "login": "sisuxi",
-        "type": "User",
-        "url": "https://github.com/sisuxi"
-      },
-      "number": 13625,
-      "repository": {
-        "name": "mono",
-        "nameWithOwner": "hebbia/mono"
-      },
-      "title": "feat: add concurrent index creation support for migrations",
-      "url": "https://github.com/hebbia/mono/pull/13625"
-    },
-    {
-      "author": {
-        "id": "U_kgDODYruhg",
-        "is_bot": false,
-        "login": "sisuxi",
-        "type": "User",
-        "url": "https://github.com/sisuxi"
-      },
-      "number": 13619,
-      "repository": {
-        "name": "mono",
-        "nameWithOwner": "hebbia/mono"
-      },
-      "title": "feat: add logging to verify N+1 query protection in get_rows_utils",
-      "url": "https://github.com/hebbia/mono/pull/13619"
-    },
-    {
-      "author": {
-        "id": "U_kgDODYruhg",
-        "is_bot": false,
-        "login": "sisuxi",
-        "type": "User",
-        "url": "https://github.com/sisuxi"
-      },
-      "number": 13608,
-      "repository": {
-        "name": "mono",
-        "nameWithOwner": "hebbia/mono"
-      },
-      "title": "Set explicit 5-second database connection timeout",
-      "url": "https://github.com/hebbia/mono/pull/13608"
-    },
-    {
-      "author": {
-        "id": "U_kgDODYruhg",
-        "is_bot": false,
-        "login": "sisuxi",
-        "type": "User",
-        "url": "https://github.com/sisuxi"
-      },
-      "number": 13568,
-      "repository": {
-        "name": "mono",
-        "nameWithOwner": "hebbia/mono"
-      },
-      "title": "feat: Add comprehensive database connection pool monitoring",
-      "url": "https://github.com/hebbia/mono/pull/13568"
-    },
-    {
-      "author": {
-        "id": "U_kgDODYruhg",
-        "is_bot": false,
-        "login": "sisuxi",
-        "type": "User",
-        "url": "https://github.com/sisuxi"
-      },
-      "number": 13537,
-      "repository": {
-        "name": "mono",
-        "nameWithOwner": "hebbia/mono"
-      },
-      "title": "perf: add database indexes to optimize get_rows function",
-      "url": "https://github.com/hebbia/mono/pull/13537"
-    }
-  ],
-  "prs_involved": [
-    {
-      "author": {
-        "id": "U_kgDODYruhg",
-        "is_bot": false,
-        "login": "sisuxi",
-        "type": "User",
-        "url": "https://github.com/sisuxi"
-      },
-      "number": 35,
+      "createdAt": "2025-09-06T01:50:44Z",
+      "labels": [],
+      "number": 12,
       "repository": {
         "name": "sisu-tools",
         "nameWithOwner": "hebbia/sisu-tools"
       },
-      "title": "feat: improve JSON output formatting for human readability"
+      "state": "merged",
+      "title": "Add Gmail Explorer tool for email analysis",
+      "updatedAt": "2025-09-06T01:50:55Z",
+      "url": "https://github.com/hebbia/sisu-tools/pull/12"
     },
     {
-      "author": {
-        "id": "U_kgDODYruhg",
-        "is_bot": false,
-        "login": "sisuxi",
-        "type": "User",
-        "url": "https://github.com/sisuxi"
-      },
-      "number": 34,
+      "createdAt": "2025-09-06T01:42:50Z",
+      "labels": [],
+      "number": 11,
       "repository": {
         "name": "sisu-tools",
         "nameWithOwner": "hebbia/sisu-tools"
       },
-      "title": "Standardize JSON output formatting across all tools"
+      "state": "merged",
+      "title": "Update Drive Explorer documentation with usage learnings",
+      "updatedAt": "2025-09-06T01:43:01Z",
+      "url": "https://github.com/hebbia/sisu-tools/pull/11"
     },
     {
-      "author": {
-        "id": "U_kgDODYruhg",
-        "is_bot": false,
-        "login": "sisuxi",
-        "type": "User",
-        "url": "https://github.com/sisuxi"
-      },
-      "number": 13771,
-      "repository": {
-        "name": "mono",
-        "nameWithOwner": "hebbia/mono"
-      },
-      "title": "feat: add alembic version check to create-migration.sh"
-    },
-    {
-      "author": {
-        "id": "U_kgDODYruhg",
-        "is_bot": false,
-        "login": "sisuxi",
-        "type": "User",
-        "url": "https://github.com/sisuxi"
-      },
-      "number": 13766,
-      "repository": {
-        "name": "mono",
-        "nameWithOwner": "hebbia/mono"
-      },
-      "title": "Fix cells table index definitions to prevent migration conflicts"
-    },
-    {
-      "author": {
-        "id": "U_kgDODYruhg",
-        "is_bot": false,
-        "login": "sisuxi",
-        "type": "User",
-        "url": "https://github.com/sisuxi"
-      },
-      "number": 33,
+      "createdAt": "2025-09-06T01:39:44Z",
+      "labels": [],
+      "number": 10,
       "repository": {
         "name": "sisu-tools",
         "nameWithOwner": "hebbia/sisu-tools"
       },
-      "title": "docs: enhance database and LaunchDarkly command documentation"
+      "state": "merged",
+      "title": "Consolidate Google OAuth credentials to single file",
+      "updatedAt": "2025-09-06T01:39:54Z",
+      "url": "https://github.com/hebbia/sisu-tools/pull/10"
     },
     {
-      "author": {
-        "id": "U_kgDODYruhg",
-        "is_bot": false,
-        "login": "sisuxi",
-        "type": "User",
-        "url": "https://github.com/sisuxi"
-      },
+      "createdAt": "2025-09-06T01:34:53Z",
+      "labels": [],
       "number": 9,
       "repository": {
-        "name": "interview-guideline-and-questions-bank",
-        "nameWithOwner": "hebbia/interview-guideline-and-questions-bank"
-      },
-      "title": "Clarify that Practical Project interview itself is TBD"
-    },
-    {
-      "author": {
-        "id": "U_kgDODYruhg",
-        "is_bot": false,
-        "login": "sisuxi",
-        "type": "User",
-        "url": "https://github.com/sisuxi"
-      },
-      "number": 13734,
-      "repository": {
-        "name": "mono",
-        "nameWithOwner": "hebbia/mono"
-      },
-      "title": "Simplify LaunchDarkly flag logic and use existing batching utility"
-    },
-    {
-      "author": {
-        "id": "U_kgDODYruhg",
-        "is_bot": false,
-        "login": "sisuxi",
-        "type": "User",
-        "url": "https://github.com/sisuxi"
-      },
-      "number": 32,
-      "repository": {
         "name": "sisu-tools",
         "nameWithOwner": "hebbia/sisu-tools"
       },
-      "title": "docs: improve database explorer documentation"
+      "state": "merged",
+      "title": "Add Google Drive Explorer tool for activity tracking",
+      "updatedAt": "2025-09-06T01:35:03Z",
+      "url": "https://github.com/hebbia/sisu-tools/pull/9"
     },
     {
-      "author": {
-        "id": "MDQ6VXNlcjgzNDQzOTM=",
-        "is_bot": false,
-        "login": "ammuh",
-        "type": "User",
-        "url": "https://github.com/ammuh"
-      },
-      "number": 13727,
-      "repository": {
-        "name": "mono",
-        "nameWithOwner": "hebbia/mono"
-      },
-      "title": "reprompt pr reviews"
-    },
-    {
-      "author": {
-        "id": "U_kgDODYruhg",
-        "is_bot": false,
-        "login": "sisuxi",
-        "type": "User",
-        "url": "https://github.com/sisuxi"
-      },
+      "createdAt": "2025-09-06T01:29:32Z",
+      "labels": [],
       "number": 8,
       "repository": {
-        "name": "interview-guideline-and-questions-bank",
-        "nameWithOwner": "hebbia/interview-guideline-and-questions-bank"
+        "name": "sisu-tools",
+        "nameWithOwner": "hebbia/sisu-tools"
       },
-      "title": "Update interview working group assignments per Sept 9 meeting"
+      "state": "merged",
+      "title": "Add Google Calendar Explorer tool for schedule analysis",
+      "updatedAt": "2025-09-06T01:29:42Z",
+      "url": "https://github.com/hebbia/sisu-tools/pull/8"
     },
     {
-      "author": {
-        "id": "U_kgDODYruhg",
-        "is_bot": false,
-        "login": "sisuxi",
-        "type": "User",
-        "url": "https://github.com/sisuxi"
-      },
-      "number": 31,
+      "createdAt": "2025-09-06T01:07:02Z",
+      "labels": [],
+      "number": 7,
       "repository": {
         "name": "sisu-tools",
         "nameWithOwner": "hebbia/sisu-tools"
       },
-      "title": "Update org structure documentation with team member details"
+      "state": "merged",
+      "title": "Add LaunchDarkly Explorer tool for feature flag management",
+      "updatedAt": "2025-09-06T01:07:04Z",
+      "url": "https://github.com/hebbia/sisu-tools/pull/7"
     },
     {
-      "author": {
-        "id": "U_kgDODYruhg",
-        "is_bot": false,
-        "login": "sisuxi",
-        "type": "User",
-        "url": "https://github.com/sisuxi"
-      },
-      "number": 30,
-      "repository": {
-        "name": "sisu-tools",
-        "nameWithOwner": "hebbia/sisu-tools"
-      },
-      "title": "Move org structure documentation to commands folder"
-    },
-    {
-      "author": {
-        "id": "U_kgDODYruhg",
-        "is_bot": false,
-        "login": "sisuxi",
-        "type": "User",
-        "url": "https://github.com/sisuxi"
-      },
-      "number": 29,
-      "repository": {
-        "name": "sisu-tools",
-        "nameWithOwner": "hebbia/sisu-tools"
-      },
-      "title": "Remove duplicated content between CLAUDE.md and README.md"
-    },
-    {
-      "author": {
-        "id": "U_kgDODYruhg",
-        "is_bot": false,
-        "login": "sisuxi",
-        "type": "User",
-        "url": "https://github.com/sisuxi"
-      },
+      "createdAt": "2025-09-06T00:57:33Z",
+      "labels": [],
       "number": 6,
       "repository": {
-        "name": "interview-guideline-and-questions-bank",
-        "nameWithOwner": "hebbia/interview-guideline-and-questions-bank"
+        "name": "sisu-tools",
+        "nameWithOwner": "hebbia/sisu-tools"
       },
-      "title": "Streamline interview process for P3+ hiring with unified structure"
+      "state": "merged",
+      "title": "Add comprehensive Linear team IDs to documentation",
+      "updatedAt": "2025-09-06T00:57:35Z",
+      "url": "https://github.com/hebbia/sisu-tools/pull/6"
     },
     {
-      "author": {
-        "id": "U_kgDODYruhg",
-        "is_bot": false,
-        "login": "sisuxi",
-        "type": "User",
-        "url": "https://github.com/sisuxi"
-      },
+      "createdAt": "2025-09-06T00:44:37Z",
+      "labels": [],
       "number": 5,
       "repository": {
+        "name": "sisu-tools",
+        "nameWithOwner": "hebbia/sisu-tools"
+      },
+      "state": "merged",
+      "title": "Add Linear Explorer tool and update team names",
+      "updatedAt": "2025-09-06T00:46:38Z",
+      "url": "https://github.com/hebbia/sisu-tools/pull/5"
+    },
+    {
+      "createdAt": "2025-09-06T00:05:25Z",
+      "labels": [],
+      "number": 3,
+      "repository": {
         "name": "interview-guideline-and-questions-bank",
         "nameWithOwner": "hebbia/interview-guideline-and-questions-bank"
       },
-      "title": "Update terminology from 'GitHub migration' to 'Doc as Code'"
+      "state": "merged",
+      "title": "Update README support section for Slack channel",
+      "updatedAt": "2025-09-06T00:05:30Z",
+      "url": "https://github.com/hebbia/interview-guideline-and-questions-bank/pull/3"
     },
     {
-      "author": {
-        "id": "U_kgDODYruhg",
-        "is_bot": false,
-        "login": "sisuxi",
-        "type": "User",
-        "url": "https://github.com/sisuxi"
-      },
-      "number": 28,
+      "createdAt": "2025-09-06T00:02:12Z",
+      "labels": [],
+      "number": 4,
       "repository": {
         "name": "sisu-tools",
         "nameWithOwner": "hebbia/sisu-tools"
       },
-      "title": "Add checkpoint PR practice to development workflow"
+      "state": "merged",
+      "title": "Update engineering team names to reflect current structure",
+      "updatedAt": "2025-09-06T00:03:29Z",
+      "url": "https://github.com/hebbia/sisu-tools/pull/4"
     },
     {
-      "author": {
-        "id": "U_kgDODYruhg",
-        "is_bot": false,
-        "login": "sisuxi",
-        "type": "User",
-        "url": "https://github.com/sisuxi"
-      },
-      "number": 27,
+      "createdAt": "2025-09-05T21:01:59Z",
+      "labels": [],
+      "number": 3,
       "repository": {
         "name": "sisu-tools",
         "nameWithOwner": "hebbia/sisu-tools"
       },
-      "title": "Update CLAUDE.md to reflect new universal features"
+      "state": "merged",
+      "title": "Update command file paths and add credential management guidance",
+      "updatedAt": "2025-09-05T21:02:10Z",
+      "url": "https://github.com/hebbia/sisu-tools/pull/3"
     },
     {
-      "author": {
-        "id": "U_kgDODYruhg",
-        "is_bot": false,
-        "login": "sisuxi",
-        "type": "User",
-        "url": "https://github.com/sisuxi"
-      },
-      "number": 26,
+      "createdAt": "2025-09-05T20:55:10Z",
+      "labels": [],
+      "number": 2,
       "repository": {
         "name": "sisu-tools",
         "nameWithOwner": "hebbia/sisu-tools"
       },
-      "title": "Add comprehensive date range filtering and URL generation to all explorer tools"
+      "state": "merged",
+      "title": "Apply Hebbia writing guidelines to improve documentation clarity",
+      "updatedAt": "2025-09-05T20:56:06Z",
+      "url": "https://github.com/hebbia/sisu-tools/pull/2"
     },
+    {
+      "createdAt": "2025-09-05T20:42:57Z",
+      "labels": [],
+      "number": 1,
+      "repository": {
+        "name": "sisu-tools",
+        "nameWithOwner": "hebbia/sisu-tools"
+      },
+      "state": "merged",
+      "title": "Add comprehensive documentation and tools for Hebbia development workflow",
+      "updatedAt": "2025-09-05T20:44:13Z",
+      "url": "https://github.com/hebbia/sisu-tools/pull/1"
+    },
+    {
+      "createdAt": "2025-09-05T20:26:37Z",
+      "labels": [],
+      "number": 2,
+      "repository": {
+        "name": "interview-guideline-and-questions-bank",
+        "nameWithOwner": "hebbia/interview-guideline-and-questions-bank"
+      },
+      "state": "merged",
+      "title": "Add comprehensive interview framework documentation",
+      "updatedAt": "2025-09-05T20:41:43Z",
+      "url": "https://github.com/hebbia/interview-guideline-and-questions-bank/pull/2"
+    },
+    {
+      "createdAt": "2025-09-05T20:14:11Z",
+      "labels": [],
+      "number": 1,
+      "repository": {
+        "name": "interview-guideline-and-questions-bank",
+        "nameWithOwner": "hebbia/interview-guideline-and-questions-bank"
+      },
+      "state": "merged",
+      "title": "Add repository structure and maintenance guidelines",
+      "updatedAt": "2025-09-05T20:14:48Z",
+      "url": "https://github.com/hebbia/interview-guideline-and-questions-bank/pull/1"
+    },
+    {
+      "createdAt": "2025-09-05T18:12:21Z",
+      "labels": [],
+      "number": 13663,
+      "repository": {
+        "name": "mono",
+        "nameWithOwner": "hebbia/mono"
+      },
+      "state": "merged",
+      "title": "Hotfix 4.64.4: Cherry-pick work_mem optimization for get_rows queries",
+      "updatedAt": "2025-09-05T18:22:18Z",
+      "url": "https://github.com/hebbia/mono/pull/13663"
+    },
+    {
+      "createdAt": "2025-09-05T18:05:29Z",
+      "labels": [],
+      "number": 13662,
+      "repository": {
+        "name": "mono",
+        "nameWithOwner": "hebbia/mono"
+      },
+      "state": "closed",
+      "title": "Hotfix 4.64.4: Cherry-pick work_mem optimization for get_rows queries",
+      "updatedAt": "2025-09-05T18:12:09Z",
+      "url": "https://github.com/hebbia/mono/pull/13662"
+    }
+  ],
+  "prs_reviewed": [],
+  "prs_involved": [
     {
       "author": {
         "id": "U_kgDODYruhg",
@@ -1003,117 +572,279 @@
         "nameWithOwner": "hebbia/sisu-tools"
       },
       "title": "Add Slack Explorer tool for workspace data analysis"
+    },
+    {
+      "author": {
+        "id": "U_kgDODYruhg",
+        "is_bot": false,
+        "login": "sisuxi",
+        "type": "User",
+        "url": "https://github.com/sisuxi"
+      },
+      "number": 13,
+      "repository": {
+        "name": "sisu-tools",
+        "nameWithOwner": "hebbia/sisu-tools"
+      },
+      "title": "Rename token.json to calendar_token.json for consistency"
+    },
+    {
+      "author": {
+        "id": "U_kgDODYruhg",
+        "is_bot": false,
+        "login": "sisuxi",
+        "type": "User",
+        "url": "https://github.com/sisuxi"
+      },
+      "number": 12,
+      "repository": {
+        "name": "sisu-tools",
+        "nameWithOwner": "hebbia/sisu-tools"
+      },
+      "title": "Add Gmail Explorer tool for email analysis"
+    },
+    {
+      "author": {
+        "id": "U_kgDODYruhg",
+        "is_bot": false,
+        "login": "sisuxi",
+        "type": "User",
+        "url": "https://github.com/sisuxi"
+      },
+      "number": 11,
+      "repository": {
+        "name": "sisu-tools",
+        "nameWithOwner": "hebbia/sisu-tools"
+      },
+      "title": "Update Drive Explorer documentation with usage learnings"
+    },
+    {
+      "author": {
+        "id": "U_kgDODYruhg",
+        "is_bot": false,
+        "login": "sisuxi",
+        "type": "User",
+        "url": "https://github.com/sisuxi"
+      },
+      "number": 10,
+      "repository": {
+        "name": "sisu-tools",
+        "nameWithOwner": "hebbia/sisu-tools"
+      },
+      "title": "Consolidate Google OAuth credentials to single file"
+    },
+    {
+      "author": {
+        "id": "U_kgDODYruhg",
+        "is_bot": false,
+        "login": "sisuxi",
+        "type": "User",
+        "url": "https://github.com/sisuxi"
+      },
+      "number": 9,
+      "repository": {
+        "name": "sisu-tools",
+        "nameWithOwner": "hebbia/sisu-tools"
+      },
+      "title": "Add Google Drive Explorer tool for activity tracking"
+    },
+    {
+      "author": {
+        "id": "U_kgDODYruhg",
+        "is_bot": false,
+        "login": "sisuxi",
+        "type": "User",
+        "url": "https://github.com/sisuxi"
+      },
+      "number": 8,
+      "repository": {
+        "name": "sisu-tools",
+        "nameWithOwner": "hebbia/sisu-tools"
+      },
+      "title": "Add Google Calendar Explorer tool for schedule analysis"
+    },
+    {
+      "author": {
+        "id": "U_kgDODYruhg",
+        "is_bot": false,
+        "login": "sisuxi",
+        "type": "User",
+        "url": "https://github.com/sisuxi"
+      },
+      "number": 7,
+      "repository": {
+        "name": "sisu-tools",
+        "nameWithOwner": "hebbia/sisu-tools"
+      },
+      "title": "Add LaunchDarkly Explorer tool for feature flag management"
+    },
+    {
+      "author": {
+        "id": "U_kgDODYruhg",
+        "is_bot": false,
+        "login": "sisuxi",
+        "type": "User",
+        "url": "https://github.com/sisuxi"
+      },
+      "number": 6,
+      "repository": {
+        "name": "sisu-tools",
+        "nameWithOwner": "hebbia/sisu-tools"
+      },
+      "title": "Add comprehensive Linear team IDs to documentation"
+    },
+    {
+      "author": {
+        "id": "U_kgDODYruhg",
+        "is_bot": false,
+        "login": "sisuxi",
+        "type": "User",
+        "url": "https://github.com/sisuxi"
+      },
+      "number": 5,
+      "repository": {
+        "name": "sisu-tools",
+        "nameWithOwner": "hebbia/sisu-tools"
+      },
+      "title": "Add Linear Explorer tool and update team names"
+    },
+    {
+      "author": {
+        "id": "U_kgDODYruhg",
+        "is_bot": false,
+        "login": "sisuxi",
+        "type": "User",
+        "url": "https://github.com/sisuxi"
+      },
+      "number": 3,
+      "repository": {
+        "name": "interview-guideline-and-questions-bank",
+        "nameWithOwner": "hebbia/interview-guideline-and-questions-bank"
+      },
+      "title": "Update README support section for Slack channel"
+    },
+    {
+      "author": {
+        "id": "U_kgDODYruhg",
+        "is_bot": false,
+        "login": "sisuxi",
+        "type": "User",
+        "url": "https://github.com/sisuxi"
+      },
+      "number": 4,
+      "repository": {
+        "name": "sisu-tools",
+        "nameWithOwner": "hebbia/sisu-tools"
+      },
+      "title": "Update engineering team names to reflect current structure"
+    },
+    {
+      "author": {
+        "id": "U_kgDODYruhg",
+        "is_bot": false,
+        "login": "sisuxi",
+        "type": "User",
+        "url": "https://github.com/sisuxi"
+      },
+      "number": 3,
+      "repository": {
+        "name": "sisu-tools",
+        "nameWithOwner": "hebbia/sisu-tools"
+      },
+      "title": "Update command file paths and add credential management guidance"
+    },
+    {
+      "author": {
+        "id": "U_kgDODYruhg",
+        "is_bot": false,
+        "login": "sisuxi",
+        "type": "User",
+        "url": "https://github.com/sisuxi"
+      },
+      "number": 2,
+      "repository": {
+        "name": "sisu-tools",
+        "nameWithOwner": "hebbia/sisu-tools"
+      },
+      "title": "Apply Hebbia writing guidelines to improve documentation clarity"
+    },
+    {
+      "author": {
+        "id": "U_kgDODYruhg",
+        "is_bot": false,
+        "login": "sisuxi",
+        "type": "User",
+        "url": "https://github.com/sisuxi"
+      },
+      "number": 1,
+      "repository": {
+        "name": "sisu-tools",
+        "nameWithOwner": "hebbia/sisu-tools"
+      },
+      "title": "Add comprehensive documentation and tools for Hebbia development workflow"
+    },
+    {
+      "author": {
+        "id": "U_kgDODYruhg",
+        "is_bot": false,
+        "login": "sisuxi",
+        "type": "User",
+        "url": "https://github.com/sisuxi"
+      },
+      "number": 2,
+      "repository": {
+        "name": "interview-guideline-and-questions-bank",
+        "nameWithOwner": "hebbia/interview-guideline-and-questions-bank"
+      },
+      "title": "Add comprehensive interview framework documentation"
+    },
+    {
+      "author": {
+        "id": "U_kgDODYruhg",
+        "is_bot": false,
+        "login": "sisuxi",
+        "type": "User",
+        "url": "https://github.com/sisuxi"
+      },
+      "number": 1,
+      "repository": {
+        "name": "interview-guideline-and-questions-bank",
+        "nameWithOwner": "hebbia/interview-guideline-and-questions-bank"
+      },
+      "title": "Add repository structure and maintenance guidelines"
+    },
+    {
+      "author": {
+        "id": "U_kgDODYruhg",
+        "is_bot": false,
+        "login": "sisuxi",
+        "type": "User",
+        "url": "https://github.com/sisuxi"
+      },
+      "number": 13663,
+      "repository": {
+        "name": "mono",
+        "nameWithOwner": "hebbia/mono"
+      },
+      "title": "Hotfix 4.64.4: Cherry-pick work_mem optimization for get_rows queries"
+    },
+    {
+      "author": {
+        "id": "U_kgDODYruhg",
+        "is_bot": false,
+        "login": "sisuxi",
+        "type": "User",
+        "url": "https://github.com/sisuxi"
+      },
+      "number": 13662,
+      "repository": {
+        "name": "mono",
+        "nameWithOwner": "hebbia/mono"
+      },
+      "title": "Hotfix 4.64.4: Cherry-pick work_mem optimization for get_rows queries"
     }
   ],
   "commits": [
-    {
-      "commit": {
-        "author": {
-          "date": "2025-09-08T11:04:03-04:00",
-          "email": "sisu.xi@hebbia.ai",
-          "name": "Sisu Xi"
-        },
-        "comment_count": 0,
-        "committer": {
-          "date": "2025-09-08T11:04:03-04:00",
-          "email": "noreply@github.com",
-          "name": "GitHub"
-        },
-        "message": "Merge pull request #5 from hebbia/update-github-migration-to-doc-as-code\n\nUpdate terminology from 'GitHub migration' to 'Doc as Code'",
-        "tree": {
-          "sha": "d7cad94747a87f6961251f6c6305b4b5117cf76e"
-        }
-      },
-      "repository": {
-        "description": "Hebbia Eng Interview Guidelines and Questions Bank",
-        "fullName": "hebbia/interview-guideline-and-questions-bank",
-        "id": "R_kgDOPqoQUw",
-        "isFork": false,
-        "isPrivate": true,
-        "name": "interview-guideline-and-questions-bank",
-        "owner": {
-          "id": "MDEyOk9yZ2FuaXphdGlvbjYyMjMzMTIx",
-          "is_bot": false,
-          "login": "hebbia",
-          "type": "Organization",
-          "url": "https://github.com/hebbia"
-        },
-        "url": "https://github.com/hebbia/interview-guideline-and-questions-bank"
-      },
-      "sha": "3a2c6524893c89c1576bb4426c9d384da7c94bcf"
-    },
-    {
-      "commit": {
-        "author": {
-          "date": "2025-09-09T14:46:49-04:00",
-          "email": "sisu.xi@hebbia.ai",
-          "name": "Sisu Xi"
-        },
-        "comment_count": 0,
-        "committer": {
-          "date": "2025-09-09T14:46:49-04:00",
-          "email": "noreply@github.com",
-          "name": "GitHub"
-        },
-        "message": "Update interview working group assignments per Sept 9 meeting (#8)\n\n## Summary\nUpdates the interview process documentation based on the September 9th\nmeeting notes from issue #7.\n\n## Changes\n- \u2705 Renamed \"Block DRI Pre-assignments\" to \"Block Working Group\nPreassignment\"\n- \u2705 Replaced individual DRI column with Frontend/Backend working group\nassignments\n- \u2705 Updated all names to full names:\n  - Shirley \u2192 Shirley Kabir\n  - Snow \u2192 Snow Kang\n  - Ellis \u2192 Victor Geary (corrected from initial Eli Raich)\n  - Aabhas \u2192 Aabhas Sharma\n- \u2705 Consolidated DRI and Working Group responsibilities into single\nsection\n- \u2705 Removed \"Action Items for Sept 22nd Onsite\" section\n- \u2705 Moved Scott Bianco's logistics responsibilities to Process\nVariations section\n- \u2705 Added lunch coordination details for referred candidates\n\n## Files Modified\n- `Overall.md` - Updated working group assignments and responsibilities\n- `System_Design.md` - Updated DRI names to match new structure\n\nCloses #7\n\n\ud83e\udd16 Generated with [Claude Code](https://claude.ai/code)",
-        "tree": {
-          "sha": "4442a9682a4982d52549440405db4f56dd9d9cc9"
-        }
-      },
-      "repository": {
-        "description": "Hebbia Eng Interview Guidelines and Questions Bank",
-        "fullName": "hebbia/interview-guideline-and-questions-bank",
-        "id": "R_kgDOPqoQUw",
-        "isFork": false,
-        "isPrivate": true,
-        "name": "interview-guideline-and-questions-bank",
-        "owner": {
-          "id": "MDEyOk9yZ2FuaXphdGlvbjYyMjMzMTIx",
-          "is_bot": false,
-          "login": "hebbia",
-          "type": "Organization",
-          "url": "https://github.com/hebbia"
-        },
-        "url": "https://github.com/hebbia/interview-guideline-and-questions-bank"
-      },
-      "sha": "999785c58f1ee85128de4c02e7e104dc1fe2fb18"
-    },
-    {
-      "commit": {
-        "author": {
-          "date": "2025-09-08T20:52:47-04:00",
-          "email": "sisu.xi@hebbia.ai",
-          "name": "Sisu Xi"
-        },
-        "comment_count": 0,
-        "committer": {
-          "date": "2025-09-08T20:52:47-04:00",
-          "email": "noreply@github.com",
-          "name": "GitHub"
-        },
-        "message": "Streamline interview process for P3+ hiring with unified structure\n\n## Summary\nComprehensive update to focus interview process exclusively on P3+\nhiring with a unified structure and clear DRI assignments.\n\n## Major Changes\n\n### \ud83c\udfaf Process Simplification\n- **Focused on P3+ only**: Removed P1/P2 from scope to concentrate on\nsenior hiring\n- **Unified process**: Single interview structure for all P3+ levels\n(P3-P6)\n- **Exact timing**: Calculated precise durations (3.5 hours interview +\n1 hour lunch)\n\n### \ud83d\udccb Organization & Assignments\n- **DRI pre-assignments**: Clear ownership for each interview block\n  - Scott Bianco: Recruiter Screening\n  - Bowen Zhang: Coding Screen\n  - Ben Devore: Hiring Manager Screen\n  - Beshoi Genidy: Practical Coding\n  - Will Luer: System Design\n  - Sisu Xi: Technical Deep Dive\n  - Rob Day: HM + Behavior\n  - Aabhas Sharma & George Sivulka: Executive Interviews\n- **Working group established**: 8 engineers to review guidelines and\nprovide questions\n\n### \ud83d\udcdd Documentation Updates\n- **Living document approach**: Emphasized iterative nature and\ncontinuous refinement\n- **CLAUDE.md updated**: Added explicit PR/merge restrictions\n- **Resolved questions**: Marked 4 questions as resolved with clear\nreferences\n- **Removed redundancy**: Eliminated version history (tracked in git),\nduplicate building blocks section\n\n### \ud83d\ude80 Process Improvements\n- **Early exit policy**: Added for onsite interviews with Strong No\nratings\n- **Load distribution philosophy**: Pre-onsite handled by many\nengineers, senior folks for later stages\n- **Lunch clarification**: Non-evaluative, with engineer host\n- **Rating scale guidance**: Each block to define specific criteria by\nlevel\n\n### \ud83d\uddd3\ufe0f Timeline\n- September 10: DRI confirmation\n- September 19: At least 1 question per block\n- September 22: P5 onsite trial\n\n## Test Plan\n- [ ] Review with interview working group\n- [ ] Validate DRI assignments with named individuals\n- [ ] Confirm P5 trial logistics for September 22nd\n- [ ] Ensure all blocks have initial questions by September 19th\n\n\ud83e\udd16 Generated with [Claude Code](https://claude.ai/code)\n\n---------\n\nCo-authored-by: Sisu Xi <xisisu@gmail.com>\nCo-authored-by: Claude <noreply@anthropic.com>",
-        "tree": {
-          "sha": "feb7d9672748961801205af4157be53d87428ea7"
-        }
-      },
-      "repository": {
-        "description": "Hebbia Eng Interview Guidelines and Questions Bank",
-        "fullName": "hebbia/interview-guideline-and-questions-bank",
-        "id": "R_kgDOPqoQUw",
-        "isFork": false,
-        "isPrivate": true,
-        "name": "interview-guideline-and-questions-bank",
-        "owner": {
-          "id": "MDEyOk9yZ2FuaXphdGlvbjYyMjMzMTIx",
-          "is_bot": false,
-          "login": "hebbia",
-          "type": "Organization",
-          "url": "https://github.com/hebbia"
-        },
-        "url": "https://github.com/hebbia/interview-guideline-and-questions-bank"
-      },
-      "sha": "da755338b52642ff360565b9c1f6c46e5b9c5bb4"
-    },
     {
       "commit": {
         "author": {
@@ -1261,42 +992,6 @@
     {
       "commit": {
         "author": {
-          "date": "2025-09-10T13:56:36-04:00",
-          "email": "sisu.xi@hebbia.ai",
-          "name": "Sisu Xi"
-        },
-        "comment_count": 0,
-        "committer": {
-          "date": "2025-09-10T13:56:36-04:00",
-          "email": "noreply@github.com",
-          "name": "GitHub"
-        },
-        "message": "Clarify that Practical Project interview itself is TBD (#9)\n\n## Summary\n- Move the (TBD) indicator from the Details column to the Interview\nStage column for the Practical Project\n- This clarifies that the entire Practical Project interview is to be\ndetermined, not just its implementation details\n\n## Changes\n- Updated `Overall.md` to show `Practical Project **(TBD)**` in the\nfirst column instead of `**(TBD)** Design & Implementation exercise` in\nthe details column\n\n\ud83e\udd16 Generated with [Claude Code](https://claude.ai/code)",
-        "tree": {
-          "sha": "1ed67ce7bf9f92dc67bbf5f08d788ab313491aa1"
-        }
-      },
-      "repository": {
-        "description": "Hebbia Eng Interview Guidelines and Questions Bank",
-        "fullName": "hebbia/interview-guideline-and-questions-bank",
-        "id": "R_kgDOPqoQUw",
-        "isFork": false,
-        "isPrivate": true,
-        "name": "interview-guideline-and-questions-bank",
-        "owner": {
-          "id": "MDEyOk9yZ2FuaXphdGlvbjYyMjMzMTIx",
-          "is_bot": false,
-          "login": "hebbia",
-          "type": "Organization",
-          "url": "https://github.com/hebbia"
-        },
-        "url": "https://github.com/hebbia/interview-guideline-and-questions-bank"
-      },
-      "sha": "6ed989330835cd2b41f1a10ea768d1caedad54af"
-    },
-    {
-      "commit": {
-        "author": {
           "date": "2025-09-02T17:23:24-04:00",
           "email": "sisu.xi@hebbia.ai",
           "name": "Sisu Xi"
@@ -1437,222 +1132,6 @@
         "url": "https://github.com/hebbia/mono"
       },
       "sha": "edcd70fb77bfd101dabe7c6daf10b2720f3218aa"
-    },
-    {
-      "commit": {
-        "author": {
-          "date": "2025-09-11T15:57:49-04:00",
-          "email": "sisu.xi@hebbia.ai",
-          "name": "Sisu Xi"
-        },
-        "comment_count": 0,
-        "committer": {
-          "date": "2025-09-11T15:57:49-04:00",
-          "email": "noreply@github.com",
-          "name": "GitHub"
-        },
-        "message": "Fix cells table index definitions to prevent migration conflicts (#13766)\n\n## Summary\n- Fix problematic index definitions in `brain/models/cells.py` that were\ncausing `create-migration.sh` to fail\n- Replace `sa.text(\"updated_at DESC\")` with proper\n`postgresql_ops={\"updated_at\": \"DESC\"}` parameter\n- Allows Alembic's autogenerate to properly track these indexes without\nconflicts\n\n## Changes\n- **ix_cells_sheet_tab_versioned_col_hash_updated**: Now uses\n`postgresql_ops={\"updated_at\": \"DESC\"}`\n- **ix_cells_max_updated_at_per_sheet_tab**: Now uses\n`postgresql_ops={\"updated_at\": \"DESC\"}`\n\n## Test plan\n- [x] Verified migration script runs without index conflicts\n- [x] Generated test migration contains only `pass` statements (no\nspurious operations)\n- [x] Confirmed no duplicate or conflicting index operations in\nmigration\n- [x] Successfully tested `./create-migration.sh` - produces clean empty\nmigrations\n\n## Validation\nRan `./create-migration.sh \"test migration after cells index fix\"` and\nconfirmed it generates a clean migration with only `pass` statements,\nproving the index conflict issue is resolved.\n\n\ud83e\udd16 Generated with [Claude Code](https://claude.ai/code)\n\nCo-authored-by: Sisu Xi <xisisu@gmail.com>\nCo-authored-by: Claude <noreply@anthropic.com>",
-        "tree": {
-          "sha": "80e91facde3b9110ea7faa5b255bb9793ac78b30"
-        }
-      },
-      "repository": {
-        "description": "Python services monorepo",
-        "fullName": "hebbia/mono",
-        "id": "MDEwOlJlcG9zaXRvcnkzNDg0NzE4NjY=",
-        "isFork": false,
-        "isPrivate": true,
-        "name": "mono",
-        "owner": {
-          "id": "MDEyOk9yZ2FuaXphdGlvbjYyMjMzMTIx",
-          "is_bot": false,
-          "login": "hebbia",
-          "type": "Organization",
-          "url": "https://github.com/hebbia"
-        },
-        "url": "https://github.com/hebbia/mono"
-      },
-      "sha": "1204c33a0cd921323f20da455823ec249cbd0d29"
-    },
-    {
-      "commit": {
-        "author": {
-          "date": "2025-09-11T17:14:23-04:00",
-          "email": "sisu.xi@hebbia.ai",
-          "name": "Sisu Xi"
-        },
-        "comment_count": 0,
-        "committer": {
-          "date": "2025-09-11T17:14:23-04:00",
-          "email": "noreply@github.com",
-          "name": "GitHub"
-        },
-        "message": "feat: add alembic version check to create-migration.sh (#13771)\n\n## Summary\n- Added validation to ensure alembic version is exactly 1.8.1 before\ncreating migrations\n- Uses `alembic --version` command to check version in bash\n- Exits with error message and installation instructions if version\nmismatch\n\n## Test plan\n- [ ] Test with correct alembic version (1.8.1) - should proceed\nnormally\n- [ ] Test with incorrect version - should exit with error message\n- [ ] Verify migration creation still works as expected\n\n\ud83e\udd16 Generated with [Claude Code](https://claude.ai/code)\n\nCo-authored-by: Sisu Xi <xisisu@gmail.com>\nCo-authored-by: Claude <noreply@anthropic.com>",
-        "tree": {
-          "sha": "15be1a66bb777f55537f073cbb531fe416b19c36"
-        }
-      },
-      "repository": {
-        "description": "Python services monorepo",
-        "fullName": "hebbia/mono",
-        "id": "MDEwOlJlcG9zaXRvcnkzNDg0NzE4NjY=",
-        "isFork": false,
-        "isPrivate": true,
-        "name": "mono",
-        "owner": {
-          "id": "MDEyOk9yZ2FuaXphdGlvbjYyMjMzMTIx",
-          "is_bot": false,
-          "login": "hebbia",
-          "type": "Organization",
-          "url": "https://github.com/hebbia"
-        },
-        "url": "https://github.com/hebbia/mono"
-      },
-      "sha": "4fdab8fde302b997d35ebce65917eab304734cb8"
-    },
-    {
-      "commit": {
-        "author": {
-          "date": "2025-09-11T20:56:26-04:00",
-          "email": "sisu.xi@hebbia.ai",
-          "name": "Sisu Xi"
-        },
-        "comment_count": 0,
-        "committer": {
-          "date": "2025-09-11T20:56:26-04:00",
-          "email": "noreply@github.com",
-          "name": "GitHub"
-        },
-        "message": "Simplify LaunchDarkly flag logic and use existing batching utility (#13734)\n\n## Summary\n\nSimplified the parallel execution feature flag logic and replaced ALL\ncustom batching implementations with the existing\n`divide_list_into_batches` utility function.\n\n### Changes Made\n\n#### 1. Simplified LaunchDarkly Flag Logic \u2705\n\n**Before:**\n```python\nenable_parallel = False\nif user_id and org_id:\n    enable_parallel = ld.get_client().get_user_org_flag(...)\nelif user_id:\n    enable_parallel = ld.get_client().get_user_flag(...)\n```\n\n**After:**\n```python\nenable_parallel = ld.get_client().get_user_org_flag(\n    UserFlags.ENABLE_MATRIX_GET_ROWS_PARALLEL_EXECUTION,\n    user_id=user_id,\n    org_id=org_id,\n    default_value=False,\n)\n```\n\nThe `get_user_org_flag` function handles `None` values internally,\neliminating the need for conditional logic.\n\n**Locations updated:**\n- `sheets/data_layer/cells.py` (3 locations)\n- `sheets/cortex/ssrm/get_rows_utils.py` (1 location)\n\n#### 2. Replaced ALL Custom Batching Logic \u2705\n\n**Pattern 1 - Simple list slicing:**\n```python\n# Before:\nbatches = [all_row_ids[i : i + 500] for i in range(0, len(all_row_ids), 500)]\n\n# After:\nbatches = divide_list_into_batches(all_row_ids, 500)\n```\n\n**Pattern 2 - Range-based iteration:**\n```python\n# Before:\nfor batch_start in range(0, len(rows), ROW_BATCH_SIZE):\n    batch = rows[batch_start : batch_start + ROW_BATCH_SIZE]\n\n# After:\nbatches = divide_list_into_batches(rows, ROW_BATCH_SIZE)\nfor batch in batches:\n```\n\n**Pattern 3 - Complex conditional batching:**\n```python\n# Before:\nif len(column_ids) <= max_workers:\n    column_batches = [[col_id] for col_id in column_ids]\nelse:\n    batch_size = len(column_ids) // max_workers\n    remainder = len(column_ids) % max_workers\n    column_batches = []\n    start = 0\n    for i in range(max_workers):\n        end = start + batch_size + (1 if i < remainder else 0)\n        column_batches.append(column_ids[start:end])\n        start = end\n\n# After (simplified to always batch):\nbatch_size = max(1, (len(column_ids) + max_workers - 1) // max_workers)\ncolumn_batches = divide_list_into_batches(column_ids, batch_size)\n```\n\n**Files updated:**\n- `sheets/routes/sheets.py` - Simple batching\n- `sheets/data_layer/cells.py` - Both `upsert_rows` and complex column\nbatching logic\n\n#### 3. Updated All Tests \u2705\n\n- Modified test cases in `test_cells_parallel_query.py` to use\n`get_user_org_flag` instead of `get_user_flag`\n- Added `org_id` to test fixtures and function calls\n- Updated test expectations to match the new simplified batching\nbehavior\n- All 21 tests pass\n\n## Test Results\n\n\u2705 All 21 tests in `sheets/tests/data_layer/test_cells_parallel_query.py`\npass\n\u2705 All modified files compile without syntax errors  \n\u2705 Pre-commit hooks pass (isort, black, mypy, etc.)\n\n## Benefits\n\n- **Cleaner code**: Eliminated unnecessary conditional logic and manual\nindex calculations\n- **DRY principle**: All batching operations now use the same\nwell-tested utility function\n- **Consistency**: Single batching approach throughout the codebase\n- **Maintainability**: Simpler to understand and modify\n- **Less error-prone**: No more manual index arithmetic that could lead\nto off-by-one errors\n\n## Performance Impact\n\nNo performance regression - the batching behavior remains functionally\nequivalent:\n- Small column counts still get individual queries\n- Large column counts still get efficiently batched\n- The number of parallel workers remains optimized\n\n\ud83e\udd16 Generated with [Claude Code](https://claude.ai/code)\n\n---------\n\nCo-authored-by: Sisu Xi <xisisu@gmail.com>\nCo-authored-by: Claude <noreply@anthropic.com>",
-        "tree": {
-          "sha": "c5c995ff08547b0146a45af8bfbbdac95f8ecf86"
-        }
-      },
-      "repository": {
-        "description": "Python services monorepo",
-        "fullName": "hebbia/mono",
-        "id": "MDEwOlJlcG9zaXRvcnkzNDg0NzE4NjY=",
-        "isFork": false,
-        "isPrivate": true,
-        "name": "mono",
-        "owner": {
-          "id": "MDEyOk9yZ2FuaXphdGlvbjYyMjMzMTIx",
-          "is_bot": false,
-          "login": "hebbia",
-          "type": "Organization",
-          "url": "https://github.com/hebbia"
-        },
-        "url": "https://github.com/hebbia/mono"
-      },
-      "sha": "d34ada8386fc526c29f32ddc07e9995aae1eefc7"
-    },
-    {
-      "commit": {
-        "author": {
-          "date": "2025-09-06T22:57:03-04:00",
-          "email": "sisu.xi@hebbia.ai",
-          "name": "Sisu Xi"
-        },
-        "comment_count": 0,
-        "committer": {
-          "date": "2025-09-06T22:57:03-04:00",
-          "email": "noreply@github.com",
-          "name": "GitHub"
-        },
-        "message": "Add comprehensive date range filtering and URL generation to all explorer tools (#26)\n\n## Date Range Support Added\n- Linear Explorer: Filter issues by creation date with --from/--to\n- DB Explorer: Auto-filter queries by date columns (created_at, updated_at, timestamp)\n- LaunchDarkly Explorer: Filter flags and segments by creation/modification dates\n\n## URL Generation Added\n- Gmail Explorer: Generate Gmail web URLs for messages and searches\n- Slack Explorer: Generate Slack web URLs for channels, users, and messages\n- Calendar Explorer: Generate Google Calendar URLs for events\n- Linear Explorer: Generate Linear web URLs for issues, projects, and teams\n- LaunchDarkly Explorer: Generate LaunchDarkly web URLs for flags and segments\n\n## Features\n- All tools now support --from and --to date parameters where applicable\n- All tools now generate clickable web URLs for their respective items\n- Backward compatibility maintained for all existing functionality\n- Flexible date parsing using dateutil for user convenience\n\n\ud83e\udd16 Generated with [Claude Code](https://claude.ai/code)\n\nCo-authored-by: Sisu Xi <xisisu@gmail.com>\nCo-authored-by: Claude <noreply@anthropic.com>",
-        "tree": {
-          "sha": "7a08f80dd298b2482566fd5a02929b3fe7cb1ef1"
-        }
-      },
-      "repository": {
-        "description": "sharing a list of custom created tools & prompts & configs",
-        "fullName": "hebbia/sisu-tools",
-        "id": "R_kgDOPqo27Q",
-        "isFork": false,
-        "isPrivate": true,
-        "name": "sisu-tools",
-        "owner": {
-          "id": "MDEyOk9yZ2FuaXphdGlvbjYyMjMzMTIx",
-          "is_bot": false,
-          "login": "hebbia",
-          "type": "Organization",
-          "url": "https://github.com/hebbia"
-        },
-        "url": "https://github.com/hebbia/sisu-tools"
-      },
-      "sha": "2ce4f210216ed994d63ed95b2cc8d340405ab792"
-    },
-    {
-      "commit": {
-        "author": {
-          "date": "2025-09-06T22:58:23-04:00",
-          "email": "sisu.xi@hebbia.ai",
-          "name": "Sisu Xi"
-        },
-        "comment_count": 0,
-        "committer": {
-          "date": "2025-09-06T22:58:23-04:00",
-          "email": "noreply@github.com",
-          "name": "GitHub"
-        },
-        "message": "Update CLAUDE.md to reflect new universal features (#27)\n\n- Document date range filtering support across all tools\n- Document URL generation capabilities for all tools\n- Clarify that these are now universal features\n- Add specific examples for tools with unique implementations\n\n\ud83e\udd16 Generated with [Claude Code](https://claude.ai/code)\n\nCo-authored-by: Sisu Xi <xisisu@gmail.com>\nCo-authored-by: Claude <noreply@anthropic.com>",
-        "tree": {
-          "sha": "68587d2784d2d3ec9de07cfe2573e83a62b0d89b"
-        }
-      },
-      "repository": {
-        "description": "sharing a list of custom created tools & prompts & configs",
-        "fullName": "hebbia/sisu-tools",
-        "id": "R_kgDOPqo27Q",
-        "isFork": false,
-        "isPrivate": true,
-        "name": "sisu-tools",
-        "owner": {
-          "id": "MDEyOk9yZ2FuaXphdGlvbjYyMjMzMTIx",
-          "is_bot": false,
-          "login": "hebbia",
-          "type": "Organization",
-          "url": "https://github.com/hebbia"
-        },
-        "url": "https://github.com/hebbia/sisu-tools"
-      },
-      "sha": "03de2c977f3c59c7bc68f19bd6eb4187f06d6cee"
-    },
-    {
-      "commit": {
-        "author": {
-          "date": "2025-09-06T23:01:02-04:00",
-          "email": "sisu.xi@hebbia.ai",
-          "name": "Sisu Xi"
-        },
-        "comment_count": 0,
-        "committer": {
-          "date": "2025-09-06T23:01:02-04:00",
-          "email": "noreply@github.com",
-          "name": "GitHub"
-        },
-        "message": "Add checkpoint PR practice to development workflow (#28)\n\n- Document the practice of creating PRs at logical checkpoints\n- Define what constitutes a checkpoint (feature completion, bug fixes, tested changes)\n- Emphasize benefits of smaller, incremental PRs\n- Add reminder in documentation workflow section\n\nThis aligns with best practices for maintainable development and easier code review.\n\n\ud83e\udd16 Generated with [Claude Code](https://claude.ai/code)\n\nCo-authored-by: Sisu Xi <xisisu@gmail.com>\nCo-authored-by: Claude <noreply@anthropic.com>",
-        "tree": {
-          "sha": "d6cc5cbd65d1bcffc833affd51d23dfab349815d"
-        }
-      },
-      "repository": {
-        "description": "sharing a list of custom created tools & prompts & configs",
-        "fullName": "hebbia/sisu-tools",
-        "id": "R_kgDOPqo27Q",
-        "isFork": false,
-        "isPrivate": true,
-        "name": "sisu-tools",
-        "owner": {
-          "id": "MDEyOk9yZ2FuaXphdGlvbjYyMjMzMTIx",
-          "is_bot": false,
-          "login": "hebbia",
-          "type": "Organization",
-          "url": "https://github.com/hebbia"
-        },
-        "url": "https://github.com/hebbia/sisu-tools"
-      },
-      "sha": "1986bbf00963937111022a9d3e2763227012d722"
     },
     {
       "commit": {
@@ -2589,312 +2068,9 @@
         "url": "https://github.com/hebbia/sisu-tools"
       },
       "sha": "e78c2806d2bbdfe1819efddc976cfc73f6650b9e"
-    },
-    {
-      "commit": {
-        "author": {
-          "date": "2025-09-09T14:31:40-04:00",
-          "email": "sisu.xi@hebbia.ai",
-          "name": "Sisu Xi"
-        },
-        "comment_count": 0,
-        "committer": {
-          "date": "2025-09-09T14:31:40-04:00",
-          "email": "noreply@github.com",
-          "name": "GitHub"
-        },
-        "message": "Move org structure documentation to commands folder (#30)\n\n- Relocated tools/org_structure.md to commands/explore_org.md for consistency\n- All exploration guides now centralized in commands/ directory\n- Softlink created in ~/.claude/commands/ for easy access\n\n\ud83e\udd16 Generated with [Claude Code](https://claude.ai/code)\n\nCo-authored-by: Sisu Xi <xisisu@gmail.com>\nCo-authored-by: Claude <noreply@anthropic.com>",
-        "tree": {
-          "sha": "658deeaf5f8ce71ccd7a66a9a5c882f42af521c1"
-        }
-      },
-      "repository": {
-        "description": "sharing a list of custom created tools & prompts & configs",
-        "fullName": "hebbia/sisu-tools",
-        "id": "R_kgDOPqo27Q",
-        "isFork": false,
-        "isPrivate": true,
-        "name": "sisu-tools",
-        "owner": {
-          "id": "MDEyOk9yZ2FuaXphdGlvbjYyMjMzMTIx",
-          "is_bot": false,
-          "login": "hebbia",
-          "type": "Organization",
-          "url": "https://github.com/hebbia"
-        },
-        "url": "https://github.com/hebbia/sisu-tools"
-      },
-      "sha": "b6fe091c244c7fdb1fea8ca663312b1f2b647ac1"
-    },
-    {
-      "commit": {
-        "author": {
-          "date": "2025-09-09T10:55:25-04:00",
-          "email": "sisu.xi@hebbia.ai",
-          "name": "Sisu Xi"
-        },
-        "comment_count": 0,
-        "committer": {
-          "date": "2025-09-09T10:55:25-04:00",
-          "email": "noreply@github.com",
-          "name": "GitHub"
-        },
-        "message": "Merge pull request #29 from hebbia/remove-claude-readme-duplicates\n\nRemove duplicated content between CLAUDE.md and README.md",
-        "tree": {
-          "sha": "b25a1b2c4d5278b80ed4ba9ef6ccbebfe3a09e95"
-        }
-      },
-      "repository": {
-        "description": "sharing a list of custom created tools & prompts & configs",
-        "fullName": "hebbia/sisu-tools",
-        "id": "R_kgDOPqo27Q",
-        "isFork": false,
-        "isPrivate": true,
-        "name": "sisu-tools",
-        "owner": {
-          "id": "MDEyOk9yZ2FuaXphdGlvbjYyMjMzMTIx",
-          "is_bot": false,
-          "login": "hebbia",
-          "type": "Organization",
-          "url": "https://github.com/hebbia"
-        },
-        "url": "https://github.com/hebbia/sisu-tools"
-      },
-      "sha": "49dc87d2d916abf22789470ae9c55f9885b1302d"
-    },
-    {
-      "commit": {
-        "author": {
-          "date": "2025-09-10T00:52:00-04:00",
-          "email": "sisu.xi@hebbia.ai",
-          "name": "Sisu Xi"
-        },
-        "comment_count": 0,
-        "committer": {
-          "date": "2025-09-10T00:52:00-04:00",
-          "email": "noreply@github.com",
-          "name": "GitHub"
-        },
-        "message": "docs: improve database explorer documentation based on debugging learnings (#32)\n\n- Added comprehensive troubleshooting guide with solutions for common failures\n- Added schema gotchas section highlighting type mismatches (sheet_id VARCHAR vs UUID)\n- Consolidated duplicate content, reducing file from 737 to 309 lines (58% reduction)\n- Added optimized Matrix/Sheets queries that avoid timeouts on 304GB cells table\n- Added warnings that matrix data is typically in production, not staging\n- Fixed column name errors (version_id not version, no tabs table exists)\n- Improved performance debugging section with clear metrics and red flags\n- Added type casting in queries to handle VARCHAR/UUID mismatches\n\n\ud83e\udd16 Generated with [Claude Code](https://claude.ai/code)\n\nCo-authored-by: Sisu Xi <xisisu@gmail.com>\nCo-authored-by: Claude <noreply@anthropic.com>",
-        "tree": {
-          "sha": "1d5ae59affb861d4a8174bc34973fa67aa3be9f2"
-        }
-      },
-      "repository": {
-        "description": "sharing a list of custom created tools & prompts & configs",
-        "fullName": "hebbia/sisu-tools",
-        "id": "R_kgDOPqo27Q",
-        "isFork": false,
-        "isPrivate": true,
-        "name": "sisu-tools",
-        "owner": {
-          "id": "MDEyOk9yZ2FuaXphdGlvbjYyMjMzMTIx",
-          "is_bot": false,
-          "login": "hebbia",
-          "type": "Organization",
-          "url": "https://github.com/hebbia"
-        },
-        "url": "https://github.com/hebbia/sisu-tools"
-      },
-      "sha": "301f61f49ea3f9f5a6da070ed969a9ce15189332"
-    },
-    {
-      "commit": {
-        "author": {
-          "date": "2025-09-09T14:38:24-04:00",
-          "email": "sisu.xi@hebbia.ai",
-          "name": "Sisu Xi"
-        },
-        "comment_count": 0,
-        "committer": {
-          "date": "2025-09-09T14:38:24-04:00",
-          "email": "noreply@github.com",
-          "name": "GitHub"
-        },
-        "message": "Update org structure documentation (#31)\n\n- Added Victor Geary's alternative name (Ellis) for clarity\n- Minor formatting improvement in Matrix Engineering Team section\n\n\ud83e\udd16 Generated with [Claude Code](https://claude.ai/code)\n\nCo-authored-by: Sisu Xi <xisisu@gmail.com>\nCo-authored-by: Claude <noreply@anthropic.com>",
-        "tree": {
-          "sha": "da1db30b3124f938c1d3d3b7b6cd8eb64aed3ad6"
-        }
-      },
-      "repository": {
-        "description": "sharing a list of custom created tools & prompts & configs",
-        "fullName": "hebbia/sisu-tools",
-        "id": "R_kgDOPqo27Q",
-        "isFork": false,
-        "isPrivate": true,
-        "name": "sisu-tools",
-        "owner": {
-          "id": "MDEyOk9yZ2FuaXphdGlvbjYyMjMzMTIx",
-          "is_bot": false,
-          "login": "hebbia",
-          "type": "Organization",
-          "url": "https://github.com/hebbia"
-        },
-        "url": "https://github.com/hebbia/sisu-tools"
-      },
-      "sha": "56bf2a6e6ff74ac9211508536256fe3c8a0637ea"
-    },
-    {
-      "commit": {
-        "author": {
-          "date": "2025-09-11T14:37:10-04:00",
-          "email": "sisu.xi@hebbia.ai",
-          "name": "Sisu Xi"
-        },
-        "comment_count": 0,
-        "committer": {
-          "date": "2025-09-11T14:37:10-04:00",
-          "email": "noreply@github.com",
-          "name": "GitHub"
-        },
-        "message": "docs: enhance database and LaunchDarkly command documentation (#33)\n\n- Add production RDS instance specifications (db.m6g.16xlarge) to database docs\n- Document important versioned_columns counting caveat using static_column_id\n- Add performance tuning queries specific to the production instance specs\n- Include user context (User ID) in LaunchDarkly quick reference for easier access\n- Improve SQL examples with correct column counting methodology\n\nThese improvements help with debugging performance issues and provide\ncritical context about the production environment.\n\n\ud83e\udd16 Generated with [Claude Code](https://claude.ai/code)\n\nCo-authored-by: Sisu Xi <xisisu@gmail.com>\nCo-authored-by: Claude <noreply@anthropic.com>",
-        "tree": {
-          "sha": "28b993c9ed442219f56cb0d8ad491532190df87a"
-        }
-      },
-      "repository": {
-        "description": "sharing a list of custom created tools & prompts & configs",
-        "fullName": "hebbia/sisu-tools",
-        "id": "R_kgDOPqo27Q",
-        "isFork": false,
-        "isPrivate": true,
-        "name": "sisu-tools",
-        "owner": {
-          "id": "MDEyOk9yZ2FuaXphdGlvbjYyMjMzMTIx",
-          "is_bot": false,
-          "login": "hebbia",
-          "type": "Organization",
-          "url": "https://github.com/hebbia"
-        },
-        "url": "https://github.com/hebbia/sisu-tools"
-      },
-      "sha": "35b515a2eeeb7935381554161f7b47d0b9870f3b"
-    },
-    {
-      "commit": {
-        "author": {
-          "date": "2025-09-11T18:22:30-04:00",
-          "email": "sisu.xi@hebbia.ai",
-          "name": "Sisu Xi"
-        },
-        "comment_count": 0,
-        "committer": {
-          "date": "2025-09-11T18:22:30-04:00",
-          "email": "noreply@github.com",
-          "name": "GitHub"
-        },
-        "message": "Merge pull request #34 from hebbia/feature/consistent-json-formatting\n\nStandardize JSON output formatting across all tools",
-        "tree": {
-          "sha": "56ef17c884731eb9e26c5510ab740678154b9041"
-        }
-      },
-      "repository": {
-        "description": "sharing a list of custom created tools & prompts & configs",
-        "fullName": "hebbia/sisu-tools",
-        "id": "R_kgDOPqo27Q",
-        "isFork": false,
-        "isPrivate": true,
-        "name": "sisu-tools",
-        "owner": {
-          "id": "MDEyOk9yZ2FuaXphdGlvbjYyMjMzMTIx",
-          "is_bot": false,
-          "login": "hebbia",
-          "type": "Organization",
-          "url": "https://github.com/hebbia"
-        },
-        "url": "https://github.com/hebbia/sisu-tools"
-      },
-      "sha": "e59383bff9f42c66b59621c415004cdb6c9e9569"
-    },
-    {
-      "commit": {
-        "author": {
-          "date": "2025-09-11T22:31:09-04:00",
-          "email": "sisu.xi@hebbia.ai",
-          "name": "Sisu Xi"
-        },
-        "comment_count": 0,
-        "committer": {
-          "date": "2025-09-11T22:31:09-04:00",
-          "email": "noreply@github.com",
-          "name": "GitHub"
-        },
-        "message": "feat: improve JSON output formatting for human readability (#35)\n\n- calendar_explorer.py: Add clean JSON formatting with essential fields only\n  - Include web URLs, duration calculations, and key event details\n  - Remove verbose API metadata for better readability\n\n- slack_explorer.py: Add clean JSON formatting for channels, messages, and search\n  - Include web URLs and essential message/channel information\n  - Support --json flag for channels, history, and search commands\n\n- gmail_explorer.py: Add --json flag support for search command\n\n- linear_explorer.py: Minor formatting improvements\n\n\ud83e\udd16 Generated with [Claude Code](https://claude.ai/code)\n\nCo-authored-by: Sisu Xi <xisisu@gmail.com>\nCo-authored-by: Claude <noreply@anthropic.com>",
-        "tree": {
-          "sha": "198339c794f3b6fd44c8096284a13770c4ad9442"
-        }
-      },
-      "repository": {
-        "description": "sharing a list of custom created tools & prompts & configs",
-        "fullName": "hebbia/sisu-tools",
-        "id": "R_kgDOPqo27Q",
-        "isFork": false,
-        "isPrivate": true,
-        "name": "sisu-tools",
-        "owner": {
-          "id": "MDEyOk9yZ2FuaXphdGlvbjYyMjMzMTIx",
-          "is_bot": false,
-          "login": "hebbia",
-          "type": "Organization",
-          "url": "https://github.com/hebbia"
-        },
-        "url": "https://github.com/hebbia/sisu-tools"
-      },
-      "sha": "bc657abd52200d1989379bc51d495ba26f814dca"
     }
   ],
   "team_prs_reviewed": [
-    {
-      "author": {
-        "id": "U_kgDODYruhg",
-        "is_bot": false,
-        "login": "sisuxi",
-        "type": "User",
-        "url": "https://github.com/sisuxi"
-      },
-      "createdAt": "2025-09-11T19:16:31Z",
-      "number": 13766,
-      "repository": {
-        "name": "mono",
-        "nameWithOwner": "hebbia/mono"
-      },
-      "state": "merged",
-      "title": "Fix cells table index definitions to prevent migration conflicts"
-    },
-    {
-      "author": {
-        "id": "U_kgDODYruhg",
-        "is_bot": false,
-        "login": "sisuxi",
-        "type": "User",
-        "url": "https://github.com/sisuxi"
-      },
-      "createdAt": "2025-09-10T15:21:52Z",
-      "number": 13734,
-      "repository": {
-        "name": "mono",
-        "nameWithOwner": "hebbia/mono"
-      },
-      "state": "merged",
-      "title": "Simplify LaunchDarkly flag logic and use existing batching utility"
-    },
-    {
-      "author": {
-        "id": "MDQ6VXNlcjgzNDQzOTM=",
-        "is_bot": false,
-        "login": "ammuh",
-        "type": "User",
-        "url": "https://github.com/ammuh"
-      },
-      "createdAt": "2025-09-10T04:04:44Z",
-      "number": 13727,
-      "repository": {
-        "name": "mono",
-        "nameWithOwner": "hebbia/mono"
-      },
-      "state": "merged",
-      "title": "reprompt pr reviews"
-    },
     {
       "author": {
         "id": "U_kgDOCrncfQ",

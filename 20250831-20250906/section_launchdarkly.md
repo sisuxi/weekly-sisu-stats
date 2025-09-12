@@ -1,3 +1,3 @@
 ## LaunchDarkly Activity
 
-No flags created or updated during this period
+No flags created/updated during this period.

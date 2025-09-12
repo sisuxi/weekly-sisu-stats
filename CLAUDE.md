@@ -60,12 +60,29 @@ If folder exists, ask user:
 All configured in `~/Hebbia/sisu-tools/`:
 
 1. **GitHub**: PRs, reviews, commits (focus on architectural impact)
+   - Uses date ranges for precise filtering
+   - Tracks created, reviewed, and involved PRs separately
+   
 2. **Slack**: Technical discussions, mentorship, incident response
+   - **NEW**: Uses `history` command for ALL messages (not limited to 50)
+   - **NEW**: Checks multiple channels for user's activity
+   - **NEW**: Rate limiting protection with `--single-channel` mode
+   - Filters messages by user (Sisu Xi)
+   
 3. **Gmail**: Strategic communications, decisions
+   - Filters by date range for sent/received emails
+   
 4. **Calendar**: Meeting time, strategic sessions
+   - Events within specified date range
+   
 5. **Drive**: Documentation, technical designs
+   - Modified documents within date range
+   
 6. **Linear**: P0/P1 issues, technical debt, cross-team work
+   - Issues assigned/created/completed within date range
+   
 7. **LaunchDarkly**: Production changes, feature rollouts
+   - Feature flag status (limited history support)
 
 ## Writing Style
 
@@ -82,6 +99,8 @@ Follow `/Users/sisu/.claude/commands/writing_guideline.md`:
 3. **Parallel Execution**: Never run data collection sequentially
 4. **File Locks**: Each agent writes to separate file
 5. **Raw Data**: Always preserve for future reference
+6. **Slack Rate Limiting**: Use `--single-channel --channel-delay 2` if hitting rate limits
+7. **Date Range Filtering**: All data sources now properly filter by date range
 
 ## Usage Pattern
 

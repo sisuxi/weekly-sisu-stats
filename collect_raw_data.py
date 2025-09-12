@@ -8,9 +8,9 @@ import json
 import os
 import subprocess
 import sys
+import time
 from datetime import datetime, timedelta
 from pathlib import Path
-# from concurrent.futures import ThreadPoolExecutor, as_completed
 import argparse
 
 
@@ -50,8 +50,8 @@ def collect_github_data(start_date, end_date, output_dir):
     if not auth_check or 'sisuxi' not in auth_check:
         raise Exception("GitHub auth verification failed - not authenticated as sisuxi")
     
-    # PRs created in Hebbia org
-    cmd = f'gh search prs --author=sisuxi --created=">={start_date}" "org:hebbia" --json number,title,state,createdAt,updatedAt,url,repository,labels'
+    # PRs created in Hebbia org within date range
+    cmd = f'gh search prs --author=sisuxi --created="{start_date}..{end_date}" "org:hebbia" --json number,title,state,createdAt,updatedAt,url,repository,labels'
     result = run_command(cmd)
     if result:
         try:
@@ -59,17 +59,24 @@ def collect_github_data(start_date, end_date, output_dir):
         except json.JSONDecodeError:
             data['prs_created'] = []
     
-    # PRs reviewed in Hebbia org
-    cmd = f'gh search prs --reviewed-by=sisuxi --updated=">={start_date}" "org:hebbia" --json number,title,author,url,repository'
+    # PRs reviewed in Hebbia org within date range
+    cmd = f'gh search prs --reviewed-by=sisuxi --updated="{start_date}..{end_date}" "org:hebbia" --json number,title,author,url,repository'
     result = run_command(cmd)
     if result:
         try:
-            data['prs_reviewed'] = json.loads(result)
+            prs = json.loads(result)
+            # Filter to only include reviews actually done in the date range
+            filtered_prs = []
+            for pr in prs:
+                # Keep PRs that were likely reviewed during this period
+                if pr.get('updatedAt', '') >= start_date:
+                    filtered_prs.append(pr)
+            data['prs_reviewed'] = filtered_prs
         except json.JSONDecodeError:
             data['prs_reviewed'] = []
     
-    # PRs involved in Hebbia org
-    cmd = f'gh search prs --involves=sisuxi --updated=">={start_date}" "org:hebbia" --json number,title,repository,author'
+    # PRs involved in Hebbia org within date range
+    cmd = f'gh search prs --involves=sisuxi --updated="{start_date}..{end_date}" "org:hebbia" --json number,title,repository,author'
     result = run_command(cmd)
     if result:
         try:
@@ -77,24 +84,17 @@ def collect_github_data(start_date, end_date, output_dir):
         except json.JSONDecodeError:
             data['prs_involved'] = []
     
-    # Commits in all Hebbia repos (recent, will filter by date later)
-    cmd = f'gh search commits --author=sisuxi "org:hebbia" --limit 100 --json sha,commit,repository'
+    # Commits in all Hebbia repos within date range
+    cmd = f'gh search commits --author=sisuxi --author-date="{start_date}..{end_date}" "org:hebbia" --limit 100 --json sha,commit,repository'
     result = run_command(cmd)
     if result:
         try:
-            commits_data = json.loads(result)
-            # Filter commits by date
-            filtered_commits = []
-            for commit_item in commits_data:
-                commit_date = commit_item.get('commit', {}).get('author', {}).get('date', '')
-                if commit_date and commit_date >= start_date:
-                    filtered_commits.append(commit_item)
-            data['commits'] = filtered_commits
+            data['commits'] = json.loads(result)
         except json.JSONDecodeError:
             data['commits'] = []
     
-    # Team PRs reviewed across all Hebbia repos (using search to get all)
-    cmd = f'gh search prs --reviewed-by=sisuxi --created=">={start_date}" "org:hebbia" --limit 100 --json number,title,author,repository,createdAt,state'
+    # Team PRs reviewed across all Hebbia repos within date range
+    cmd = f'gh search prs --reviewed-by=sisuxi --created="{start_date}..{end_date}" "org:hebbia" --limit 100 --json number,title,author,repository,createdAt,state'
     result = run_command(cmd)
     if result:
         try:
@@ -109,30 +109,90 @@ def collect_github_data(start_date, end_date, output_dir):
     return data
 
 
-def collect_slack_data(start_date, end_date, output_dir):
-    """Collect Slack activity data"""
+def collect_slack_data(start_date, end_date, output_dir, channels=None, single_channel_mode=False, channel_delay=1):
+    """Collect Slack activity data - focused on user's messages"""
     print("Collecting Slack data...")
     data = {}
     tools_dir = Path.home() / "Hebbia" / "sisu-tools"
     
-    # Messages from me
-    cmd = f'.venv/bin/python tools/slack_explorer.py search "from:@sisu.xi" --from "{start_date}" --to "{end_date}" --count 50'
-    result = run_command(cmd, cwd=tools_dir)
-    if result is None:
-        raise Exception("Failed to collect Slack messages")
-    data['messages_from_me'] = result
+    # Default channels to check for user's activity
+    if channels is None:
+        channels = ['eng', 'ask-eng-leads', 'eng-postmortems', 'oncall', 'alerts', 
+                   'bugs-and-support', 'product-change-log', 'feedback-eng', 
+                   'matrix-team', 'doc-team', 'agents-team', 'infra-team']
     
-    # Activity summary
+    print(f"Checking {len(channels)} channels for your messages...")
+    if single_channel_mode:
+        print(f"  Single-channel mode enabled with {channel_delay}s delay between channels")
+    
+    channel_data = {}
+    
+    for i, channel in enumerate(channels):
+        print(f"  [{i+1}/{len(channels)}] Checking #{channel} for your messages...")
+        try:
+            # Use history command with full pagination support
+            # First get all messages in the channel for the date range
+            cmd = f'.venv/bin/python tools/slack_explorer.py history {channel} --from {start_date} --to {end_date} --json'
+            result = run_command(cmd, cwd=tools_dir)
+            
+            if result:
+                try:
+                    channel_messages = json.loads(result)
+                    # Filter for messages from the user
+                    user_messages = []
+                    if 'messages' in channel_messages:
+                        for msg in channel_messages['messages']:
+                            # Check if message is from user (by name or user ID)
+                            if (msg.get('user_profile', {}).get('real_name', '').lower() == 'sisu xi' or
+                                msg.get('user_profile', {}).get('display_name', '').lower() == 'sisu.xi' or
+                                'sisu' in msg.get('user_profile', {}).get('real_name', '').lower()):
+                                user_messages.append(msg)
+                    
+                    if user_messages:
+                        channel_data[channel] = {
+                            'message_count': len(user_messages),
+                            'messages': user_messages
+                        }
+                        print(f"    Found {len(user_messages)} messages from you in #{channel}")
+                    else:
+                        print(f"    No messages from you in #{channel}")
+                except json.JSONDecodeError:
+                    print(f"    Warning: Could not parse JSON for #{channel}")
+            else:
+                print(f"    Warning: No data retrieved for #{channel}")
+                
+        except Exception as e:
+            print(f"    Warning: Failed to collect #{channel} data: {e}")
+        
+        # Add delay between channels if in single-channel mode
+        if single_channel_mode and i < len(channels) - 1:
+            print(f"    Waiting {channel_delay}s before next channel...")
+            time.sleep(channel_delay)
+    
+    # Also get direct search for user's messages (as backup/validation)
+    print("\n  Running direct search for your messages...")
+    cmd = f'.venv/bin/python tools/slack_explorer.py search "from:@sisu.xi" --from "{start_date}" --to "{end_date}" --count 100'
+    result = run_command(cmd, cwd=tools_dir)
+    if result:
+        data['direct_search'] = result
+    
+    # Get activity summary
+    print("  Getting activity summary...")
     cmd = f'.venv/bin/python tools/slack_explorer.py activity --from "{start_date}" --to "{end_date}"'
     result = run_command(cmd, cwd=tools_dir)
-    if result is None:
-        raise Exception("Failed to collect Slack activity summary")
-    data['activity_summary'] = result
+    if result:
+        data['activity_summary'] = result
+    
+    # Store channel data
+    data['channels_with_messages'] = channel_data
+    data['total_messages'] = sum(ch['message_count'] for ch in channel_data.values())
+    data['active_channels'] = list(channel_data.keys())
     
     output_path = Path(output_dir) / "raw_slack.json"
     with open(output_path, 'w') as f:
         json.dump(data, f, indent=2)
-    print(f"Slack data saved to {output_path}")
+    print(f"\nSlack data saved to {output_path}")
+    print(f"Total messages found: {data['total_messages']} across {len(data['active_channels'])} channels")
     return data
 
 
@@ -143,16 +203,24 @@ def collect_gmail_data(start_date, end_date, output_dir):
     tools_dir = Path.home() / "Hebbia" / "sisu-tools"
     
     try:
-        # Inbox statistics (using days parameter)
+        # Calculate days for stats
         days = (datetime.fromisoformat(end_date) - datetime.fromisoformat(start_date)).days + 1
+        
+        # Inbox statistics
         cmd = f'.venv/bin/python tools/gmail_explorer.py stats --days {days}'
         result = run_command(cmd, cwd=tools_dir)
         data['stats'] = result if result else ""
         
-        # Sent emails
-        cmd = f'.venv/bin/python tools/gmail_explorer.py sent --days {days}'
+        # Search for sent emails in date range
+        cmd = f'.venv/bin/python tools/gmail_explorer.py search "from:sisu@hebbia.ai after:{start_date} before:{end_date}" --max 50'
         result = run_command(cmd, cwd=tools_dir)
-        data['sent'] = result if result else ""
+        data['sent_emails'] = result if result else ""
+        
+        # Search for received emails in date range
+        cmd = f'.venv/bin/python tools/gmail_explorer.py search "to:sisu@hebbia.ai after:{start_date} before:{end_date}" --max 100'
+        result = run_command(cmd, cwd=tools_dir)
+        data['received_emails'] = result if result else ""
+        
     except Exception as e:
         print(f"Warning: Some Gmail data collection failed: {e}")
         data['error'] = str(e)
@@ -171,15 +239,17 @@ def collect_drive_data(start_date, end_date, output_dir):
     tools_dir = Path.home() / "Hebbia" / "sisu-tools"
     
     try:
-        # Recent documents
-        cmd = '.venv/bin/python tools/drive_explorer.py recent'
+        # Documents I modified in date range
+        cmd = f'.venv/bin/python tools/drive_explorer.py recent --from "{start_date}" --to "{end_date}" --max 50'
         result = run_command(cmd, cwd=tools_dir)
-        data['recent'] = result if result else ""
+        data['modified_docs'] = result if result else ""
         
-        # Shared documents
-        cmd = '.venv/bin/python tools/drive_explorer.py shared'
+        # Recent activity
+        cmd = f'.venv/bin/python tools/drive_explorer.py activities --from "{start_date}" --to "{end_date}" --max 50'
         result = run_command(cmd, cwd=tools_dir)
-        data['shared'] = result if result else ""
+        if result:
+            data['activity'] = result
+        
     except Exception as e:
         print(f"Warning: Some Drive data collection failed: {e}")
         data['error'] = str(e)
@@ -198,15 +268,16 @@ def collect_calendar_data(start_date, end_date, output_dir):
     tools_dir = Path.home() / "Hebbia" / "sisu-tools"
     
     try:
-        # All events
-        cmd = '.venv/bin/python tools/calendar_explorer.py events'
+        # Events in date range
+        cmd = f'.venv/bin/python tools/calendar_explorer.py events --from "{start_date}" --to "{end_date}"'
         result = run_command(cmd, cwd=tools_dir)
         data['events'] = result if result else ""
         
-        # Meeting analysis
-        cmd = '.venv/bin/python tools/calendar_explorer.py analyze'
+        # Summary for the period
+        cmd = f'.venv/bin/python tools/calendar_explorer.py summary --from "{start_date}" --to "{end_date}"'
         result = run_command(cmd, cwd=tools_dir)
-        data['analysis'] = result if result else ""
+        data['summary'] = result if result else ""
+        
     except Exception as e:
         print(f"Warning: Some Calendar data collection failed: {e}")
         data['error'] = str(e)
@@ -225,23 +296,24 @@ def collect_linear_data(start_date, end_date, output_dir):
     tools_dir = Path.home() / "Hebbia" / "sisu-tools"
     
     try:
-        # My assigned issues
-        query = '{ issues(filter: { assignee: { email: { eq: "sisu.xi@hebbia.ai" } } }, first: 100) { nodes { identifier title state { name } priority createdAt updatedAt team { name } } } }'
-        cmd = f".venv/bin/python tools/linear_explorer.py '{query}' --from '{start_date}' --to '{end_date}' --urls"
+        # Issues assigned to me or created by me in date range
+        query = f'{{ issues(filter: {{ OR: [{{ assignee: {{ email: {{ eq: "sisu@hebbia.ai" }} }} }}, {{ creator: {{ email: {{ eq: "sisu@hebbia.ai" }} }} }}], updatedAt: {{ gte: "{start_date}" }} }}, first: 50) {{ nodes {{ identifier title state {{ name }} priority createdAt updatedAt completedAt assignee {{ name }} creator {{ name }} team {{ name }} labels {{ nodes {{ name }} }} }} }} }}'
+        cmd = f".venv/bin/python tools/linear_explorer.py '{query}' --urls"
         result = run_command(cmd, cwd=tools_dir)
         data['my_issues'] = result if result else ""
         
-        # High priority issues
-        query = '{ issues(filter: { assignee: { email: { eq: "sisu.xi@hebbia.ai" } }, priority: { in: [0, 1] } }, first: 50) { nodes { identifier title state { name } priority team { name } } } }'
-        cmd = f".venv/bin/python tools/linear_explorer.py '{query}' --from '{start_date}' --to '{end_date}'"
+        # Issues I completed in date range
+        query = f'{{ issues(filter: {{ assignee: {{ email: {{ eq: "sisu@hebbia.ai" }} }}, completedAt: {{ gte: "{start_date}", lte: "{end_date}" }} }}, first: 50) {{ nodes {{ identifier title state {{ name }} priority completedAt team {{ name }} }} }} }}'
+        cmd = f".venv/bin/python tools/linear_explorer.py '{query}' --urls"
         result = run_command(cmd, cwd=tools_dir)
-        data['high_priority'] = result if result else ""
+        data['completed_issues'] = result if result else ""
         
-        # Issues I created
-        query = '{ issues(filter: { creator: { email: { eq: "sisu.xi@hebbia.ai" } } }, first: 50) { nodes { identifier title state { name } createdAt team { name } } } }'
-        cmd = f".venv/bin/python tools/linear_explorer.py '{query}' --from '{start_date}' --to '{end_date}'"
+        # High priority issues I'm involved with
+        query = f'{{ issues(filter: {{ OR: [{{ assignee: {{ email: {{ eq: "sisu@hebbia.ai" }} }} }}, {{ creator: {{ email: {{ eq: "sisu@hebbia.ai" }} }} }}], priority: {{ in: [0, 1, 2] }}, state: {{ type: {{ nin: ["completed", "canceled"] }} }} }}, first: 20) {{ nodes {{ identifier title state {{ name }} priority team {{ name }} }} }} }}'
+        cmd = f".venv/bin/python tools/linear_explorer.py '{query}' --urls"
         result = run_command(cmd, cwd=tools_dir)
-        data['created'] = result if result else ""
+        data['high_priority_issues'] = result if result else ""
+        
     except Exception as e:
         print(f"Warning: Some Linear data collection failed: {e}")
         data['error'] = str(e)
@@ -260,7 +332,7 @@ def collect_launchdarkly_data(start_date, end_date, output_dir):
     tools_dir = Path.home() / "Hebbia" / "sisu-tools"
     
     try:
-        # Get flags list
+        # Get all flags (we'll filter by date later if possible)
         cmd = '.venv/bin/python tools/launchdarkly_explorer.py flags'
         result = run_command(cmd, cwd=tools_dir)
         data['flags'] = result if result else ""
@@ -270,10 +342,8 @@ def collect_launchdarkly_data(start_date, end_date, output_dir):
         result = run_command(cmd, cwd=tools_dir)
         data['environments'] = result if result else ""
         
-        # Get projects
-        cmd = '.venv/bin/python tools/launchdarkly_explorer.py projects'
-        result = run_command(cmd, cwd=tools_dir)
-        data['projects'] = result if result else ""
+        # Note: The tool may not support detailed history, so we get what we can
+        
     except Exception as e:
         print(f"Warning: Some LaunchDarkly data collection failed: {e}")
         data['error'] = str(e)
@@ -285,126 +355,107 @@ def collect_launchdarkly_data(start_date, end_date, output_dir):
     return data
 
 
-def calculate_week_dates(date_str=None):
-    """Calculate Sunday-Saturday date range for the previous week or custom date"""
-    if date_str:
-        # Parse custom date
-        target_date = datetime.strptime(date_str, "%Y-%m-%d")
-    else:
-        # Use today's date
-        target_date = datetime.now()
-    
-    # Calculate last Sunday
-    days_since_sunday = (target_date.weekday() + 1) % 7
-    last_sunday = target_date - timedelta(days=days_since_sunday + 7)
-    last_saturday = last_sunday + timedelta(days=6)
-    
-    return last_sunday.strftime("%Y-%m-%d"), last_saturday.strftime("%Y-%m-%d")
-
-
 def main():
-    parser = argparse.ArgumentParser(description='Collect raw data for weekly snapshot report')
-    parser.add_argument('--start', help='Start date (YYYY-MM-DD)')
-    parser.add_argument('--end', help='End date (YYYY-MM-DD)')
-    parser.add_argument('--date', help='Calculate week containing this date (YYYY-MM-DD)')
-    parser.add_argument('--output', help='Output directory (default: YYYYMMDD-YYYYMMDD)')
-    parser.add_argument('--force', action='store_true', help='Force overwrite existing directory without prompting')
+    """Main execution function with command line argument support"""
+    parser = argparse.ArgumentParser(description='Collect raw data for weekly snapshot reports')
+    parser.add_argument('--start', type=str, help='Start date (YYYY-MM-DD)')
+    parser.add_argument('--end', type=str, help='End date (YYYY-MM-DD)')
+    parser.add_argument('--force', action='store_true', help='Overwrite existing data without prompting')
+    parser.add_argument('--channels', nargs='+', help='Specific Slack channels to check')
+    parser.add_argument('--single-channel', action='store_true', help='Process Slack channels one at a time to avoid rate limiting')
+    parser.add_argument('--channel-delay', type=int, default=1, help='Seconds to wait between Slack channels (default: 1)')
+    
     args = parser.parse_args()
     
-    # Determine date range
+    # Calculate dates if not provided
     if args.start and args.end:
         start_date = args.start
         end_date = args.end
-    elif args.date:
-        start_date, end_date = calculate_week_dates(args.date)
+        # Create folder name from dates
+        folder_name = f"{start_date.replace('-', '')}-{end_date.replace('-', '')}"
     else:
-        # Default to previous week
-        start_date, end_date = calculate_week_dates()
+        # Use calculate_week.py to get the folder and dates
+        result = subprocess.run(['python3', 'calculate_week.py'], capture_output=True, text=True)
+        if result.returncode != 0:
+            print("Error: Failed to calculate week")
+            sys.exit(1)
+        folder_name = result.stdout.strip()
+        
+        # Parse dates from folder name (YYYYMMDD-YYYYMMDD)
+        parts = folder_name.split('-')
+        start_date = f"{parts[0][:4]}-{parts[0][4:6]}-{parts[0][6:8]}"
+        end_date = f"{parts[1][:4]}-{parts[1][4:6]}-{parts[1][6:8]}"
     
-    print(f"Collecting data for {start_date} to {end_date}")
+    print(f"Collecting data for: {start_date} to {end_date}")
+    print(f"Output folder: {folder_name}")
+    
+    # Check if folder exists
+    output_dir = Path(folder_name)
+    if output_dir.exists() and not args.force:
+        response = input(f"Folder {folder_name} already exists. Overwrite? (y/n): ")
+        if response.lower() != 'y':
+            print("Aborted")
+            sys.exit(0)
     
     # Create output directory
-    if args.output:
-        output_dir = args.output
+    output_dir.mkdir(exist_ok=True)
+    
+    # Track collection status
+    success = True
+    
+    # Collect data from all sources
+    try:
+        collect_github_data(start_date, end_date, output_dir)
+    except Exception as e:
+        print(f"ERROR: GitHub collection failed: {e}")
+        success = False
+    
+    try:
+        collect_slack_data(start_date, end_date, output_dir, 
+                          channels=args.channels,
+                          single_channel_mode=args.single_channel,
+                          channel_delay=args.channel_delay)
+    except Exception as e:
+        print(f"ERROR: Slack collection failed: {e}")
+        success = False
+    
+    try:
+        collect_gmail_data(start_date, end_date, output_dir)
+    except Exception as e:
+        print(f"ERROR: Gmail collection failed: {e}")
+        success = False
+    
+    try:
+        collect_drive_data(start_date, end_date, output_dir)
+    except Exception as e:
+        print(f"ERROR: Drive collection failed: {e}")
+        success = False
+    
+    try:
+        collect_calendar_data(start_date, end_date, output_dir)
+    except Exception as e:
+        print(f"ERROR: Calendar collection failed: {e}")
+        success = False
+    
+    try:
+        collect_linear_data(start_date, end_date, output_dir)
+    except Exception as e:
+        print(f"ERROR: Linear collection failed: {e}")
+        success = False
+    
+    try:
+        collect_launchdarkly_data(start_date, end_date, output_dir)
+    except Exception as e:
+        print(f"ERROR: LaunchDarkly collection failed: {e}")
+        success = False
+    
+    if success:
+        print(f"\n✅ All data collection completed successfully!")
+        print(f"📁 Data saved in: {output_dir}")
     else:
-        start_fmt = start_date.replace('-', '')
-        end_fmt = end_date.replace('-', '')
-        output_dir = f"{start_fmt}-{end_fmt}"
-    
-    # Check if directory exists
-    if os.path.exists(output_dir):
-        if args.force:
-            import shutil
-            shutil.rmtree(output_dir)
-            os.makedirs(output_dir)
-            print(f"Force: Deleted and recreated {output_dir}")
-        else:
-            try:
-                response = input(f"\nFolder {output_dir} already exists. What would you like to do?\n"
-                                "1. Delete and regenerate everything (default - press Enter)\n"
-                                "2. Download new raw data, but keep existing report sections unchanged\n"
-                                "3. Cancel operation\n"
-                                "Choice [1]: ")
-            except EOFError:
-                # Non-interactive mode, default to option 1
-                response = "1"
-            
-            if response == "" or response == "1":
-                import shutil
-                shutil.rmtree(output_dir)
-                os.makedirs(output_dir)
-                print(f"Deleted and recreated {output_dir}")
-            elif response == "2":
-                # Keep existing sections but remove raw data files for re-download
-                import glob
-                raw_files = glob.glob(os.path.join(output_dir, "raw_*.json"))
-                if raw_files:
-                    for raw_file in raw_files:
-                        os.remove(raw_file)
-                    print(f"Removed {len(raw_files)} raw data files, keeping existing report sections")
-                else:
-                    print(f"No raw data files found to remove in {output_dir}")
-                # Continue with data collection (don't return)
-            else:
-                print("Operation cancelled")
-                sys.exit(0)
-    else:
-        os.makedirs(output_dir)
-        print(f"Created directory {output_dir}")
-    
-    # Collect data sequentially
-    collectors = [
-        ('GitHub', collect_github_data),
-        ('Slack', collect_slack_data),
-        ('Gmail', collect_gmail_data),
-        ('Drive', collect_drive_data),
-        ('Calendar', collect_calendar_data),
-        ('Linear', collect_linear_data),
-        ('LaunchDarkly', collect_launchdarkly_data),
-    ]
-    
-    print("\nStarting sequential data collection...")
-    
-    for name, collector_func in collectors:
-        print(f"\n📊 Collecting {name} data...")
-        try:
-            result = collector_func(start_date, end_date, output_dir)
-            print(f"✅ {name} collection completed")
-        except Exception as e:
-            print(f"❌ {name} collection failed: {e}")
-            print(f"Exiting with error code 1")
-            sys.exit(1)
-    
-    print(f"\n✅ All data collection completed successfully!")
-    print(f"📁 Raw data saved in: {output_dir}/")
-    print(f"   - raw_github.json")
-    print(f"   - raw_slack.json")
-    print(f"   - raw_gmail.json")
-    print(f"   - raw_drive.json")
-    print(f"   - raw_calendar.json")
-    print(f"   - raw_linear.json")
-    print(f"   - raw_launchdarkly.json")
-    print(f"\nYou can now run the report generation process to create the final report.")
+        print(f"\n⚠️  Some data collection failed. Check the errors above.")
+        print(f"📁 Partial data saved in: {output_dir}")
+        sys.exit(1)
 
 
 if __name__ == "__main__":

@@ -19,7 +19,7 @@ echo "Cleaned folder: $FOLDER"
 
 ### 2. Collect raw data
 
-**ALWAYS** use the existing script:
+**ALWAYS** use the existing script with options:
 
 ```bash
 # Download all raw data for the calculated week
@@ -28,6 +28,25 @@ if ! python3 collect_raw_data.py; then
     exit 1
 fi
 echo "Raw data collection completed successfully"
+```
+
+**Available options**:
+- `--start YYYY-MM-DD --end YYYY-MM-DD`: Custom date range (overrides calculate_week.py)
+- `--force`: Overwrite existing data without prompting
+- `--channels channel1 channel2`: Specific Slack channels to check
+- `--single-channel`: Process Slack channels one at a time to avoid rate limiting
+- `--channel-delay N`: Seconds to wait between Slack channels (default: 1)
+
+**Examples**:
+```bash
+# Custom date range
+python3 collect_raw_data.py --start 2025-09-01 --end 2025-09-07 --force
+
+# Rate limit protection for Slack
+python3 collect_raw_data.py --single-channel --channel-delay 2
+
+# Check specific channels only
+python3 collect_raw_data.py --channels eng ask-eng-leads matrix-team
 ```
 
 ### 3. Generate sections sequentially
