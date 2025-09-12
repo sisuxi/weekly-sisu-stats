@@ -1,6 +1,19 @@
 {
   "prs_created": [
     {
+      "createdAt": "2025-09-12T02:30:59Z",
+      "labels": [],
+      "number": 35,
+      "repository": {
+        "name": "sisu-tools",
+        "nameWithOwner": "hebbia/sisu-tools"
+      },
+      "state": "merged",
+      "title": "feat: improve JSON output formatting for human readability",
+      "updatedAt": "2025-09-12T02:31:12Z",
+      "url": "https://github.com/hebbia/sisu-tools/pull/35"
+    },
+    {
       "createdAt": "2025-09-11T22:22:20Z",
       "labels": [],
       "number": 34,
@@ -376,19 +389,6 @@
       "title": "Rename token.json to calendar_token.json for consistency",
       "updatedAt": "2025-09-06T01:56:46Z",
       "url": "https://github.com/hebbia/sisu-tools/pull/13"
-    },
-    {
-      "createdAt": "2025-09-06T01:50:44Z",
-      "labels": [],
-      "number": 12,
-      "repository": {
-        "name": "sisu-tools",
-        "nameWithOwner": "hebbia/sisu-tools"
-      },
-      "state": "merged",
-      "title": "Add Gmail Explorer tool for email analysis",
-      "updatedAt": "2025-09-06T01:50:55Z",
-      "url": "https://github.com/hebbia/sisu-tools/pull/12"
     }
   ],
   "prs_reviewed": [
@@ -554,6 +554,21 @@
     }
   ],
   "prs_involved": [
+    {
+      "author": {
+        "id": "U_kgDODYruhg",
+        "is_bot": false,
+        "login": "sisuxi",
+        "type": "User",
+        "url": "https://github.com/sisuxi"
+      },
+      "number": 35,
+      "repository": {
+        "name": "sisu-tools",
+        "nameWithOwner": "hebbia/sisu-tools"
+      },
+      "title": "feat: improve JSON output formatting for human readability"
+    },
     {
       "author": {
         "id": "U_kgDODYruhg",
@@ -988,21 +1003,6 @@
         "nameWithOwner": "hebbia/sisu-tools"
       },
       "title": "Add Slack Explorer tool for workspace data analysis"
-    },
-    {
-      "author": {
-        "id": "U_kgDODYruhg",
-        "is_bot": false,
-        "login": "sisuxi",
-        "type": "User",
-        "url": "https://github.com/sisuxi"
-      },
-      "number": 13,
-      "repository": {
-        "name": "sisu-tools",
-        "nameWithOwner": "hebbia/sisu-tools"
-      },
-      "title": "Rename token.json to calendar_token.json for consistency"
     }
   ],
   "commits": [
@@ -2805,6 +2805,42 @@
         "url": "https://github.com/hebbia/sisu-tools"
       },
       "sha": "e59383bff9f42c66b59621c415004cdb6c9e9569"
+    },
+    {
+      "commit": {
+        "author": {
+          "date": "2025-09-11T22:31:09-04:00",
+          "email": "sisu.xi@hebbia.ai",
+          "name": "Sisu Xi"
+        },
+        "comment_count": 0,
+        "committer": {
+          "date": "2025-09-11T22:31:09-04:00",
+          "email": "noreply@github.com",
+          "name": "GitHub"
+        },
+        "message": "feat: improve JSON output formatting for human readability (#35)\n\n- calendar_explorer.py: Add clean JSON formatting with essential fields only\n  - Include web URLs, duration calculations, and key event details\n  - Remove verbose API metadata for better readability\n\n- slack_explorer.py: Add clean JSON formatting for channels, messages, and search\n  - Include web URLs and essential message/channel information\n  - Support --json flag for channels, history, and search commands\n\n- gmail_explorer.py: Add --json flag support for search command\n\n- linear_explorer.py: Minor formatting improvements\n\n\ud83e\udd16 Generated with [Claude Code](https://claude.ai/code)\n\nCo-authored-by: Sisu Xi <xisisu@gmail.com>\nCo-authored-by: Claude <noreply@anthropic.com>",
+        "tree": {
+          "sha": "198339c794f3b6fd44c8096284a13770c4ad9442"
+        }
+      },
+      "repository": {
+        "description": "sharing a list of custom created tools & prompts & configs",
+        "fullName": "hebbia/sisu-tools",
+        "id": "R_kgDOPqo27Q",
+        "isFork": false,
+        "isPrivate": true,
+        "name": "sisu-tools",
+        "owner": {
+          "id": "MDEyOk9yZ2FuaXphdGlvbjYyMjMzMTIx",
+          "is_bot": false,
+          "login": "hebbia",
+          "type": "Organization",
+          "url": "https://github.com/hebbia"
+        },
+        "url": "https://github.com/hebbia/sisu-tools"
+      },
+      "sha": "bc657abd52200d1989379bc51d495ba26f814dca"
     }
   ],
   "team_prs_reviewed": [
