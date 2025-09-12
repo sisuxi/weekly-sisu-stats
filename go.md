@@ -1,18 +1,13 @@
 # Principal Engineer Weekly Snapshot Report Generator
 
-Generate comprehensive weekly reports documenting strategic technical leadership, architectural decisions, and cross-team impact.
+**INSTRUCTIONS FOR CLAUDE**: Follow this workflow exactly. Do NOT manually calculate dates - use the existing Python scripts.
 
-## Usage
-
-```bash
-@go.md
-```
-
-## Claude Code Instructions
-
-When executing `@go.md`:
+## Workflow Steps
 
 ### 1. Calculate date and clean folder
+
+**ALWAYS** use the existing script:
+
 ```bash
 FOLDER=$(python3 calculate_week.py)
 echo "Working on week: $FOLDER"
@@ -23,6 +18,9 @@ echo "Cleaned folder: $FOLDER"
 ```
 
 ### 2. Collect raw data
+
+**ALWAYS** use the existing script:
+
 ```bash
 # Download all raw data for the calculated week
 if ! python3 collect_raw_data.py; then
@@ -32,43 +30,22 @@ fi
 echo "Raw data collection completed successfully"
 ```
 
-### 3. Launch parallel section generators
+### 3. Generate sections sequentially
 
-**CRITICAL**: Use Task tool to run ALL simultaneously:
+Generate each section one at a time, reading the raw data files:
 
-```python
-Task("Generate GitHub section", 
-     prompt="Read raw_github.json and create GitHub activity section",
-     subagent_type="documentation-specialist")
-
-Task("Generate Slack section",
-     prompt="Read raw_slack.json and create Slack activity section", 
-     subagent_type="documentation-specialist")
-
-Task("Generate Gmail section",
-     prompt="Read raw_gmail.json and create Gmail activity section",
-     subagent_type="documentation-specialist")
-
-Task("Generate Calendar section",
-     prompt="Read raw_calendar.json and create Calendar activity section",
-     subagent_type="documentation-specialist")
-
-Task("Generate Drive section",
-     prompt="Read raw_drive.json and create Drive activity section",
-     subagent_type="documentation-specialist")
-
-Task("Generate Linear section",
-     prompt="Read raw_linear.json and create Linear activity section",
-     subagent_type="documentation-specialist")
-
-Task("Generate LaunchDarkly section",
-     prompt="Read raw_launchdarkly.json and create LaunchDarkly activity section",
-     subagent_type="documentation-specialist")
-```
+1. Read `raw_github.json` and create `section_github.md`
+2. Read `raw_slack.json` and create `section_slack.md` 
+3. Read `raw_gmail.json` and create `section_gmail.md`
+4. Read `raw_calendar.json` and create `section_calendar.md`
+5. Read `raw_drive.json` and create `section_drive.md`
+6. Read `raw_linear.json` and create `section_linear.md`
+7. Read `raw_launchdarkly.json` and create `section_launchdarkly.md`
 
 ### 4. Generate final report
 
 After ALL sections complete:
+
 - Read all `section_*.md` files
 - Generate executive summary LAST (with full context)
 - Combine into `weekly_report.md`
@@ -76,6 +53,7 @@ After ALL sections complete:
 ## Data Sources
 
 **Raw Data** (collected by Python):
+
 - `raw_github.json` - PRs, reviews, commits
 - `raw_slack.json` - Messages, channels, DMs
 - `raw_gmail.json` - Email statistics
@@ -85,6 +63,7 @@ After ALL sections complete:
 - `raw_launchdarkly.json` - Feature flag changes
 
 **Generated Files** (created by Claude):
+
 - `section_*.md` - Individual activity sections
 - `weekly_report.md` - Final combined report
 
@@ -94,25 +73,72 @@ After ALL sections complete:
 # Weekly Snapshot: [START_DATE] - [END_DATE]
 
 ## Executive Summary
-- **PRs**: [X] created, [Y] reviewed  
-- **Teams**: [List teams collaborated with]
-- **P0/P1 Issues**: [Count and identifiers]
-- **Key Decisions**: [Major technical decisions]
 
-## [Data Source] Activity
-[Generated from raw_*.json files]
+- **PRs**: X total (X1 in repo1, X2 in repo2, ...)
+- **Feature Flags**: X created/updated by me
+- **Docs**: X created/updated (doc1, doc2, ... ranked by importance)
+- **Meetings**: X meetings totaling Y hours
+
+## GitHub Activity
+
+### PRs Created
+[Group by repo with high-level summary]
+**Repo Name**: Brief summary of PRs in this repo
+- #PR_NUMBER: Title - URL
+- ...
+
+### PRs Reviewed
+[Group by repo with high-level summary]
+**Repo Name**: Brief summary of reviews in this repo
+- #PR_NUMBER: Title - URL
+- ...
+
+## Slack Activity
+[If no activity, just say "No activity recorded"]
+
+## Gmail Activity
+- Received: X emails
+- Sent: Y emails
+
+Important sent emails:
+- [List important sent emails]
+[If no sent activity, just say "No sent emails"]
+
+## Calendar Activity
+X meetings totaling Y hours
+
+**Area Name** (Z hours total):
+- Meeting Name (duration) [doc link if available]
+- ...
+
+## Drive Activity
+X docs created/updated/reviewed
+
+**Area Name**: Brief summary
+- Doc Name - URL
+- ...
+
+## Linear Activity
+[If no activity, just say "No activity"]
+
+## LaunchDarkly Activity
+[Only show flags created/updated by me. If none, say "No flags created/updated"]
 ```
 
 ## Writing Guidelines
 
-**Focus**: Strategic impact > tactical work
-**Style**: Factual, concise, scannable
+**Focus**: Concise, factual reporting
+**Style**: Short, bullet-point driven
 **Links**: Include all URLs to PRs, issues, documents
 **Tone**: Objective reporting, no subjective assessments
+**Length**: Keep report SHORT and to the point
 
-## Critical Rules
+## Critical Rules for Claude
 
-- **Parallel Execution**: ALL section generators run simultaneously
-- **Executive Summary**: Generated LAST with full context  
+- **NO MANUAL DATE CALCULATION**: Always use `python3 calculate_week.py`
+- **NO MANUAL DATA COLLECTION**: Always use `python3 collect_raw_data.py`  
+- **Sequential Execution**: Generate sections one at a time
+- **Executive Summary**: Generated LAST with full context
 - **Error Handling**: Exit immediately if ANY data download fails
 - **Clean State**: Remove entire folder before regeneration (`rm -rf`)
+- **Follow Scripts**: Use existing Python automation, don't reinvent

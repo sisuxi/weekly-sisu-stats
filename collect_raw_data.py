@@ -10,7 +10,7 @@ import subprocess
 import sys
 from datetime import datetime, timedelta
 from pathlib import Path
-from concurrent.futures import ThreadPoolExecutor, as_completed
+# from concurrent.futures import ThreadPoolExecutor, as_completed
 import argparse
 
 
@@ -116,7 +116,7 @@ def collect_slack_data(start_date, end_date, output_dir):
     tools_dir = Path.home() / "Hebbia" / "sisu-tools"
     
     # Messages from me
-    cmd = f'.venv/bin/python tools/slack_explorer.py search "from:@sisu" --from "{start_date}" --to "{end_date}" --count 50'
+    cmd = f'.venv/bin/python tools/slack_explorer.py search "from:@sisu.xi" --from "{start_date}" --to "{end_date}" --count 50'
     result = run_command(cmd, cwd=tools_dir)
     if result is None:
         raise Exception("Failed to collect Slack messages")
@@ -226,19 +226,19 @@ def collect_linear_data(start_date, end_date, output_dir):
     
     try:
         # My assigned issues
-        query = '{ issues(filter: { assignee: { email: { eq: "sisu@hebbia.ai" } } }, first: 100) { nodes { identifier title state { name } priority createdAt updatedAt team { name } } } }'
+        query = '{ issues(filter: { assignee: { email: { eq: "sisu.xi@hebbia.ai" } } }, first: 100) { nodes { identifier title state { name } priority createdAt updatedAt team { name } } } }'
         cmd = f".venv/bin/python tools/linear_explorer.py '{query}' --from '{start_date}' --to '{end_date}' --urls"
         result = run_command(cmd, cwd=tools_dir)
         data['my_issues'] = result if result else ""
         
         # High priority issues
-        query = '{ issues(filter: { assignee: { email: { eq: "sisu@hebbia.ai" } }, priority: { in: [0, 1] } }, first: 50) { nodes { identifier title state { name } priority team { name } } } }'
+        query = '{ issues(filter: { assignee: { email: { eq: "sisu.xi@hebbia.ai" } }, priority: { in: [0, 1] } }, first: 50) { nodes { identifier title state { name } priority team { name } } } }'
         cmd = f".venv/bin/python tools/linear_explorer.py '{query}' --from '{start_date}' --to '{end_date}'"
         result = run_command(cmd, cwd=tools_dir)
         data['high_priority'] = result if result else ""
         
         # Issues I created
-        query = '{ issues(filter: { creator: { email: { eq: "sisu@hebbia.ai" } } }, first: 50) { nodes { identifier title state { name } createdAt team { name } } } }'
+        query = '{ issues(filter: { creator: { email: { eq: "sisu.xi@hebbia.ai" } } }, first: 50) { nodes { identifier title state { name } createdAt team { name } } } }'
         cmd = f".venv/bin/python tools/linear_explorer.py '{query}' --from '{start_date}' --to '{end_date}'"
         result = run_command(cmd, cwd=tools_dir)
         data['created'] = result if result else ""
@@ -308,6 +308,7 @@ def main():
     parser.add_argument('--end', help='End date (YYYY-MM-DD)')
     parser.add_argument('--date', help='Calculate week containing this date (YYYY-MM-DD)')
     parser.add_argument('--output', help='Output directory (default: YYYYMMDD-YYYYMMDD)')
+    parser.add_argument('--force', action='store_true', help='Force overwrite existing directory without prompting')
     args = parser.parse_args()
     
     # Determine date range
@@ -332,28 +333,38 @@ def main():
     
     # Check if directory exists
     if os.path.exists(output_dir):
-        response = input(f"\nFolder {output_dir} already exists. What would you like to do?\n"
-                        "1. Delete and regenerate everything (default - press Enter)\n"
-                        "2. Keep existing data and exit\n"
-                        "3. Cancel operation\n"
-                        "Choice [1]: ")
-        
-        if response == "" or response == "1":
+        if args.force:
             import shutil
             shutil.rmtree(output_dir)
             os.makedirs(output_dir)
-            print(f"Deleted and recreated {output_dir}")
-        elif response == "2":
-            print(f"Keeping existing data in {output_dir}")
-            return
+            print(f"Force: Deleted and recreated {output_dir}")
         else:
-            print("Operation cancelled")
-            sys.exit(0)
+            try:
+                response = input(f"\nFolder {output_dir} already exists. What would you like to do?\n"
+                                "1. Delete and regenerate everything (default - press Enter)\n"
+                                "2. Keep existing data and exit\n"
+                                "3. Cancel operation\n"
+                                "Choice [1]: ")
+            except EOFError:
+                # Non-interactive mode, default to option 1
+                response = "1"
+            
+            if response == "" or response == "1":
+                import shutil
+                shutil.rmtree(output_dir)
+                os.makedirs(output_dir)
+                print(f"Deleted and recreated {output_dir}")
+            elif response == "2":
+                print(f"Keeping existing data in {output_dir}")
+                return
+            else:
+                print("Operation cancelled")
+                sys.exit(0)
     else:
         os.makedirs(output_dir)
         print(f"Created directory {output_dir}")
     
-    # Collect data in parallel
+    # Collect data sequentially
     collectors = [
         ('GitHub', collect_github_data),
         ('Slack', collect_slack_data),
@@ -364,29 +375,17 @@ def main():
         ('LaunchDarkly', collect_launchdarkly_data),
     ]
     
-    print("\nStarting parallel data collection...")
-    failed_collectors = []
+    print("\nStarting sequential data collection...")
     
-    with ThreadPoolExecutor(max_workers=7) as executor:
-        futures = {}
-        for name, collector_func in collectors:
-            future = executor.submit(collector_func, start_date, end_date, output_dir)
-            futures[future] = name
-        
-        for future in as_completed(futures):
-            name = futures[future]
-            try:
-                result = future.result()
-                print(f"✅ {name} collection completed")
-            except Exception as e:
-                print(f"❌ {name} collection failed: {e}")
-                failed_collectors.append(name)
-    
-    # Check if any collectors failed
-    if failed_collectors:
-        print(f"\n❌ Data collection failed for: {', '.join(failed_collectors)}")
-        print(f"Exiting with error code 1")
-        sys.exit(1)
+    for name, collector_func in collectors:
+        print(f"\n📊 Collecting {name} data...")
+        try:
+            result = collector_func(start_date, end_date, output_dir)
+            print(f"✅ {name} collection completed")
+        except Exception as e:
+            print(f"❌ {name} collection failed: {e}")
+            print(f"Exiting with error code 1")
+            sys.exit(1)
     
     print(f"\n✅ All data collection completed successfully!")
     print(f"📁 Raw data saved in: {output_dir}/")
